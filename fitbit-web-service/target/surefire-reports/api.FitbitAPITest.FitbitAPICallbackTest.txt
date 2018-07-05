@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: api.FitbitAPITest.FitbitAPICallbackTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.625 s - in api.FitbitAPITest.FitbitAPICallbackTest

@@ -1,0 +1,12 @@
+api/FitbitAPI/Services/FitbitAPIService.class
+api/FitbitAPI/Services/FitbitProfileService.class
+api/FitbitWebServiceApplication$ApplicationConfig.class
+api/FitbitAPI/Services/FitbitAPIService$AuthorizeParams.class
+api/FitbitAPI/Constants/ActivitiesResourcePath.class
+api/FitbitAPI/Services/FitbitAPIService$AccessTokenParams.class
+api/FitbitAPI/Controllers/FitbitAPIController.class
+api/FitbitAPI/FitbitAPIRequestBuilder.class
+api/FitbitAPI/Repository/FitbitProfileRepository.class
+api/Utilities/ColorLogger.class
+api/FitbitAPI/Models/FitbitProfile.class
+api/FitbitWebServiceApplication.class
