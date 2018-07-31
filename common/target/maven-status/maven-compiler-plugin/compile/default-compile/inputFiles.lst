@@ -1,0 +1,10 @@
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/util/Validation.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/SpringRepositoryEventStore.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/Aggregate.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/OptimisticLockingException.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/BaseRepository.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/IEventStore.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/util/EntityHelper.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/models/BaseEntity.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/domain/Event.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/common/src/main/java/util/ColorLogger.java

@@ -1,7 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java" line="35" mnemonic="5" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5648ee4d-dc9b-4e79-af03-7f626f883425" name="Default" comment="" />
+    <list default="true" id="5648ee4d-dc9b-4e79-af03-7f626f883425" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/common_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_6_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_6_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_6_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/KafkaConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/strain_role/StrainRole.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/common.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/Aggregate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/BaseRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/Event.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/IEventStore.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/OptimisticLockingException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/SpringRepositoryEventStore.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/domain/models/BaseEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/util/EntityHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/src/main/java/util/Validation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/EntityAuditBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitConstantEnvironment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/WebConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessTokenParams.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessTokenResponseKey.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AuthorizeParams.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/UnauthorizedErrors.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/ActivitiesResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/BaseActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/BaseActivityRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/CaloriesActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/DistanceActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/ElevationActivities.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/FloorsActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/StepsActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateAPIService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZone.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleep.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepAPIService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepStages.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerie.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitActivityServiceTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_6_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/account-service/target/classes/boostrap.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conf-log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/disc-log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Constants/ActivitiesResourcePath.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/FitbitAPIRequestBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Services/FitbitAPIService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitAPIServiceTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Constants/ActivitiesResourcePath.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Controllers/FitbitAPIController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Controllers/FitbitProfileController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/FitbitAPIRequestBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Models/FitbitProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Repository/FitbitProfileRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Services/FitbitAPIService$AccessTokenParams.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Services/FitbitAPIService$AuthorizeParams.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Services/FitbitAPIService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitAPI/Services/FitbitProfileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/Utilities/ColorLogger.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/surefire-reports/2018-06-23T03-20-51_595-jvmRun1.dumpstream" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/surefire-reports/TEST-api.FitbitAPITest.FitbitAPICallbackTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/surefire-reports/TEST-api.FitbitAPITest.FitbitAPIServiceTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/surefire-reports/api.FitbitAPITest.FitbitAPICallbackTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/surefire-reports/api.FitbitAPITest.FitbitAPIServiceTest.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit-web-service/target/test-classes/api/FitbitAPITest/FitbitAPIServiceTest.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_0_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_24_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_25_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_9_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_3_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_8_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_2_1_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_2_1_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_0_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_0_6_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_6_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitAPIController.java" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/FitbitAPIController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitProfileController.java" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Models/FitbitProfile.java" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfile.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Repository/FitbitProfileRepository.java" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Services/FitbitProfileService.java" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/Utilities/ColorLogger.java" afterPath="$PROJECT_DIR$/common/src/main/java/util/ColorLogger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/classes/api/AccountServiceApplication.class" afterPath="$PROJECT_DIR$/account-service/target/classes/api/AccountServiceApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/classes/api/KafkaSandbox$Listener.class" afterPath="$PROJECT_DIR$/account-service/target/classes/api/KafkaSandbox$Listener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/classes/api/KafkaSandbox.class" afterPath="$PROJECT_DIR$/account-service/target/classes/api/KafkaSandbox.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUser.class" afterPath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserRepository.class" afterPath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserService.class" afterPath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-gateway-service/target/api-gateway-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/api-gateway-service/target/api-gateway-service-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-gateway-service/target/api-gateway-service-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/api-gateway-service/target/api-gateway-service-1.0-SNAPSHOT.jar.original" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-gateway-service/target/classes/api/APIGatewayService.class" afterPath="$PROJECT_DIR$/api-gateway-service/target/classes/api/APIGatewayService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-service/target/classes/api/ConfigServiceApplication.class" afterPath="$PROJECT_DIR$/config-service/target/classes/api/ConfigServiceApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discovery-service/target/classes/api/DiscoveryServiceApplication.class" afterPath="$PROJECT_DIR$/discovery-service/target/classes/api/DiscoveryServiceApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discovery-service/target/discovery-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/discovery-service/target/discovery-service-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discovery-service/target/discovery-service-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/discovery-service/target/discovery-service-1.0-SNAPSHOT.jar.original" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitWebServiceApplication$ApplicationConfig.class" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitWebServiceApplication$ApplicationConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitWebServiceApplication.class" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/FitbitWebServiceApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar.original" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/test-classes/api/FitbitAPITest/FitbitAPICallbackTest.class" afterPath="$PROJECT_DIR$/fitbit-web-service/target/test-classes/api/FitbitAPITest/FitbitAPICallbackTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/account-service.iml" afterPath="$PROJECT_DIR$/account-service/account-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/pom.xml" afterPath="$PROJECT_DIR$/account-service/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/src/main/java/api/KafkaSandbox.java" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/KafkaSandbox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUser.java" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserRepository.java" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-gateway-service/api-gateway-service.iml" afterPath="$PROJECT_DIR$/api-gateway-service/api-gateway-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-gateway-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/api-gateway-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-service/config-service.iml" afterPath="$PROJECT_DIR$/config-service/config-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/discovery-service/discovery-service.iml" afterPath="$PROJECT_DIR$/discovery-service/discovery-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/fitbit-web-service.iml" afterPath="$PROJECT_DIR$/fitbit-web-service/fitbit-web-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/pom.xml" afterPath="$PROJECT_DIR$/fitbit-web-service/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitWebServiceApplication.java" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitWebServiceApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/strain-core.iml" afterPath="$PROJECT_DIR$/strain-core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/strain.sh" afterPath="$PROJECT_DIR$/strain.sh" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/discovery-service/target/" />
@@ -9,6 +211,7 @@
     <ignored path="$PROJECT_DIR$/config-service/target/" />
     <ignored path="$PROJECT_DIR$/api-gateway-service/target/" />
     <ignored path="$PROJECT_DIR$/account-service/target/" />
+    <ignored path="$PROJECT_DIR$/common/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,90 +224,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="FitbitUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="382">
+              <caret line="108" column="38" lean-forward="false" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FitbitActivityRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StrainUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUser.java">
+      <file leaf-file-name="FitbitActivityService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="375">
+              <caret line="73" column="39" lean-forward="false" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#1843#1863#0" expanded="true" />
+                <element signature="e#3022#3023#0" expanded="true" />
+                <element signature="e#3068#3069#0" expanded="true" />
+                <element signature="e#3128#3129#0" expanded="true" />
+                <element signature="e#3177#3178#0" expanded="true" />
+                <element signature="e#3384#3385#0" expanded="true" />
+                <element signature="e#3441#3442#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java">
+      <file leaf-file-name="FitbitActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+            <state relative-caret-position="140">
+              <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
               <folding>
-                <element signature="e#1619#1620#0" expanded="true" />
-                <element signature="e#1667#1668#0" expanded="true" />
+                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#1088#1089#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KafkaSandbox.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/KafkaSandbox.java">
+      <file leaf-file-name="FitbitActivityController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+            <state relative-caret-position="397">
+              <caret line="102" column="49" lean-forward="false" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2703#2704#0" expanded="true" />
-                <element signature="e#2740#2741#0" expanded="true" />
-                <element signature="e#4022#4023#0" expanded="true" />
-                <element signature="e#4093#4094#0" expanded="true" />
-                <element signature="e#4226#4227#0" expanded="true" />
-                <element signature="e#4287#4288#0" expanded="true" />
+                <element signature="method#getActivities#0;class#FitbitActivityController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StrainUserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java">
+      <file leaf-file-name="FitbitProfileService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="1434">
+              <caret line="133" column="47" lean-forward="false" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="APIGatewayService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api-gateway-service/src/main/java/api/APIGatewayService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="31" column="55" lean-forward="false" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1210#1211#0" expanded="true" />
-                <element signature="e#1266#1267#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,9 +305,36 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>log.info</find>
+      <find>age</find>
+      <find>fitbituserservice</find>
+      <find>1)</find>
+      <find>serve</find>
+      <find>@auto</find>
+      <find>auth</find>
+      <find>use</find>
+      <find>u</find>
+      <find>resource</find>
+      <find>resource_URL</find>
+      <find>parsetime</find>
+      <find>log</find>
+      <find>content</find>
+      <find>revoke</find>
+      <find>accesjson</find>
+      <find>save</find>
+      <find>epoch</find>
+      <find>info</find>
+      <find>sleep</find>
+      <find>colorlog</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -129,41 +347,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/discovery-service/src/main/java/api/CoreApplication.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/ApplicationInit.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitAPICallbackTest.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitAPIServiceTest.java" />
-        <option value="$PROJECT_DIR$/discovery-service/src/main/java/DiscoveryServiceApplication.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/CoreApplication.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/FitbitAPIService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitAPIService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/enum_test.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessTokenResponseKey.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/WebConfig.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessTokenParams.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessErrors.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/UnauthorizedErrors.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/ActivitiesResourcePath.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepTimeserie.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepCycle.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepTimeSerie.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepTimeSerieRepository.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileRepository.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepRepository.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitConstantEnvironment.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileController.java" />
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitWebServiceApplication.java" />
-        <option value="$PROJECT_DIR$/config-service/src/main/java/ConfigServiceApplication.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/pom.xml" />
-        <option value="$PROJECT_DIR$/config-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/api-gateway-service/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/discovery-service/src/main/java/api/DiscoveryServiceApplication.java" />
-        <option value="$PROJECT_DIR$/config-service/src/main/java/api/ConfigServiceApplication.java" />
-        <option value="$PROJECT_DIR$/discovery-service/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/discovery-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/config-service/pom.xml" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitAPIController.java" />
-        <option value="$PROJECT_DIR$/account-service/pom.xml" />
-        <option value="$PROJECT_DIR$/account-service/src/main/resources/boostrap.yml" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUser.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitProfileController.java" />
-        <option value="$PROJECT_DIR$/api-gateway-service/src/main/java/api/TestController.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Repository/FitbitProfileRepository.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Models/FitbitProfile.java" />
-        <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/api-gateway-service/pom.xml" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserRepository.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserController.java" />
-        <option value="$PROJECT_DIR$/api-gateway-service/src/main/java/api/APIGatewayService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java" />
-        <option value="$PROJECT_DIR$/account-service/src/main/java/api/KafkaSandbox.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfile.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieRepository.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerie.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepAPIService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepController.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepStages.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleep.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/ZoneName.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZone.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrate.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateController.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneRepository.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/ActivitiesResourcePath.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateAPIService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/ElevationActivities.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/DistanceActivity.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/CaloriesActivity.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/StepsActivity.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityRepository.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/FloorsActivity.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/util/EntityHelper.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/test.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivity.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityService.java" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityController.java" />
       </list>
     </option>
   </component>
@@ -178,7 +412,9 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -194,8 +430,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,78 +443,25 @@
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
               <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
               <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
               <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="strain_user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="account-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
               <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -285,29 +469,11 @@
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
               <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="api-gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="discovery-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="discovery-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
-              <item name="discovery-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
@@ -352,7 +518,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="FitbitAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
@@ -362,8 +528,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="FitbitAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_account" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
@@ -373,8 +538,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="FitbitAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_account" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
@@ -384,8 +549,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="FitbitAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_account" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
@@ -395,8 +560,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="FitbitAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_account" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
@@ -404,21 +569,92 @@
               <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_activity" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_heartrate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_heartrate" type="462c0819:PsiDirectoryNode" />
+              <item name="heartrate_zone" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_sleep" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="strain-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strain-core" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit-web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_web_api" type="462c0819:PsiDirectoryNode" />
+              <item name="fitbit_sleep" type="462c0819:PsiDirectoryNode" />
+              <item name="sleep_time_series" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -440,7 +676,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.test">
+    <configuration name="EntityHelper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="util.EntityHelper" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="common" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -522,6 +777,56 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="enum_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="api.fitbit_web_api.fitbit_activity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="api.constants.enum_test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="fitbit-web-service" />
+      <envs />
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="api.fitbit_account.fitbit_auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="api.fitbit_account.fitbit_auth.test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="fitbit-web-service" />
+      <envs />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.EntityHelper" />
+      <item index="1" class="java.lang.String" itemvalue="Application.enum_test" />
+      <item index="2" class="java.lang.String" itemvalue="Application.test" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.enum_test" />
+        <item index="2" class="java.lang.String" itemvalue="Application.EntityHelper" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -536,406 +841,570 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31176472" sideWeight="0.49444443" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31176472" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18611111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31176472" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31176472" sideWeight="0.49444443" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18611111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/strain-core.iml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Models/FitbitUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitAPICallbackTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitAPIServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/ApplicationInit.java" />
-    <entry file="file://$PROJECT_DIR$/discovery-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery-service/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery-service/src/main/java/api/DiscoveryServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="34" column="76" lean-forward="false" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-service/src/main/java/api/ConfigServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="98">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#1285#1286#0" expanded="false" />
-            <element signature="e#1382#1383#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/discovery-service/discovery-service.iml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/enum_test.java" />
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/models.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="784">
+          <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Services/FitbitUserService.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="98">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Services/FitbitAPIService.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitConstantEnvironment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2530">
-          <caret line="48" column="52" lean-forward="false" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-service/config-service.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway-service/api-gateway-service.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Services/FitbitProfileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="868">
+          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitWebServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state relative-caret-position="378">
+          <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/fitbit-web-service.iml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="45" column="3" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="31" column="43" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway-service/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
+        <state relative-caret-position="84">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Models/FitbitProfile.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="true" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
           <folding>
-            <element signature="e#1223#1224#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Repository/FitbitProfileRepository.java">
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/util/Validation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway-service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <marker date="1530552203000" expanded="true" signature="1023:1173" ph="..." />
-          </folding>
+        <state relative-caret-position="4794">
+          <caret line="396" column="5" lean-forward="false" selection-start-line="396" selection-start-column="5" selection-end-line="396" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitProfileController.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/SleepStages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/FitbitAPI/Controllers/FitbitAPIController.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1414">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/account-service.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="994">
-          <caret line="71" column="19" lean-forward="false" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway-service/src/main/java/api/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        <state relative-caret-position="193">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding>
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#425#426#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/resources/bootstrap.yml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="382">
+          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1063#1064#0" expanded="false" />
+            <element signature="e#1106#1107#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/ZoneName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepAPIService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway-service/src/main/java/api/APIGatewayService.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="31" column="55" lean-forward="false" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+        <state relative-caret-position="247">
+          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1401#1402#0" expanded="true" />
+            <element signature="e#1447#1448#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="true" />
+            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#1691#1692#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserRepository.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="529">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-332">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1380#1381#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1437#1438#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1541#1542#0" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+            <element signature="e#1714#1715#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1958#1959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateAPIService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="91" column="42" lean-forward="true" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessTokenParams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/UnauthorizedErrors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AccessTokenResponseKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="168">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUser.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/constants/AuthorizeParams.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="28">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/ActivitiesResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/BaseActivityRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+        <state relative-caret-position="447">
+          <caret line="89" column="58" lean-forward="true" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/ElevationActivities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/FloorsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/DistanceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/CaloriesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/StepsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/models/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding>
-            <element signature="e#1619#1620#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/KafkaSandbox.java">
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/test/java/api/FitbitAPITest/FitbitActivityServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+        <state relative-caret-position="98">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/util/EntityHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="155" column="5" lean-forward="false" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+          <folding>
+            <element signature="e#4964#4965#0" expanded="true" />
+            <element signature="e#5014#5015#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="108" column="38" lean-forward="false" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2703#2704#0" expanded="true" />
-            <element signature="e#2740#2741#0" expanded="true" />
-            <element signature="e#4022#4023#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-            <element signature="e#4226#4227#0" expanded="true" />
-            <element signature="e#4287#4288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1434">
+          <caret line="133" column="47" lean-forward="false" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="73" column="39" lean-forward="false" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1843#1863#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+            <element signature="e#3068#3069#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3177#3178#0" expanded="true" />
+            <element signature="e#3384#3385#0" expanded="true" />
+            <element signature="e#3441#3442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <folding>
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/FitbitActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="102" column="49" lean-forward="false" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+          <folding>
+            <element signature="method#getActivities#0;class#FitbitActivityController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -946,10 +1415,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>common:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -992,7 +1463,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>strain-core</last-edited>
+          <last-edited>common</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

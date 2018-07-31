@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="account-service" />
         <module name="api-gateway-service" />
+        <module name="common" />
         <module name="config-service" />
         <module name="discovery-service" />
         <module name="fitbit-web-service" />
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="account-service" target="1.8" />
       <module name="api-gateway-service" target="1.8" />
+      <module name="common" target="1.8" />
       <module name="config-service" target="1.8" />
       <module name="discovery-service" target="1.8" />
       <module name="fitbit-web-service" target="1.8" />

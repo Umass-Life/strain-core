@@ -1,29 +1,21 @@
 package api.strain_user;
 
 
+import domain.models.BaseEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class StrainUser {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class StrainUser extends BaseEntity{
+
     private String email;
     private String password;
 
     public StrainUser(String email, String password) {
         this.email = email;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -41,6 +33,7 @@ public class StrainUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
 
 

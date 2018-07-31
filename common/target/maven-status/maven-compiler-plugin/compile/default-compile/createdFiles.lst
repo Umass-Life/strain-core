@@ -1,0 +1,11 @@
+domain/Aggregate.class
+domain/models/BaseEntity.class
+domain/SpringRepositoryEventStore.class
+domain/BaseRepository.class
+domain/Event.class
+domain/IEventStore.class
+util/Validation.class
+util/EntityHelper.class
+util/EntityHelper$Options.class
+domain/OptimisticLockingException.class
+util/ColorLogger.class

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $1 = "rebuild" ]
+then
+  mvn clean install -DskipTests
+fi
+
 if [ $1 = "1" ]
 then
   cmd="mvn spring-boot:run -pl config-service"

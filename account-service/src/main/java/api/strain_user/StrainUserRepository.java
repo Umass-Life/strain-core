@@ -1,11 +1,9 @@
 package api.strain_user;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public interface StrainUserRepository extends PagingAndSortingRepository<StrainUser, Long> {
+import java.util.Optional;
 
+public interface StrainUserRepository extends CrudRepository<StrainUser, Long> {
+    Optional<StrainUser> getByEmail(String email);
 }

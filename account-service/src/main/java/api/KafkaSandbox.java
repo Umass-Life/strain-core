@@ -16,9 +16,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
+import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
+import org.springframework.kafka.listener.KafkaMessageListenerContainer;
+import org.springframework.kafka.listener.config.ContainerProperties;
+import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -28,18 +37,16 @@ import java.util.logging.Logger;
 @EnableKafka
 public class KafkaSandbox {
     public static Logger log = Logger.getLogger(KafkaSandbox.class.getName());
+
+    @Value("${spring.kafka.topics.new-strain-user}")
+    public String NEW_STRAIN_USER_TOPIC;
+
+    @Value("${spring.kafka.topics.new-strain-user-reply}")
+    public String NEW_STRAIN_USER_REPLY_TOPIC;
+
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServersLocation;
-    public final static String NEW_KAFKA_USER_TOPIC = "new-strain-user";
 
-    @Bean
-    ConcurrentKafkaListenerContainerFactory<Integer, String>
-    kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<Integer, String> factory =
-                new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(consumerFactory());
-        return factory;
-    }
 
     @Bean
     public ConsumerFactory<Integer, String> consumerFactory() {
@@ -61,7 +68,9 @@ public class KafkaSandbox {
 
     @Bean
     public Listener listener(){
-        return new Listener();
+        Listener listener = new Listener();
+        listener.listen(null);
+        return listener;
     }
 
     @Bean
@@ -73,7 +82,6 @@ public class KafkaSandbox {
     public Map<String, Object> producerConfigs() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServersLocation);
-
         props.put(ProducerConfig.RETRIES_CONFIG, 0);
         props.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);
         props.put(ProducerConfig.LINGER_MS_CONFIG, 1);
@@ -89,6 +97,27 @@ public class KafkaSandbox {
     }
 
     @Bean
+    public ReplyingKafkaTemplate<Integer, String, String> replyingKafkaTemplate
+            (ProducerFactory<Integer, String> pf,
+             KafkaMessageListenerContainer<Integer, String> replyContainer){
+        return new ReplyingKafkaTemplate<>(pf, replyContainer);
+    }
+
+    @Bean
+    public KafkaMessageListenerContainer<Integer, String> replyContainer(ConsumerFactory<Integer, String> cf){
+        ContainerProperties cp = new ContainerProperties(NEW_STRAIN_USER_REPLY_TOPIC);
+        return new KafkaMessageListenerContainer<Integer, String>(cf, cp);
+    }
+
+    @Bean
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<Integer, String>> kafkaListenerContainerFactory(){
+        ConcurrentKafkaListenerContainerFactory<Integer, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory());
+        factory.setReplyTemplate(kafkaTemplate());
+        return factory;
+    }
+
+    @Bean
     public KafkaAdmin admin(){
         log.info("\n----> " + bootstrapServersLocation);
         Map<String, Object> configs = new HashMap<>();
@@ -98,20 +127,25 @@ public class KafkaSandbox {
 
     @Bean
     public NewTopic newStrainUserTopic(){
-        return new NewTopic(NEW_KAFKA_USER_TOPIC, 1, (short) 1);
+        return new NewTopic(NEW_STRAIN_USER_TOPIC, 1, (short) 1);
     }
 
+    @Bean
+    public NewTopic newStrainUserReplyTopic(){
+        return new NewTopic(NEW_STRAIN_USER_REPLY_TOPIC, 1, (short) 1);
+    }
 
     public static class Listener {
         public static CountDownLatch latch = new CountDownLatch(1);
 
         public Listener(){
-            log.info("---> Listener initialized");
+            log.info("\n---> Listener initialized");
         }
-        @KafkaListener(id = "test", topics = NEW_KAFKA_USER_TOPIC)
-        public void listen(ConsumerRecord<Integer, String> msg){
+        @KafkaListener(id = "test", topics = "new-strain-user")//"#{'${spring.kafka.topics.new-strain-user}'}" )
+        @SendTo
+        public String listen(ConsumerRecord<Integer, String> msg){
             log.info("\n----> received " + msg);
-            latch.countDown();
+            return "WORLD";
         }
     }
 }
