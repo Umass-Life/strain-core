@@ -29,6 +29,7 @@ import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.ColorLogger;
+import util.StrainTimer;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -65,6 +66,8 @@ public class FitbitAuthenticationService {
 
     @Autowired
     private FitbitUserService fitbitUserService;
+
+    private static boolean DEBUG_TIME = true;
 
     private String CLIENT_ID;
     private String CLIENT_SECRET;
@@ -332,6 +335,8 @@ public class FitbitAuthenticationService {
         httpGet.addHeader("Authorization", String.format("Bearer %s", access_token));
 
         CloseableHttpClient client = HttpClients.createDefault();
+        StrainTimer timer = new StrainTimer(colorLog);
+        timer.start();
 
         try {
             HttpResponse res = client.execute(httpGet);
@@ -377,6 +382,7 @@ public class FitbitAuthenticationService {
             colorLog.severe("Got code: " + e.getMessage());
             throw new IllegalAccessError(e.getMessage());
         } finally {
+            timer.stop();
             return node;
         }
     }
@@ -404,6 +410,10 @@ public class FitbitAuthenticationService {
         System.out.println("=========");
         IOUtils.copy(body.getContent(), System.out);
         System.out.println();
+    }
+
+    public static String combineDateTime(String date, String time){
+        return String.format("%sT%s", date, time);
     }
 
 

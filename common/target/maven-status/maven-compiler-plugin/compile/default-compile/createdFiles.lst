@@ -6,6 +6,7 @@ domain/Event.class
 domain/IEventStore.class
 util/Validation.class
 util/EntityHelper.class
+util/StrainTimer.class
 util/EntityHelper$Options.class
 domain/OptimisticLockingException.class
 util/ColorLogger.class

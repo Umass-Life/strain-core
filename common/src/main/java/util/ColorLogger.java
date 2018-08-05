@@ -14,6 +14,9 @@ public class ColorLogger {
     }
 
     public String color(Object in, String color, Object... params){
+        if (in == null){
+            in = "NULL";
+        }
         String text = "\n" + color + in.toString() + ANSI_RESET;
         if (params.length == 0){
             return text;

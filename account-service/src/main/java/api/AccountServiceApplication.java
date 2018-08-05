@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-//@SpringBootApplication(scanBasePackages= {"api", "domain.models.account_service"})
-//@EntityScan(basePackages = {"domain.models.account_service"})
+//@SpringBootApplication(scanBasePackages= {"api", "domain.intraday.account_service"})
+//@EntityScan(basePackages = {"domain.intraday.account_service"})
 @SpringBootApplication
 @EnableDiscoveryClient
 @Controller

@@ -5,6 +5,7 @@ import api.fitbit_account.fitbit_user.FitbitUserService;
 import api.fitbit_web_api.fitbit_heartrate.heartrate_zone.HeartrateZone;
 import api.fitbit_web_api.fitbit_heartrate.heartrate_zone.HeartrateZoneService;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import util.ColorLogger;
 
 import javax.xml.ws.Response;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -35,9 +38,18 @@ public class FitbitHeartrateController {
     private FitbitUserService fitbitUserService;
 
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
-    public ResponseEntity<Map> fetchAll() {
+    public ResponseEntity<Map> fetchAll(@RequestParam("includeZone") Boolean includeZone) {
         Map<String, Object> responseMap = new HashMap<>();
         Iterable<FitbitHeartrate> fitbitHeartrates = fitbitHeartrateService.list();
+        if (includeZone){
+            ObjectMapper om = new ObjectMapper();
+            List<Iterable<HeartrateZone>> zones =new ArrayList<>();
+            for(FitbitHeartrate hr : fitbitHeartrates){
+                Iterable<HeartrateZone> zone = zoneService.listByFitbitHeartrateId(hr.getId());
+                zones.add(zone);
+            }
+            responseMap.put(HeartrateZone.PLURAL, zones);
+        }
         responseMap.put(FitbitHeartrate.PLURAL, fitbitHeartrates);
         return ResponseEntity.ok(responseMap);
     }
@@ -60,15 +72,21 @@ public class FitbitHeartrateController {
     public ResponseEntity<Map> fetchAPI(@RequestParam(value="fid",required=false) String fid,
                                         @RequestParam(value="from",required=false) String from,
                                         @RequestParam(value="to",required=false) String to,
-                                        @RequestParam(value="all",required=false) Boolean fetchAll){
+                                        @RequestParam(value="save",required=false,defaultValue="false") Boolean save){
         Map<String, Object> responseMap = new HashMap<>();
         try {
             FitbitUser fitbitUser = fitbitUserService.getByFitbitId(fid).orElseThrow(
                     () -> new IllegalArgumentException("cannot find fitbitId = " + fid)
             );
 
-            JsonNode node = heartrateAPIService.fetchHeartrateFromFitbit(fitbitUser, from, to);
-            responseMap.put("payload", node);
+            if (save){
+                Iterable<FitbitHeartrate> hrData = heartrateAPIService.fetchAndCreateBulk(fitbitUser, from, to);
+                responseMap.put(FitbitHeartrate.PLURAL, hrData);
+            } else {
+                JsonNode node = heartrateAPIService.fetchHeartrateFromFitbit(fitbitUser, from, to);
+                responseMap.put("payload", node);
+            }
+
 
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
@@ -80,19 +98,24 @@ public class FitbitHeartrateController {
         }
     }
 
-    @RequestMapping(value = "/fetch-api-save")
-    public ResponseEntity<Map> fetchAPISave(@RequestParam(value="fid",required=false) String fid,
-                                            @RequestParam(value="from",required=false) String from,
-                                            @RequestParam(value="to",required=false) String to,
-                                            @RequestParam(value="all",required=false) Boolean fetchAll){
+    @RequestMapping(value="/serie",  method=RequestMethod.GET)
+    public ResponseEntity<Map> fetchTimeserieAPI(@RequestParam(value="fid",required=false) String fid,
+                                        @RequestParam(value="from",required=false) String from,
+                                        @RequestParam(value="to",required=false) String to,
+                                        @RequestParam(value="save",required=false,defaultValue="false") Boolean save){
         Map<String, Object> responseMap = new HashMap<>();
         try {
             FitbitUser fitbitUser = fitbitUserService.getByFitbitId(fid).orElseThrow(
                     () -> new IllegalArgumentException("cannot find fitbitId = " + fid)
             );
 
-            Iterable<FitbitHeartrate> hrData = heartrateAPIService.fetchAndCreateBulk(fitbitUser, from, to);
-            responseMap.put(FitbitHeartrate.PLURAL, hrData);
+            if (save){
+
+            } else {
+                JsonNode hrData = heartrateAPIService.fetchFinegrainHeartrateFromFitbit(fitbitUser, from, to);
+                responseMap.put("payload", hrData);
+            }
+
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
             e.printStackTrace();
@@ -121,5 +144,6 @@ public class FitbitHeartrateController {
             return ResponseEntity.badRequest().body(map);
         }
     }
+
 
 }

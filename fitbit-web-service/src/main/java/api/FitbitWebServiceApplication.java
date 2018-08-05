@@ -8,6 +8,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import util.ColorLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,12 +25,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@Controller
 public class FitbitWebServiceApplication implements ApplicationRunner {
 	static final Logger log = Logger.getLogger(FitbitWebServiceApplication.class.getName());
 	static final ColorLogger colorLogger = new ColorLogger(log);
@@ -48,20 +56,20 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args){
 		colorLogger.info("%s started at port: %s", FitbitWebServiceApplication.class.getName(), config.port);
-		new FitbitProfile(1L);
-        System.setProperty("org.apache.commons.logging.Log","org.apache.commons.logging.impl.SimpleLog");
-        System.setProperty("org.apache.commons.logging.simplelog.showdatetime", "true");
-        System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.http.wire", "DEBUG");
 
 
-        System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.http.impl.conn", "DEBUG");
-        System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.http.impl.client", "DEBUG");
-        System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.http.client", "DEBUG");
-        System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.http", "DEBUG");
+	}
 
-//        java.util.logging.Logger.getLogger("org.apache.http.wire").setLevel(Level.ALL);
-//        java.util.logging.Logger.getLogger("org.apache.http.headers").setLevel(Level.ALL);
-//        java.util.logging.Logger.getLogger("org.apache.http").setLevel(Level.ALL);
+	@RequestMapping(value = "/**", method = RequestMethod.OPTIONS)
+	public ResponseEntity PREFLIGHT_BYPASS(){
+		colorLogger.info("PREFLIGHT initiated----");
+		return new ResponseEntity(HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/test", method = RequestMethod.POST)
+	public ResponseEntity test_post(@RequestBody Map<String, Object> body){
+		System.out.println(body);
+		return ResponseEntity.ok(body);
 
 	}
 

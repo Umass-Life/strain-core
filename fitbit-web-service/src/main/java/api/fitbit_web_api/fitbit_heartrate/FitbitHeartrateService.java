@@ -39,7 +39,7 @@ public class FitbitHeartrateService {
 
     public FitbitHeartrate jsonToPOJO(Long fitbitUserId, JsonNode node){
         checkNotNull(fitbitUserId ,"fitbitUserId cannot be null in FitbitHeartrateService.jsonToPOJO");
-        if (!node.has("dateTime")) throw new IllegalArgumentException("incorrect heartrate-activities json");
+        if (!node.has("dateTime")) throw new IllegalArgumentException("incorrect heart-activities json");
         String dateTimeString = node.get("dateTime").asText();
         LocalDateTime dateTime = FitbitAuthenticationService.parseTimeParam(dateTimeString);
         Long dateTimeEpoch = EntityHelper.toEpochMilli(dateTime);

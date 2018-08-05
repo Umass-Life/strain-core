@@ -1,16 +1,12 @@
 package api.fitbit_account.fitbit_user;
 
-import api.constants.AccessTokenParams;
 import api.constants.AccessTokenResponseKey;
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_profile.FitbitProfile;
 import api.fitbit_account.fitbit_profile.FitbitProfileService;
-import api.fitbit_web_api.fitbit_activity.FitbitActivityService;
+import api.fitbit_web_api.fitbit_activity.aggregate.AggregateActivityService;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Logger;
 
 import static util.Validation.parseInt;
@@ -46,7 +40,7 @@ public class FitbitUserController {
     FitbitProfileService fitbitProfileService;
 
     @Autowired
-    FitbitActivityService fitbitActivityService;
+    AggregateActivityService aggregateActivityService;
 
     @RequestMapping(value = "/ping", method = RequestMethod.GET)
     public ResponseEntity<String> ping(){
@@ -139,7 +133,7 @@ public class FitbitUserController {
 
             colorLog.info(" obtained FitbitProfile --- \n%s\n", fitbitProfile);
 
-            JsonNode activityJson = fitbitActivityService.fetchActivities(fitbitUser, LocalDateTime.now());
+            JsonNode activityJson = aggregateActivityService.fetchActivities(fitbitUser, LocalDateTime.now());
 
             responseJson.put(FitbitUser.SINGULAR, fitbitUser);
             responseJson.put(FitbitProfile.SINGULAR, fitbitProfile);
@@ -183,9 +177,11 @@ public class FitbitUserController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Map> fetchFitbitUserById(@PathVariable("id") Long id) {
+    public ResponseEntity<Map> fetchFitbitUserById(@PathVariable("id") Long id,
+                                                   @RequestParam(value="includeProfile", required=false) Boolean includeProfile) {
         Map<String, Object> responseMap = new HashMap<>();
         try {
+
             FitbitUser user = fitbitUserService.getById(id)
                     .orElseThrow(() -> new IllegalArgumentException("Cannot find FibtitUser with ID: " + id));
             responseMap.put(FitbitUser.SINGULAR, user);
@@ -244,10 +240,17 @@ public class FitbitUserController {
     }
 
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
-    public ResponseEntity<Map> fetchAllFitbitUsers(){
+    public ResponseEntity<Map> fetchAllFitbitUsers(@RequestParam(value="includeProfile", required=false) Boolean includeProfile){
         Map<String, Object> responseMap = new HashMap<>();
         try {
             Iterable<FitbitUser> users = fitbitUserService.list();
+            if (includeProfile!=null && includeProfile.booleanValue()){
+                List<FitbitProfile> profiles = new ArrayList<>();
+                for(FitbitUser user : users){
+                    profiles.add(fitbitProfileService.getByFitbitUserId(user.getId()).get());
+                }
+                responseMap.put(FitbitProfile.PLURAL, profiles);
+            }
             responseMap.put(FitbitUser.PLURAL, users);
             return ResponseEntity.ok(responseMap);
         } catch(Exception e){

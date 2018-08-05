@@ -2,7 +2,7 @@ package api.fitbit_account.fitbit_profile;
 
 import api.FitbitConstantEnvironment;
 import api.fitbit_account.fitbit_user.FitbitUser;
-import api.fitbit_web_api.fitbit_activity.FitbitActivityService;
+import api.fitbit_web_api.fitbit_activity.ActivityAPIService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;
@@ -14,13 +14,12 @@ import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.ColorLogger;
-import util.EntityHelper;
 
 import java.util.Optional;
 import java.util.logging.Logger;
 
 import static util.Validation.checkNotNull;
-import static util.EntityHelper.updateBlock;
+
 @Service
 public class FitbitProfileService {
 
@@ -34,7 +33,7 @@ public class FitbitProfileService {
     private FitbitProfileRepository fitbitProfileRepository;
 
     @Autowired
-    private FitbitActivityService fitbitActivityService;
+    private ActivityAPIService activityAPIService;
 
     public Optional<FitbitProfile> getById(Long id){
         checkNotNull(id, "fitbit profile id cannot be null in FitbitProfileSerivce.getById");
@@ -91,7 +90,6 @@ public class FitbitProfileService {
                 () -> new IllegalArgumentException("Cannot update FitbitProfile id = " + id)
         );
         JsonNode jsonNode = json.get("user");
-        colorLogger.warning(jsonNode);
         Optional.ofNullable(jsonNode.get("displayName")).ifPresent((JsonNode x) -> profile.setDisplayName(x.asText()));
         Optional.ofNullable(jsonNode.get("dateOfBirth")).ifPresent((JsonNode x) -> profile.setDateOfBirth(x.asText()));
         Optional.ofNullable(jsonNode.get("locale")).ifPresent((JsonNode x)      -> profile.setLocale(x.asText()));
@@ -113,7 +111,7 @@ public class FitbitProfileService {
         ObjectMapper objectMapper = new ObjectMapper();
         String fitbitId = fitbitUser.getFitbitId();
         String access_token = fitbitUser.getAccessToken();
-        String profileUrl = fitbitActivityService.buildProfileRequest(fitbitUser);
+        String profileUrl = activityAPIService.buildProfileRequest(fitbitUser);
         colorLogger.info("fetching.. " + profileUrl);
         HttpGet httpGet = new HttpGet(profileUrl);
         httpGet.addHeader("Authorization", String.format("Bearer %s", access_token));

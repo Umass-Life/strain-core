@@ -1,6 +1,6 @@
 package api.fitbit_web_api;
 
-import api.fitbit_web_api.fitbit_activity.FitbitActivityService;
+import api.fitbit_web_api.fitbit_activity.aggregate.AggregateActivityService;
 import util.ColorLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,9 +20,9 @@ public class FitbitAPIController {
     ColorLogger colorLog = new ColorLogger(log);
 
     @Autowired
-    FitbitActivityService fitbitAPIservice;
+    AggregateActivityService fitbitAPIservice;
 
-    @RequestMapping(value = "/heartrate", method = RequestMethod.GET)
+    @RequestMapping(value = "/heart", method = RequestMethod.GET)
     public ResponseEntity<Map> getHeartRate(){
         Map<String, Object> responseJson = new HashMap<>();
         return ResponseEntity.ok(responseJson);

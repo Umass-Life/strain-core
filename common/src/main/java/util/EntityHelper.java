@@ -154,6 +154,17 @@ public class EntityHelper {
         return d.toString();
 
     }
+
+    public static int iterableSize(Iterable A){
+        if (A==null) return 0;
+        int cnt = 0;
+        Iterator itr = A.iterator();
+        while(itr.hasNext()){
+            cnt++;
+            itr.next();
+        }
+        return cnt;
+    }
 //
 //    public static void main(String[] args){
 //        System.out.println(epochToDateString(1532389067948L));
