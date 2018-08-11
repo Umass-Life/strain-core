@@ -33,6 +33,7 @@ import util.StrainTimer;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -330,12 +331,12 @@ public class FitbitAuthenticationService {
         String userId = fitbitUser.getFitbitId();
         String access_token = fitbitUser.getAccessToken();
 
-        colorLog.info(url);
+        colorLog.info("fetching " + url);
         HttpGet httpGet = new HttpGet(url);
         httpGet.addHeader("Authorization", String.format("Bearer %s", access_token));
 
         CloseableHttpClient client = HttpClients.createDefault();
-        StrainTimer timer = new StrainTimer(colorLog);
+        StrainTimer timer = new StrainTimer(colorLog, "GET " + url);
         timer.start();
 
         try {
@@ -405,6 +406,14 @@ public class FitbitAuthenticationService {
     public static String toRequestDateFormat(LocalDateTime date){
         return String.format("%s-%02d-%02d", date.getYear(), date.getMonthValue(), date.getDayOfMonth());
     }
+
+    public static LocalDateTime getOldestPossibleTimeForRequest(){
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime maxPossibleTime = now.minusDays(100);
+        return maxPossibleTime;
+    }
+
+
 
     private void debug_body(HttpEntity body) throws IOException {
         System.out.println("=========");

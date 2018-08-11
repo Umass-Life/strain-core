@@ -11,17 +11,23 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import util.ColorLogger;
+import util.EntityHelper;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import static util.Validation.checkNotNull;
 
 @Service
 public class FitbitSleepAPIService {
+    private static final Logger logger = Logger.getLogger(FitbitSleepAPIService.class.getSimpleName());
+    private static final ColorLogger colorLog = new ColorLogger(logger);
+
     @Autowired
     private FitbitSleepService fitbitSleepService;
 
@@ -32,25 +38,54 @@ public class FitbitSleepAPIService {
     private FitbitProfileService fitbitProfileService;
 
     @Autowired
+    private FitbitSleepAPIService fitbitSleepAPIService;
+
+    @Autowired
     private FitbitAuthenticationService authenticationService;
 
     @Autowired
     private FitbitConstantEnvironment constantEnvironment;
 
-    public Iterable<FitbitSleep> fetchAndCreateBulk(FitbitUser fitbitUser, String from, String to){
+    public Map<String, Object> fetchAndSave(FitbitUser fitbitUser, String from, String to,
+                                            Boolean save) throws Exception {
+
+        Map<String, Object> responseMap = new HashMap<>();
+        if (save){
+            Map<String, Object> saveInfo = fitbitSleepAPIService.fetchAndCreateBulk(fitbitUser, from, to);
+            responseMap.put("counts", saveInfo);
+        } else {
+            JsonNode node = fitbitSleepAPIService.fetchSleepFromFitbit(fitbitUser, from, to);
+            responseMap.put("payload", node);
+        }
+        return responseMap;
+    }
+
+    public Map<String, Object> fetchAndCreateBulk(FitbitUser fitbitUser, String from, String to){
         Map<String, Object> map = new HashMap<>();
         checkNotNull(fitbitUser, "fitbitUser cannto be null");
         JsonNode root = fetchSleepFromFitbit(fitbitUser, from, to);
         ArrayNode sleepData = (ArrayNode) root.get("sleep");
         List<FitbitSleep> sleepList = new ArrayList<>();
+        int cnt = 0;
+        int total =0;
         for(int i = 0; i < sleepData.size(); i++){
-            FitbitSleep sleep = fitbitSleepService.create(fitbitUser.getId(), sleepData.get(i));
-            sleepList.add(sleep);
-            JsonNode sleepTimeserieJson = sleepData.get(i).get("levels").get("data");
-            Iterable<SleepTimeSerie> sleepTimeSeries = sleepTimeSerieService.createBulk(sleep.getId(), (ArrayNode) sleepTimeserieJson);
+            try {
+                FitbitSleep sleep = fitbitSleepService.create(fitbitUser.getId(), sleepData.get(i));
+                sleepList.add(sleep);
+                JsonNode sleepTimeserieJson = sleepData.get(i).get("levels").get("data");
+                Iterable<SleepTimeSerie> sleepTimeSeries =
+                        sleepTimeSerieService.createBulk(sleep.getId(), fitbitUser.getId(), (ArrayNode) sleepTimeserieJson);
+                cnt+=1;
+            } catch (Exception e){
+                // we don't print errors here to save time;
+            } finally {
+                total +=1;
+            }
         }
-
-        return sleepList;
+        map.put("count", cnt);
+        map.put("total", total);
+        map.put("error", total-cnt);
+        return map;
     }
 
     public JsonNode fetchSleepFromFitbit(FitbitUser fitbitUser, String from, String to){
@@ -61,7 +96,7 @@ public class FitbitSleepAPIService {
             FitbitProfile profile = fitbitProfileService.getByFitbitUserId(fitbitUser.getId()).orElseThrow(
                     () -> new IllegalStateException("FitbitUser "+ fitbitId + " has no profile")
             );
-            from = profile.getMemberSince();
+            from = FitbitAuthenticationService.toRequestDateFormat(FitbitAuthenticationService.getOldestPossibleTimeForRequest());
         }
 
         if (to == null){

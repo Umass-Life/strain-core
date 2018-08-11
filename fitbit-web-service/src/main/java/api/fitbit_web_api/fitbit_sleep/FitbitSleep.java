@@ -3,11 +3,12 @@ package api.fitbit_web_api.fitbit_sleep;
 
 import domain.models.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
+@Table(
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"fitbit_user_id", "end_time" })}
+)
 public class FitbitSleep extends BaseEntity{
 
     @Transient
@@ -15,15 +16,19 @@ public class FitbitSleep extends BaseEntity{
     @Transient
     public static final String PLURAL = SINGULAR + "List";
 
-    @Column(nullable = false)
+    @Column(nullable = false, updatable = false)
     private String dateOfSleep;
 
-    @Column(updatable=false, nullable = false)
+    @Column(name="fitbit_user_id", updatable=false, nullable = false)
     private Long fitbitUserId;
 
     private Long duration;
+
     private Integer efficiency;
+
+    @Column(name="end_time")
     private Long endTime;
+
     private String infoCode;
 
     FitbitSleep(){}

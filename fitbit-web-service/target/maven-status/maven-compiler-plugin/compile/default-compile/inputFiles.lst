@@ -11,6 +11,7 @@
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/elevation/ElevationActivityService.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/floors/FloorsActivityService.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/SecurityConfig.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/FileLogger.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/WebConfig.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepAPIService.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/elevation/ElevationActivityRepository.java
@@ -30,6 +31,7 @@
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZoneService.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivityRepository.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/ema/EMATestController.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivity.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileRepository.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerie.java

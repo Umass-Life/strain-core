@@ -5,13 +5,22 @@ import api.fitbit_web_api.fitbit_activity.intraday.IIntradayActivityService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import util.ColorLogger;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class HeartActivityService implements IIntradayActivityService{
+    private static final Logger logger = Logger.getLogger(HeartActivityService.class.getSimpleName());
+    private static final ColorLogger colorLog = new ColorLogger(logger);
+
     @Autowired
     private HeartActivityRepository repository;
     @Autowired
@@ -28,6 +37,12 @@ public class HeartActivityService implements IIntradayActivityService{
         return repository.findAll(page);
     }
 
+
+    @Override
+    public Page findAll(Specification specs, Pageable pageble) {
+        return repository.findAll(specs, pageble);
+    }
+
     @Override
     public Optional<HeartActivity> getById(Long id) {
         return repository.findById(id);
@@ -39,8 +54,24 @@ public class HeartActivityService implements IIntradayActivityService{
     }
 
     @Override
-    public Iterable<HeartActivity> save(Iterable entities) {
-        return repository.saveAll(entities);
+    public Integer save(Iterable entities) {
+        Iterator<HeartActivity> itr = entities.iterator();
+        int cnt = 0;
+        int totalCount = 0;
+        while(itr.hasNext()){
+            try {
+                HeartActivity hr = repository.save(itr.next());
+                cnt+=1;
+//                colorLog.info("saved " + hr.getDateTime());
+            } catch(Exception e){
+//                e.printStackTrace();
+//                System.exit(1);
+            } finally {
+                totalCount+=1;
+            }
+        }
+        colorLog.info("%d/%d", cnt, totalCount);
+        return cnt;
     }
 
     @Override

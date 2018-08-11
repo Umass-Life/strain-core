@@ -52,8 +52,24 @@ public class FitbitHeartrateAPIService {
     private final String HR_VALUE = "value";
     private final String HR_ZONES = "heartRateZones";
 
+    public Map<String, Object> fetchAndSave(FitbitUser fitbitUser, String from, String to,
+                                            Boolean save) throws Exception {
 
-    public Iterable<FitbitHeartrate> fetchAndCreateBulk(FitbitUser fitbitUser, String from, String to){
+        Map<String, Object> responseMap = new HashMap<>();
+
+        if (save){
+            Map<String, Object> hrData = fetchAndCreateBulk(fitbitUser, from, to);
+            responseMap.put(FitbitHeartrate.PLURAL, hrData);
+        } else {
+            JsonNode node = fetchHeartrateFromFitbit(fitbitUser, from, to);
+            responseMap.put("payload", node);
+        }
+
+        return responseMap;
+    }
+
+
+    public Map<String, Object> fetchAndCreateBulk(FitbitUser fitbitUser, String from, String to){
         Map<String, Object> map = new HashMap<>();
         checkNotNull(fitbitUser, "fitbitUser cannto be null");
 
@@ -61,18 +77,28 @@ public class FitbitHeartrateAPIService {
         if (!root.has(ACTIVITIES_HEART)) throw new IllegalArgumentException("wrong HeartActivity json format:\n"+ root);
         ArrayNode hrData = (ArrayNode) root.get(ACTIVITIES_HEART);
         List<FitbitHeartrate> hrList = new ArrayList<>();
+        int cnt = 0;
+        int total = hrData.size();
         for(int i = 0; i < hrData.size(); i++){
-            FitbitHeartrate hr = heartrateService.create(fitbitUser.getId(), hrData.get(i));
-            hrList.add(hr);
-            JsonNode node_i = hrData.get(i);
-            if (!node_i.has(HR_VALUE) && !node_i.get(HR_VALUE).has(HR_ZONES)){
-                throw new IllegalArgumentException("Incorrect Heart-rate json:\n" + node_i);
+            try {
+                FitbitHeartrate hr = heartrateService.create(fitbitUser.getId(), hrData.get(i));
+                hrList.add(hr);
+                JsonNode node_i = hrData.get(i);
+                if (!node_i.has(HR_VALUE) && !node_i.get(HR_VALUE).has(HR_ZONES)){
+                    throw new IllegalArgumentException("Incorrect Heart-rate json:\n" + node_i);
+                }
+                ArrayNode hrZoneJsonArray = (ArrayNode) node_i.get(HR_VALUE).get(HR_ZONES);
+                Iterable<HeartrateZone> sleepTimeSeries = zoneService.createBulk(hr.getId(), (ArrayNode) hrZoneJsonArray);
+                cnt+=1;
+            } catch(Exception e){
+                colorLog.severe(e.getMessage());
+                // do not want to print errors for
             }
-            ArrayNode hrZoneJsonArray = (ArrayNode) node_i.get(HR_VALUE).get(HR_ZONES);
-            Iterable<HeartrateZone> sleepTimeSeries = zoneService.createBulk(hr.getId(), (ArrayNode) hrZoneJsonArray);
         }
-
-        return hrList;
+        map.put("count", cnt);
+        map.put("total", total);
+        map.put("error", cnt-total);
+        return map;
     }
 
     public JsonNode fetchHeartrateFromFitbit(FitbitUser fitbitUser, String from, String to){

@@ -7,6 +7,7 @@ import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_web_api.fitbit_activity.aggregate.AggregateActivity;
 import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResource;
 import api.fitbit_web_api.fitbit_activity.ActivityAPIService;
+import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResourceAggregate;
 import api.fitbit_web_api.fitbit_activity.intraday.calories.CaloriesActivityService;
 import api.fitbit_web_api.fitbit_activity.intraday.distance.DistanceActivityService;
 import api.fitbit_web_api.fitbit_activity.intraday.elevation.ElevationActivityService;
@@ -17,11 +18,19 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import util.ColorLogger;
 import util.EntityHelper;
 import util.StrainTimer;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Logger;
@@ -97,7 +106,7 @@ public class IntradayActivityService {
         return this.activitiesResources;
     }
 
-    public Iterable<? extends AbstractIntradayActivity> save(ActivitiesResource r, Iterable<? extends AbstractIntradayActivity> entities){
+    public Integer save(ActivitiesResource r, Iterable<? extends AbstractIntradayActivity> entities){
         IIntradayActivityService service = this.factory.get(r);
         return service.save(entities);
     }
@@ -120,16 +129,25 @@ public class IntradayActivityService {
      * @return
      * @throws IllegalAccessException
      */
-    public Iterable<AbstractIntradayActivity> fetchAndSave(FitbitUser fitbitUser, ActivitiesResource r, String from, String to) throws IllegalAccessException{
+    public Integer fetchAndSave(FitbitUser fitbitUser, ActivitiesResource r, String from, String to) throws IllegalAccessException{
         JsonNode json = fetchActivities(r, fitbitUser, from, to);
         IIntradayActivityService service = getService(r);
         Iterable<AbstractIntradayActivity> activities = jsonToPOJOInBulk(fitbitUser.getId(),r, json);
         colorLog.info("%s timeseries of size: %s", r, EntityHelper.iterableSize(activities));
         StrainTimer timer = new StrainTimer(colorLog);
         timer.start();
-        Iterable<AbstractIntradayActivity> savedActivities = service.save(activities);
+        Integer savedCount = service.save(activities);
         timer.stop();
-        return savedActivities;
+        return savedCount;
+    }
+
+    public Iterable<AbstractIntradayActivity> list(Long fitbitUserId, ActivitiesResource resource, Integer page, Integer count){
+
+        Specification<AbstractIntradayActivity> specs = whereFitbitUserId(fitbitUserId);
+        IIntradayActivityService service = getService(resource);
+
+        Page pageOut = service.findAll(specs, PageRequest.of(page, count, Sort.Direction.DESC, "dateTime"));
+        return pageOut.getContent();
     }
 
     public Map<String, Object> fetchAndSave(FitbitUser fitbitUser, Set<ActivitiesResource> resourcePaths,
@@ -143,8 +161,7 @@ public class IntradayActivityService {
             try {
                 Iterable<AbstractIntradayActivity> activities = null;
                 if (save){
-                    activities= fetchAndSave(fitbitUser, r, from, to);
-                    int count = EntityHelper.iterableSize(activities);
+                    int count = fetchAndSave(fitbitUser, r, from, to);
                     aggregateInfoMap.put("count", count);
                 } else {
                     JsonNode node = fetchActivities(r, fitbitUser, from, to);
@@ -255,6 +272,35 @@ public class IntradayActivityService {
             activities.add(entity);
         }
         return activities;
+    }
+
+    public Optional<AbstractIntradayActivity> findLatest(Long fitbitUserId, ActivitiesResource ara){
+        IIntradayActivityService service = getService(ara);
+        Pageable pageable = PageRequest.of(0, 1, Sort.Direction.DESC, "dateTime");
+        Specification<AbstractIntradayActivity> specs = whereFitbitUserId(fitbitUserId);
+        Page<AbstractIntradayActivity> page = service.findAll(specs, pageable);
+        List<AbstractIntradayActivity> content = page.getContent();
+        AbstractIntradayActivity sl = content.isEmpty() ? null : content.get(0);
+        return Optional.ofNullable(sl);
+    }
+
+    private Specification<AbstractIntradayActivity> whereFitbitUserId(Long fitbitUserId){
+        return (Root<AbstractIntradayActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.equal(root.get("fitbitUserId"), fitbitUserId);
+        };
+    }
+
+
+    private Specification<AbstractIntradayActivity> greaterThanEqualToDate(Long time){
+        return (Root<AbstractIntradayActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.greaterThanOrEqualTo(root.get("dateTime"), time);
+        };
+    }
+
+    private Specification<AbstractIntradayActivity> lessThanEqualToDate(Long time){
+        return (Root<AbstractIntradayActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.lessThanOrEqualTo(root.get("dateTime"), time);
+        };
     }
 
 

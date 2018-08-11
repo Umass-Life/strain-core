@@ -29,7 +29,6 @@ api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateAPIService.class
 api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateController.class
 api/constants/AccessTokenParams.class
 api/fitbit_account/fitbit_user/FitbitUserRepository.class
-api/fitbit_account/fitbit_user/FitbitUserController.class
 api/fitbit_account/fitbit_profile/FitbitProfileService.class
 api/fitbit_web_api/fitbit_activity/ActivityAPIService.class
 api/fitbit_web_api/fitbit_activity/aggregate/AggregateActivity.class
@@ -64,6 +63,5 @@ api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieRepository.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleepRepository.class
 api/fitbit_account/fitbit_profile/FitbitProfile.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleepAPIService.class
-api/fitbit_web_api/FitbitAPIController.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleepController.class
 api/FitbitWebServiceApplication.class

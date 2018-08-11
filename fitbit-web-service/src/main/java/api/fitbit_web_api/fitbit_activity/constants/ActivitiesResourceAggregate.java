@@ -10,4 +10,5 @@ public enum ActivitiesResourceAggregate {
     steps,
     distance,
     floors,
+    elevation
 }

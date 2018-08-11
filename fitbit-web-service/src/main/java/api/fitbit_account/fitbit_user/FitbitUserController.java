@@ -1,5 +1,6 @@
 package api.fitbit_account.fitbit_user;
 
+import api.FileLogger;
 import api.constants.AccessTokenResponseKey;
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_profile.FitbitProfile;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import util.ColorLogger;
+import util.EntityHelper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
@@ -21,12 +23,14 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Logger;
 
+import static util.Validation.checkNotNull;
 import static util.Validation.parseInt;
 
 @Controller
 @RequestMapping("/users")
 public class FitbitUserController {
-
+    // will reverse order Users so first user (me) comes first.
+    final Boolean TESTING_MODE = true;
     private final Logger log = Logger.getLogger(FitbitUserController.class.getName());
     private final ColorLogger colorLog = new ColorLogger(log);
 
@@ -41,11 +45,6 @@ public class FitbitUserController {
 
     @Autowired
     AggregateActivityService aggregateActivityService;
-
-    @RequestMapping(value = "/ping", method = RequestMethod.GET)
-    public ResponseEntity<String> ping(){
-        return ResponseEntity.ok("pong");
-    }
 
     @RequestMapping(value = "/authorize", method= RequestMethod.GET)
     public ResponseEntity authorizeFitbit(@RequestParam(value="strainUserId") String strainUserIdString) throws URISyntaxException {
@@ -148,22 +147,30 @@ public class FitbitUserController {
         }
     }
 
-    @RequestMapping(value = "/revoke", method = RequestMethod.POST)
-    public ResponseEntity<Map> revoke(@RequestParam(value="id", required=false) Long id,
-                                      @RequestParam(value="fib", required=false) String fib){
+    @RequestMapping(value = "/renew", method = RequestMethod.POST)
+    public ResponseEntity<Map> renewAccessToken(@RequestParam(value="id", required=false) Long id,
+                                      @RequestParam(value="fid", required=false) String fid){
         Map<String, Object> responseJson = new HashMap<>();
         try {
-            FitbitUser fitbitUser = null;
-            if (id != null){
-                fitbitUser = fitbitUserService.getById(id)
-                        .orElseThrow(() -> new IllegalArgumentException("Cannot find FitbitUser id " + id));
-            } else if (fib != null){
-                fitbitUser = fitbitUserService.getByFitbitId(fib)
-                        .orElseThrow(() -> new IllegalArgumentException("Cannot find FitbitUser with fitbit-id = " + fib));
-            }
+            FitbitUser fitbitUser = getFitbitUser(fid, id);
+            fitbitUser =  fitbitUserAuthenticationService.refreshAccessToken(fitbitUser);
+            responseJson.put(FitbitUser.SINGULAR, fitbitUser);
+            return ResponseEntity.ok(responseJson);
+        } catch (Exception e){
+            responseJson = new HashMap<>();
+            responseJson.put("error", e.getMessage());
+            e.printStackTrace();
+            colorLog.severe(e.getMessage());
+            return ResponseEntity.badRequest().body(responseJson);
+        }
+    }
 
-            if (fitbitUser == null) throw new IllegalArgumentException("Cannot find fitbitUser.");
-
+    @RequestMapping(value = "/revoke", method = RequestMethod.POST)
+    public ResponseEntity<Map> revoke(@RequestParam(value="id", required=false) Long id,
+                                      @RequestParam(value="fid", required=false) String fid){
+        Map<String, Object> responseJson = new HashMap<>();
+        try {
+            FitbitUser fitbitUser = getFitbitUser(fid, id);
             fitbitUserAuthenticationService.revokeAccessToken(fitbitUser);
 
             return ResponseEntity.ok(responseJson);
@@ -196,7 +203,7 @@ public class FitbitUserController {
     }
 
     @RequestMapping(value = "/query", method = RequestMethod.GET)
-    public ResponseEntity<Map> fetchFitbitUserByParameter(@RequestParam(value="fib",required=false) String fitbitId,
+    public ResponseEntity<Map> fetchFitbitUserByParameter(@RequestParam(value="fid",required=false) String fitbitId,
                                                          @RequestParam(value="sid",required=false) Long strainUserId){
         Map<String, Object> responseMap = new HashMap<>();
         try {
@@ -220,6 +227,34 @@ public class FitbitUserController {
         }
     }
 
+    /***
+     * CREATE NEW FITBIT USER
+     * - manually creating will refresh token and store profile
+     */
+    @RequestMapping(value = {"create", "/", ""}, method = RequestMethod.POST)
+    public ResponseEntity<Map> createUser(@RequestBody JsonNode jsonBody){
+        Map<String, Object> responseMap = new HashMap<>();
+        try {
+            checkNotNull(jsonBody, "no body in POST request in FitbitUserController.create");
+            FitbitUser fitbitUser = fitbitUserService.create(jsonBody);
+            fitbitUser = fitbitUserAuthenticationService.refreshAccessToken(fitbitUser);
+            String fitbitId = fitbitUser.getFitbitId();
+            FileLogger manualLogger = new FileLogger(fitbitId, "[FitbitId] " + fitbitId);
+            manualLogger.log(fitbitUser.toString());
+            FitbitProfile profile = fitbitProfileService.fetchAndSave(fitbitUser);
+
+            responseMap.put(FitbitUser.SINGULAR, fitbitUser);
+            responseMap.put(FitbitProfile.SINGULAR, profile);
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLog.severe(e.getMessage());
+            responseMap = new HashMap<>();
+            responseMap.put("error", e.getMessage());
+
+        }
+        return ResponseEntity.ok(responseMap);
+    }
+
     @RequestMapping(value = "/updateTokens/{id}", method = RequestMethod.POST)
     public ResponseEntity<Map> updateUser(@PathVariable("id") Long id,
                                           @RequestBody JsonNode jsonBody){
@@ -239,11 +274,17 @@ public class FitbitUserController {
         return ResponseEntity.ok(responseMap);
     }
 
+
+
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
     public ResponseEntity<Map> fetchAllFitbitUsers(@RequestParam(value="includeProfile", required=false) Boolean includeProfile){
         Map<String, Object> responseMap = new HashMap<>();
         try {
-            Iterable<FitbitUser> users = fitbitUserService.list();
+            Iterable<FitbitUser> usersItr = fitbitUserService.list();
+            List<FitbitUser> users = EntityHelper.iterableToList(usersItr);
+
+            if(TESTING_MODE) Collections.sort(users, Comparator.comparing(FitbitUser::getId));
+
             if (includeProfile!=null && includeProfile.booleanValue()){
                 List<FitbitProfile> profiles = new ArrayList<>();
                 for(FitbitUser user : users){
@@ -262,4 +303,26 @@ public class FitbitUserController {
         }
     }
 
+    private FitbitUser getFitbitUser(String fitbitId, Long userId) throws IllegalArgumentException{
+        FitbitUser fitbitUser = null;
+        if (userId!=null){
+            fitbitUser = fitbitUserService.getById(userId).orElseThrow(
+                    () -> new IllegalArgumentException("Unable to find FitbitUser id = " + userId)
+            );
+        } else if (fitbitId != null){
+            fitbitUser = fitbitUserService.getByFitbitId(fitbitId).orElseThrow(
+                    () -> new IllegalArgumentException("UNable to find FitbitUser fitbitId = " + fitbitId)
+            );
+        }
+
+        if (fitbitUser == null){
+            throw new IllegalArgumentException("No Fitbit user information provided");
+        }
+        return fitbitUser;
+    }
+
+    @RequestMapping(value = "/ping", method = RequestMethod.GET)
+    public ResponseEntity<String> ping(){
+        return ResponseEntity.ok("pong");
+    }
 }

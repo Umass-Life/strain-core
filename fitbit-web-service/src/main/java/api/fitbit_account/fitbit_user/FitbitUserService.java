@@ -2,6 +2,7 @@ package api.fitbit_account.fitbit_user;
 
 import api.FitbitConstantEnvironment;
 import api.fitbit_account.fitbit_profile.FitbitProfileService;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.Validation;
@@ -9,6 +10,7 @@ import util.Validation;
 import static util.Validation.checkNotNull;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class FitbitUserService {
@@ -45,6 +47,33 @@ public class FitbitUserService {
         return fitbitUserRepository.findByFitbitId(fitbitId);
     }
 
+    public FitbitUser create(JsonNode json){
+        // randomly generates UUID
+        final String STRAIN_ID = "strainUserId";
+        final String FITBIT_ID = "fitbitId";
+        final String ACCESS_TOKEN_ID = "accessToken";
+        final String REFRESH_TOKEN_ID = "refreshToken";
+        final String TOKEN_TYPE_ID = "tokenType";
+        final String EXPIRE_ID = "expiresIn";
+
+        Long strainId = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
+        if (json.has(STRAIN_ID)){
+            strainId = json.get(STRAIN_ID).asLong();
+        }
+
+        String fitbitId = json.get(FITBIT_ID).asText();
+        String accessToken = json.get(ACCESS_TOKEN_ID).asText();
+        String refreshToken = json.get(REFRESH_TOKEN_ID).asText();
+        String tokenType = json.get(TOKEN_TYPE_ID).asText();
+        Long expiresIn = json.get(EXPIRE_ID).asLong();
+
+        FitbitUser fitbitUser = create(strainId, fitbitId, accessToken, refreshToken, tokenType, expiresIn);
+        return fitbitUser;
+
+    }
+
+
+
     public FitbitUser create(Long strainUserId, String fitbitId, String accessToken, String refreshToken,
                              String tokenType, Long expiresIn){
         checkNotNull(strainUserId, "strainUserId cannot be null");
@@ -58,7 +87,7 @@ public class FitbitUserService {
         FitbitUser fitbitUser = new FitbitUser(strainUserId, fitbitId, accessToken,
                                                 refreshToken, tokenType, expiresIn);
 
-        System.out.println(fitbitUser.toString());
+
         return fitbitUserRepository.save(fitbitUser);
     }
 

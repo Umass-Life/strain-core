@@ -51,7 +51,6 @@ public class HeartrateZoneService {
         Optional.ofNullable(node.get("minutes")).ifPresent((JsonNode x) -> zone.setMinutes(x.asInt()));
         Optional.ofNullable(node.get("name")).ifPresent((JsonNode x) -> zone.setName(x.asText()));
 
-        colorLog.info("ZONE POJO -----> \n" + zone);
         return zone;
     }
 

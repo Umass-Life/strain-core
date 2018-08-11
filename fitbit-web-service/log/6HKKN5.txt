@@ -1,0 +1,15 @@
+----------------------------------------------------------------
+[FitbitId] 6HKKN5 2018-08-05T21:25:04.272
+----------------------------------------------------------------
+{
+  "id" : 3,
+  "createDate" : 1533518703964,
+  "lastModifiedDate" : 1533518704262,
+  "active" : true,
+  "strainUserId" : 6470285068751291334,
+  "fitbitId" : "6HKKN5",
+  "accessToken" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2SEtLTjUiLCJhdWQiOiIyMkNURloiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJudXQgcnBybyByc2xlIiwiZXhwIjoxNTMzNTQ3NTA0LCJpYXQiOjE1MzM1MTg3MDR9.e84FnYPEGiy1pmEHio1v4EnRYIOhGviO0b2v-U4lNS4",
+  "refreshToken" : "0a464ebb4004b6712cad5444d0989e41207bb41b1a2ad82ac6f3a6d51fac96f7",
+  "tokenType" : "Bearer",
+  "expiresIn" : 3600
+}

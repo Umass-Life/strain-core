@@ -10,6 +10,7 @@ import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResourceAggregate;
 import api.fitbit_web_api.fitbit_activity.intraday.IntradayActivityService;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -47,17 +48,14 @@ public class FitbitActivityController {
                                              @RequestParam(value="from", required=false) String fromDate,
                                              @RequestParam(value="to", required=false) String toDate){
         Map<String, Object> responseJson = new HashMap<>();
-        colorLog.info("userId=%s resourcePath=%s, fromDate=%s, toDate=%s", userId, r, fromDate, toDate);
+        colorLog.info("userId=%s fid=%s resourcePath=%s, fromDate=%s, toDate=%s", userId, fitbitId, r, fromDate, toDate);
 
         Map<String, Object> responseMap = new HashMap<>();
         try {
-            Iterable<AggregateActivity> activities;
-            if (r!=null){
-                ActivitiesResourceAggregate resource = ActivitiesResourceAggregate.valueOf(r);
-                activities = aggregateActivityService.listByResource(resource);
-            } else {
-                activities = aggregateActivityService.list();
-            }
+            FitbitUser fitbitUser = getFitbitUser(fitbitId, userId);
+            ActivitiesResourceAggregate resource = r == null ? null : ActivitiesResourceAggregate.valueOf(r);;
+            Iterable<AggregateActivity> activities = aggregateActivityService.list(fitbitUser.getId(), resource, fromDate, toDate);
+
             responseMap.put(AggregateActivity.PLURAL, activities);
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
@@ -67,6 +65,17 @@ public class FitbitActivityController {
             responseMap.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(responseMap);
         }
+    }
+
+    @RequestMapping(value="/bob-api", method = RequestMethod.GET)
+    public ResponseEntity bob(@RequestParam(value="id", required=false) Long userId,
+                                        @RequestParam(value="fid",required=false) String fitbitId,
+                                        @RequestParam(value="r", required=false) String[] resourcePathStrings,
+                                        @RequestParam(value="save",required=false,defaultValue = "false") Boolean save,
+                                        @RequestParam(value="from", required=false) String from,
+                                        @RequestParam(value="to", required=false) String to) {
+        Page p = aggregateActivityService.test(getFitbitUser(fitbitId, userId).getId());
+        return ResponseEntity.ok(p.getContent());
     }
 
     @RequestMapping(value="/fetch-api", method = RequestMethod.GET)
@@ -95,10 +104,14 @@ public class FitbitActivityController {
 
 
     @RequestMapping(value = "/levels", method = RequestMethod.GET)
-    public ResponseEntity<Map> getAggregates(){
+    public ResponseEntity<Map> getAggregates(@RequestParam(value="id", required=false) Long userId,
+                                             @RequestParam(value="fid",required=false) String fitbitId,
+                                             @RequestParam(value="from", required=false) String from,
+                                             @RequestParam(value="to", required=false) String to){
         Map<String, Object> responseMap = new HashMap<>();
         try {
-            List<Map> aggregate = aggregateActivityService.listAggregates();
+            FitbitUser fitbitUser = getFitbitUser(fitbitId, userId);
+            List<Map> aggregate = aggregateActivityService.listAggregates(fitbitUser.getId(), from, to);
             responseMap.put("aggregate", aggregate);
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
@@ -197,6 +210,26 @@ public class FitbitActivityController {
         return resources;
     }
 
+    @RequestMapping(value = "/latest", method=RequestMethod.GET)
+    public ResponseEntity<Map> getLatest(@RequestParam(value="id", required=false) Long userId,
+                                              @RequestParam(value="fid",required=false) String fitbitId){
+        Map<String, Object> responseMap = new HashMap<>();
+        try {
+            FitbitUser fitbitUser = getFitbitUser(fitbitId, userId);
+            Set<ActivitiesResourceAggregate> resources = aggregateActivityService.getActivitiesResources();
+            for(ActivitiesResourceAggregate r : resources){
+                responseMap.put(r.toString(), aggregateActivityService.findLatest(fitbitUser.getId(), r));
+            }
+            return ResponseEntity.ok(responseMap);
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLog.severe(e.getMessage());
+            responseMap = new HashMap<>();
+            responseMap.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(responseMap);
+        }
+    }
+
     @RequestMapping(value = {"/ping"}, method = RequestMethod.GET)
     public ResponseEntity ping(){
         return ResponseEntity.ok("poing");
@@ -214,7 +247,7 @@ public class FitbitActivityController {
             );
         }
 
-        colorLog.info("found user = " + fitbitUser);
+//        colorLog.info("found user = " + fitbitUser);
 
         if (fitbitUser == null){
             throw new IllegalArgumentException("No Fitbit user information provided");

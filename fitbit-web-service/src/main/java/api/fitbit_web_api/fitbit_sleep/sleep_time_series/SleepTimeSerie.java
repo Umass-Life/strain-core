@@ -6,15 +6,22 @@ import domain.models.BaseEntity;
 import javax.persistence.*;
 
 @Entity
+@Table(
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"fitbit_sleep_id", "date_time" })}
+)
 public class SleepTimeSerie extends BaseEntity {
     @Transient
     public static final String SINGULAR = SleepTimeSerie.class.getSimpleName();
     @Transient
     public static final String PLURAL = SINGULAR + "List";
-    @Column(updatable=false, nullable=false)
+
+    @Column(name="fitbit_sleep_id", updatable=false, nullable=false)
     private Long fitbitSleepId;
 
-    @Column(nullable=false, updatable =false)
+    @Column(name="fitbit_user_id", updatable=false, nullable=false)
+    private Long fitbitUserId;
+
+    @Column(name="date_time", nullable=false, updatable =false)
     private Long dateTime;
 
     @Column(nullable=false, updatable =false)
@@ -24,7 +31,8 @@ public class SleepTimeSerie extends BaseEntity {
     @Column(nullable=false, updatable =false)
     private int seconds;
 
-    public SleepTimeSerie(Long fitbitSleepId, Long dateTime, SleepStages level, int seconds){
+    public SleepTimeSerie(Long fitbitSleepId, Long fitbitUserId, Long dateTime, SleepStages level, int seconds){
+        this.fitbitUserId = fitbitUserId;
         this.fitbitSleepId = fitbitSleepId;
         this.dateTime = dateTime;
         this.level = level;
@@ -32,6 +40,14 @@ public class SleepTimeSerie extends BaseEntity {
     }
 
     public SleepTimeSerie(){}
+
+    public Long getFitbitUserId() {
+        return fitbitUserId;
+    }
+
+    public void setFitbitUserId(Long fitbitUserId) {
+        this.fitbitUserId = fitbitUserId;
+    }
 
     public Long getFitbitSleepId() {
         return fitbitSleepId;

@@ -1,6 +1,7 @@
 package api.fitbit_account.fitbit_profile;
 
 import api.FitbitConstantEnvironment;
+import api.constants.AccessTokenResponseKey;
 import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_web_api.fitbit_activity.ActivityAPIService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -105,6 +106,29 @@ public class FitbitProfileService {
         return fitbitProfileRepository.save(profile);
     }
 
+    ////////////////////////////////////
+    //////////// WEB API ///////////////
+    ////////////////////////////////////
+
+    public FitbitProfile fetchAndSave(FitbitUser fitbitUser){
+        JsonNode profileJsonNode = fetchProfileFromWebAPI(fitbitUser);
+        if (profileJsonNode == null){
+            throw new IllegalArgumentException("null profile json");
+        }
+
+        Optional<FitbitProfile> fitbitProfileOpt = getByFitbitUserId(fitbitUser.getId());
+        FitbitProfile fitbitProfile = null;
+        if (fitbitProfileOpt.isPresent()) {
+            fitbitProfile = update(fitbitProfileOpt.get().getId(),
+                            profileJsonNode,
+                            "");
+        } else{
+            fitbitProfile = create(fitbitUser.getId(),
+                            profileJsonNode,
+                            "");
+        }
+        return fitbitProfile;
+    }
 
     public JsonNode fetchProfileFromWebAPI(FitbitUser fitbitUser){
         JsonNode node = null;
@@ -132,7 +156,6 @@ public class FitbitProfileService {
                 colorLogger.severe(prettyJson);
                 throw new IllegalArgumentException(res.getStatusLine().toString());
             }
-            colorLogger.info("\n--> profile json\n%s\n", prettyJson);
         } catch (Exception e){
             e.printStackTrace();
             node = null;

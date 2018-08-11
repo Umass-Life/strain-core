@@ -1,5 +1,6 @@
 package api.fitbit_web_api.fitbit_heartrate;
 
+import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_account.fitbit_user.FitbitUserService;
 import api.fitbit_web_api.fitbit_heartrate.heartrate_zone.HeartrateZone;
@@ -14,12 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import util.ColorLogger;
+import util.EntityHelper;
 
 import javax.xml.ws.Response;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 @Controller
@@ -38,9 +37,22 @@ public class FitbitHeartrateController {
     private FitbitUserService fitbitUserService;
 
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
-    public ResponseEntity<Map> fetchAll(@RequestParam("includeZone") Boolean includeZone) {
+    public ResponseEntity<Map> fetchAll(@RequestParam(value="includeZone",required=false,defaultValue="true") Boolean includeZone,
+                                        @RequestParam(value="fid", required=false) String fid,
+                                        @RequestParam(value="id", required=false) Long id,
+                                        @RequestParam(value="from",required=false) String from,
+                                        @RequestParam(value="to",required=false) String to) {
         Map<String, Object> responseMap = new HashMap<>();
-        Iterable<FitbitHeartrate> fitbitHeartrates = fitbitHeartrateService.list();
+
+        FitbitUser fitbitUser = fitbitUserService.getByFitbitId(fid).orElseThrow(
+                () -> new IllegalArgumentException("cannot find fitbitId = " + fid)
+        );
+
+        Iterable<FitbitHeartrate> fitbitHeartrates = fitbitHeartrateService.list(fitbitUser.getId(), from ,to);
+        List<FitbitHeartrate> mm = EntityHelper.iterableToList(fitbitHeartrates);
+        colorLog.info("SIZE: %s from=%s to=%s\n", mm.size(),
+                EntityHelper.epochToDateString(mm.get(mm.size()-1).getDateTime()),
+                EntityHelper.epochToDateString(mm.get(0).getDateTime()));
         if (includeZone){
             ObjectMapper om = new ObjectMapper();
             List<Iterable<HeartrateZone>> zones =new ArrayList<>();
@@ -54,20 +66,6 @@ public class FitbitHeartrateController {
         return ResponseEntity.ok(responseMap);
     }
 
-    @RequestMapping(value = {"/", ""}, method = RequestMethod.POST)
-    public ResponseEntity<Map> create(){
-        Map<String, Object> responseJson = new HashMap<>();
-        try {
-            return ResponseEntity.ok(responseJson);
-        } catch (Exception e){
-            e.printStackTrace();
-            colorLog.severe(e.getMessage());
-            responseJson = new HashMap<>();
-            responseJson.put("error", e.getMessage());
-            return ResponseEntity.badRequest().body(responseJson);
-        }
-    }
-
     @RequestMapping(value = "/fetch-api", method = RequestMethod.GET)
     public ResponseEntity<Map> fetchAPI(@RequestParam(value="fid",required=false) String fid,
                                         @RequestParam(value="from",required=false) String from,
@@ -78,16 +76,7 @@ public class FitbitHeartrateController {
             FitbitUser fitbitUser = fitbitUserService.getByFitbitId(fid).orElseThrow(
                     () -> new IllegalArgumentException("cannot find fitbitId = " + fid)
             );
-
-            if (save){
-                Iterable<FitbitHeartrate> hrData = heartrateAPIService.fetchAndCreateBulk(fitbitUser, from, to);
-                responseMap.put(FitbitHeartrate.PLURAL, hrData);
-            } else {
-                JsonNode node = heartrateAPIService.fetchHeartrateFromFitbit(fitbitUser, from, to);
-                responseMap.put("payload", node);
-            }
-
-
+            responseMap = heartrateAPIService.fetchAndSave(fitbitUser, from, to, save);
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
             e.printStackTrace();
@@ -98,24 +87,14 @@ public class FitbitHeartrateController {
         }
     }
 
-    @RequestMapping(value="/serie",  method=RequestMethod.GET)
-    public ResponseEntity<Map> fetchTimeserieAPI(@RequestParam(value="fid",required=false) String fid,
-                                        @RequestParam(value="from",required=false) String from,
-                                        @RequestParam(value="to",required=false) String to,
-                                        @RequestParam(value="save",required=false,defaultValue="false") Boolean save){
+    @RequestMapping(value = "/latest", method = RequestMethod.GET)
+    public ResponseEntity<Map> getFirstDataPoint(@RequestParam(value="id", required=false) Long userId,
+                                                 @RequestParam(value="fid",required=false) String fid){
         Map<String, Object> responseMap = new HashMap<>();
         try {
-            FitbitUser fitbitUser = fitbitUserService.getByFitbitId(fid).orElseThrow(
-                    () -> new IllegalArgumentException("cannot find fitbitId = " + fid)
-            );
-
-            if (save){
-
-            } else {
-                JsonNode hrData = heartrateAPIService.fetchFinegrainHeartrateFromFitbit(fitbitUser, from, to);
-                responseMap.put("payload", hrData);
-            }
-
+            FitbitUser fitbitUser = getFitbitUser(fid, userId);
+            Optional<FitbitHeartrate> hr = fitbitHeartrateService.findLatest(fitbitUser.getId());
+            responseMap.put(FitbitHeartrate.SINGULAR, hr);
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
             e.printStackTrace();
@@ -143,6 +122,24 @@ public class FitbitHeartrateController {
             map.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(map);
         }
+    }
+
+    private FitbitUser getFitbitUser(String fitbitId, Long userId) throws IllegalArgumentException{
+        FitbitUser fitbitUser = null;
+        if (userId!=null){
+            fitbitUser = fitbitUserService.getById(userId).orElseThrow(
+                    () -> new IllegalArgumentException("Unable to find FitbitUser id = " + userId)
+            );
+        } else if (fitbitId != null){
+            fitbitUser = fitbitUserService.getByFitbitId(fitbitId).orElseThrow(
+                    () -> new IllegalArgumentException("UNable to find FitbitUser fitbitId = " + fitbitId)
+            );
+        }
+
+        if (fitbitUser == null){
+            throw new IllegalArgumentException("No Fitbit user information provided");
+        }
+        return fitbitUser;
     }
 
 

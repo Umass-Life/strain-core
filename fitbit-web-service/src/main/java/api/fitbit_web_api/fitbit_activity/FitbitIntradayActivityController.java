@@ -37,20 +37,24 @@ public class FitbitIntradayActivityController {
     @Autowired
     private IntradayActivityService intradayActivityService;
 
+
     @RequestMapping(value = {"/",""}, method = RequestMethod.GET)
-    public ResponseEntity<Map> list(@RequestParam(value="id", required=false) Long userId,
-                                    @RequestParam(value="fid",required=false) String fitbitId,
-                                    @RequestParam(value="r", required=false) String[] raw_resources,
-                                    @RequestParam(value="from", required=false) String from,
-                                    @RequestParam(value="to", required=false) String to){
+    public ResponseEntity<Map> getActivities(@RequestParam(value="id", required=false) Long userId,
+                                             @RequestParam(value="fid",required=false) String fitbitId,
+                                             @RequestParam(value="r", required=true) String r,
+                                             @RequestParam(value="page", required=true) Integer page,
+                                             @RequestParam(value="count", required=true) Integer count){
+        Map<String, Object> responseJson = new HashMap<>();
+        colorLog.info("userId=%s fid=%s resourcePath=%s, page=%s, count=%s", userId, fitbitId, r, page, count);
+
         Map<String, Object> responseMap = new HashMap<>();
         try {
-            Set<ActivitiesResource> resources = getQueriedResources(raw_resources);
-            for (ActivitiesResource r : resources){
-                Iterable <? extends AbstractIntradayActivity> activities = intradayActivityService.list(r);
-                responseMap.put(r.toString(), activities);
-            }
+            FitbitUser fitbitUser = getFitbitUser(fitbitId, userId);
 
+            ActivitiesResource resource = ActivitiesResource.valueOf(r);;
+            Iterable<AbstractIntradayActivity> activities = intradayActivityService.list(fitbitUser.getId(), resource, page, count);
+
+            responseMap.put(resource.toString(), activities);
             return ResponseEntity.ok(responseMap);
         } catch (Exception e){
             e.printStackTrace();
@@ -85,6 +89,27 @@ public class FitbitIntradayActivityController {
             return ResponseEntity.badRequest().body(responseMap);
         }
     }
+
+    @RequestMapping(value = "/latest", method=RequestMethod.GET)
+    public ResponseEntity<Map> getLatest(@RequestParam(value="id", required=false) Long userId,
+                                         @RequestParam(value="fid",required=false) String fitbitId){
+        Map<String, Object> responseMap = new HashMap<>();
+        try {
+            FitbitUser fitbitUser = getFitbitUser(fitbitId, userId);
+            Set<ActivitiesResource> resources = intradayActivityService.getActivitiesResources();
+            for(ActivitiesResource r : resources){
+                responseMap.put(r.toString(), intradayActivityService.findLatest(fitbitUser.getId(), r));
+            }
+            return ResponseEntity.ok(responseMap);
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLog.severe(e.getMessage());
+            responseMap = new HashMap<>();
+            responseMap.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(responseMap);
+        }
+    }
+
     /////////////////////////////////////////////////////////////
     /////////////////   PRIVATE UTIL METHODS  ///////////////////
     /////////////////////////////////////////////////////////////
@@ -105,8 +130,6 @@ public class FitbitIntradayActivityController {
         }
         return resources;
     }
-
-
 
     private FitbitUser getFitbitUser(String fitbitId, Long userId) throws IllegalArgumentException{
         FitbitUser fitbitUser = null;

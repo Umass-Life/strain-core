@@ -11,6 +11,9 @@ import java.time.LocalDateTime;
 import java.util.logging.Logger;
 
 @Entity
+@Table(
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"fitbit_user_id", "date_time" })}
+)
 public class FitbitHeartrate extends BaseEntity{
     @Transient
     private static final Logger logger = Logger.getLogger(FitbitHeartrate.class.getName());
@@ -22,18 +25,20 @@ public class FitbitHeartrate extends BaseEntity{
     @Transient
     static final String PLURAL = SINGULAR + "s";
 
-    @Column(nullable=false, updatable=false)
+    @Column(name="fitbit_user_id", nullable=false, updatable=false)
     private Long fitbitUserId;
 
-    @Column(nullable=false, updatable=false)
+    @Column(name="date_time", nullable=false, updatable=false)
     private Long dateTime;
 
     private Integer restingHeartRate;
 
-    public FitbitHeartrate(){}
+    public FitbitHeartrate(){ this.restingHeartRate = 0;}
+
     public FitbitHeartrate(Long fitbitUserId, Long dateTime){
         this.fitbitUserId = fitbitUserId;
         this.dateTime = dateTime;
+        this.restingHeartRate = 0;
     }
 
     public Long getFitbitUserId() {

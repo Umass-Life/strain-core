@@ -12,12 +12,22 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.lang.Nullable;
 import util.ColorLogger;
 import org.springframework.stereotype.Service;
 import util.EntityHelper;
 import util.StrainTimer;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Logger;
@@ -80,6 +90,46 @@ public class AggregateActivityService {
 
     public Iterable<AggregateActivity> list(){
         return repository.findAll();
+    }
+
+    public Iterable<AggregateActivity> list(Long fitbitUserId, ActivitiesResourceAggregate resource, String from, String to){
+
+        Specification<AggregateActivity> specs = whereFitbitUserId(fitbitUserId);
+        if (resource != null){
+            colorLog.info("--> Resource: " + resource);
+            specs = specs.and(whereActivitiesResource(resource));
+        }
+
+
+        if (from!=null){
+            LocalDateTime fromDateTime = FitbitAuthenticationService.parseTimeParam(from);
+            Long time = EntityHelper.toEpochMilli(fromDateTime);
+            colorLog.info("--> FRom: " + from);
+            specs = specs.and(greaterThanEqualToDate(time));
+        }
+
+        if (to!=null){
+            LocalDateTime toDateTime = FitbitAuthenticationService.parseTimeParam(to);
+            Long time = EntityHelper.toEpochMilli(toDateTime);
+            colorLog.info("--> TO: " + to);
+            specs = specs.and(lessThanEqualToDate(time));
+        }
+
+        Page page = repository.findAll(specs, PageRequest.of(0, Integer.MAX_VALUE, Sort.Direction.DESC, "dateTime"));
+        return page.getContent();
+    }
+
+    public Iterable<AggregateActivity> listByResource(Long fitbitUserId, ActivitiesResourceAggregate r){
+        Specification<AggregateActivity> specs = null;
+        Pageable pageable = PageRequest.of(0, Integer.MAX_VALUE, Sort.Direction.DESC, "date_time");
+
+        Iterable<AggregateActivity> results = repository.getByFitbitUserIdAndType(fitbitUserId, r);
+        List<AggregateActivity> a = EntityHelper.iterableToList(results);
+        Collections.sort(a,Collections.reverseOrder((x, y) -> x.getDateTime().compareTo(y.getDateTime())));
+        Collections.reverse(a);
+        return a;
+//        Page page = repository.findAll(specs, pageable);
+//        return page.getContent();
     }
 
     public Iterable<AggregateActivity> listByResource(ActivitiesResourceAggregate r){
@@ -233,10 +283,10 @@ public class AggregateActivityService {
      * TODO: filter by User.
      * @return
      */
-    public List<Map> listAggregates(){
+    public List<Map> listAggregates(Long fitbitUserId, String from, String to){
         TreeMap<Long, Map> aggs = new TreeMap<>();
         for(ActivitiesResourceAggregate r : this.activityAggregateMinuteSet){
-            Iterable<AggregateActivity> acts = listByResource(r);
+            Iterable<AggregateActivity> acts = list(fitbitUserId, r, from ,to);
             Iterator<AggregateActivity> itr = acts.iterator();
             while(itr.hasNext()){
                 AggregateActivity act = itr.next();
@@ -258,9 +308,57 @@ public class AggregateActivityService {
             Out.add(json);
         }
 
+        Collections.sort(Out, Collections.reverseOrder((a,b) -> {
+            Long al = (Long) a.get("dateTime");
+            Long bl = (Long) b.get("dateTime");
+            return al.compareTo(bl);
+        }));
+
         return Out;
 
     }
+
+    public Page test(Long id){
+        return repository.findAll(whereFitbitUserId(id), PageRequest.of(0,Integer.MAX_VALUE));
+    }
+
+
+    public Optional<AggregateActivity> findLatest(Long fitbitUserId, ActivitiesResourceAggregate ara){
+        Pageable pageable = PageRequest.of(0, 1, Sort.Direction.DESC, "dateTime");
+        Specification<AggregateActivity> specs = whereFitbitUserId(fitbitUserId)
+                                            .and(whereActivitiesResource(ara));
+        Page<AggregateActivity> page = repository.findAll(specs, pageable);
+        List<AggregateActivity> content = page.getContent();
+        AggregateActivity sl = content.isEmpty() ? null : content.get(0);
+        return Optional.ofNullable(sl);
+    }
+
+
+    private Specification<AggregateActivity> whereFitbitUserId(Long fitbitUserId){
+        return (Root<AggregateActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+                return cb.equal(root.get("fitbitUserId"), fitbitUserId);
+        };
+    }
+
+    private Specification<AggregateActivity> whereActivitiesResource(ActivitiesResourceAggregate resource){
+        return (Root<AggregateActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.equal(root.get("type"), resource);
+        };
+    }
+
+    private Specification<AggregateActivity> greaterThanEqualToDate(Long time){
+        return (Root<AggregateActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.greaterThanOrEqualTo(root.get("dateTime"), time);
+        };
+    }
+
+    private Specification<AggregateActivity> lessThanEqualToDate(Long time){
+        return (Root<AggregateActivity> root, CriteriaQuery<?> cq, CriteriaBuilder cb) -> {
+            return cb.lessThanOrEqualTo(root.get("dateTime"), time);
+        };
+    }
+
+
 
 
 }

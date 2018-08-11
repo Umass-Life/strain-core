@@ -35,18 +35,18 @@ public class SleepTimeSerieService {
         return repository.findByFitbitSleepId(sleepSessionId);
     }
 
-    public Iterable<SleepTimeSerie> createBulk(Long sleepSessionId, ArrayNode sleepJsonData){
+    public Iterable<SleepTimeSerie> createBulk(Long sleepSessionId, Long fitbitUserId,  ArrayNode sleepJsonData){
         List<SleepTimeSerie> sleepList = new ArrayList<>();
         for(int i = 0; i < sleepJsonData.size(); i++){
             JsonNode sleep_i = sleepJsonData.get(i);
-            SleepTimeSerie sleepTimeSerie_i = jsonToPOJO(sleepSessionId, sleep_i);
+            SleepTimeSerie sleepTimeSerie_i = jsonToPOJO(sleepSessionId, fitbitUserId, sleep_i);
             sleepList.add(sleepTimeSerie_i);
 //            colorLog.info("created\n"+sleepTimeSerie_i);
         }
         return repository.saveAll(sleepList);
     }
 
-    public SleepTimeSerie jsonToPOJO(Long sleepSessionId, JsonNode json){
+    public SleepTimeSerie jsonToPOJO(Long sleepSessionId, Long fitbitUserId, JsonNode json){
         if (!json.has("dateTime")) {
             throw new IllegalArgumentException("invalid SleepTimeSerie json: \n" +json);
         }
@@ -57,7 +57,7 @@ public class SleepTimeSerieService {
         SleepStages sleepStage = SleepStages.valueOf(levelString);
         Integer seconds = json.get("seconds").asInt();
 
-        SleepTimeSerie sleep = new SleepTimeSerie(sleepSessionId, dateTimeEpoch, sleepStage, seconds);
+        SleepTimeSerie sleep = new SleepTimeSerie(sleepSessionId, fitbitUserId, dateTimeEpoch, sleepStage, seconds);
         return sleep;
     }
 
