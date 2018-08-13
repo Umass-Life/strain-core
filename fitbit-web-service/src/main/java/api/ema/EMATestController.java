@@ -17,6 +17,7 @@ public class EMATestController {
     public ResponseEntity get(){
         Map<String, String> jsonMap = new HashMap<>();
         jsonMap.put("hello", "from server");
+        System.out.println("Hello from fitbit");
         return ResponseEntity.ok(jsonMap);
     }
 

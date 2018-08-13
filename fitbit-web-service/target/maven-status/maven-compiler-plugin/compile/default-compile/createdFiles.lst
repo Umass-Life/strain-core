@@ -5,6 +5,7 @@ api/fitbit_web_api/fitbit_activity/intraday/elevation/ElevationActivityRepositor
 api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivityRepository.class
 api/fitbit_web_api/fitbit_activity/intraday/AbstractIntradayActivityRepository.class
 api/WebConfig.class
+api/fitbit_web_api/FitbitWebApiController.class
 api/fitbit_account/fitbit_user/FitbitUserService.class
 api/fitbit_web_api/fitbit_activity/intraday/heart/HeartActivity.class
 api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateRepository.class
@@ -15,6 +16,7 @@ api/constants/AuthorizeParams.class
 api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivityService.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleepService.class
 api/fitbit_web_api/fitbit_sleep/SleepStages.class
+api/ema/EMATestController.class
 api/fitbit_account/fitbit_user/FitbitUser.class
 api/fitbit_web_api/fitbit_activity/intraday/IntradayActivityService.class
 api/fitbit_account/fitbit_auth/FitbitAuthenticationService.class
@@ -22,6 +24,8 @@ api/FitbitWebServiceApplication$ApplicationConfig.class
 api/fitbit_web_api/fitbit_activity/aggregate/AggregateActivityService.class
 api/fitbit_web_api/fitbit_activity/intraday/steps/StepsActivityService.class
 api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivity.class
+api/fitbit_web_api/FitbitWebApiController$1.class
+api/FileLogger.class
 api/FitbitConstantEnvironment.class
 api/fitbit_web_api/fitbit_activity/intraday/heart/HeartActivityService.class
 api/fitbit_web_api/fitbit_activity/intraday/elevation/ElevationActivityService.class
@@ -29,6 +33,7 @@ api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateAPIService.class
 api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateController.class
 api/constants/AccessTokenParams.class
 api/fitbit_account/fitbit_user/FitbitUserRepository.class
+api/fitbit_account/fitbit_user/FitbitUserController.class
 api/fitbit_account/fitbit_profile/FitbitProfileService.class
 api/fitbit_web_api/fitbit_activity/ActivityAPIService.class
 api/fitbit_web_api/fitbit_activity/aggregate/AggregateActivity.class

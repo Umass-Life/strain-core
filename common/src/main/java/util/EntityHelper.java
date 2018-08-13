@@ -152,7 +152,12 @@ public class EntityHelper {
         LocalDateTime d =
                 LocalDateTime.ofInstant(Instant.ofEpochMilli(epoch), ZoneId.systemDefault());
         return d.toString();
+    }
 
+    public static LocalDateTime epochToDate(Long epoch){
+        LocalDateTime d =
+                LocalDateTime.ofInstant(Instant.ofEpochMilli(epoch), ZoneId.systemDefault());
+        return d;
     }
 
     public static int iterableSize(Iterable A){

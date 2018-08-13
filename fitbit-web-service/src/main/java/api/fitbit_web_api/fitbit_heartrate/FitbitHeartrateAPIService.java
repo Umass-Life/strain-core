@@ -14,12 +14,10 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.ColorLogger;
+import util.EntityHelper;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 import static api.fitbit_account.fitbit_auth.FitbitAuthenticationService.parseTimeParam;
@@ -105,51 +103,31 @@ public class FitbitHeartrateAPIService {
         checkNotNull(fitbitUser, "fitbitUser cannot be null");
         String fitbitId = fitbitUser.getFitbitId();
 
+
         if (from == null){
-            FitbitProfile profile = profileService.getByFitbitUserId(fitbitUser.getId()).orElseThrow(
-                    () -> new IllegalStateException("FitbitUser "+ fitbitId + " has no profile")
-            );
-            from = profile.getMemberSince();
+            Optional<FitbitHeartrate> latestHr = heartrateService.findLatest(fitbitUser.getId());
+            if (latestHr.isPresent()){
+
+                Long fromTime = latestHr.get().getDateTime();
+                from = EntityHelper.epochToDateString(fromTime);
+                colorLog.info("FETCH FROM LATEST: " + from);
+            } else {
+                from = FitbitAuthenticationService.toRequestDateFormat(FitbitAuthenticationService.getOldestPossibleTimeForRequest());
+                colorLog.info("FETCH FROM BEGINNING: " + from);
+            }
         }
 
         if (to == null){
             to = FitbitAuthenticationService.toRequestDateFormat(LocalDateTime.now());
         }
+        colorLog.info("from=%s to=%s", from, to);
+        FitbitAuthenticationService.validateRequestDates(from, to);
 
         String url = buildHeartrateRequestURI(fitbitId, from ,to);
         JsonNode node = authenticationService.authorizedRequest(fitbitUser, url);
         return node;
     }
 
-    public JsonNode fetchFinegrainHeartrateFromFitbit(FitbitUser fitbitUser, String from, String to){
-        checkNotNull(fitbitUser, "fitbitUser cannot be null");
-        String fitbitId = fitbitUser.getFitbitId();
-
-        if (from == null){
-            FitbitProfile profile = profileService.getByFitbitUserId(fitbitUser.getId()).orElseThrow(
-                    () -> new IllegalStateException("FitbitUser "+ fitbitId + " has no profile")
-            );
-            from = profile.getMemberSince();
-        }
-
-        if (to == null){
-            to = FitbitAuthenticationService.toRequestDateFormat(LocalDateTime.now());
-        }
-
-        LocalDateTime cur = parseTimeParam(from);
-        LocalDateTime toDate = parseTimeParam(to);
-        ObjectMapper JsonObjectFactory = new ObjectMapper();
-        ArrayNode nodes = JsonObjectFactory.createArrayNode();
-
-        while(cur.compareTo(toDate) != 1){
-            String curString = FitbitAuthenticationService.toRequestDateFormat(cur);
-            String url = buildFinegrainHeartrateRequestURI(fitbitId, to);
-            JsonNode node = authenticationService.authorizedRequest(fitbitUser, url);
-            nodes.add(node);
-            cur = cur.plusDays(1L);
-        }
-        return nodes;
-    }
 
     public String buildHeartrateRequestURI(String fitbitId, LocalDateTime from, LocalDateTime to){
         String fromDate = null;

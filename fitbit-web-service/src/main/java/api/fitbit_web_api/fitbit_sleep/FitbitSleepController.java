@@ -62,7 +62,6 @@ public class FitbitSleepController {
             responseJson.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(responseJson);
         }
-
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

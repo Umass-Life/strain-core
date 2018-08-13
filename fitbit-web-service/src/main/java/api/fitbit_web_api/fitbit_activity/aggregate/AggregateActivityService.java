@@ -196,7 +196,14 @@ public class AggregateActivityService {
     public Iterable<AggregateActivity> fetchAndSave(FitbitUser fitbitUser, ActivitiesResourceAggregate r, String from, String to) throws IllegalAccessException{
         JsonNode json = fetchActivities(r, fitbitUser, from, to);
         List<AggregateActivity> activities = jsonToPOJOInBulk(fitbitUser.getId(),r, json);
-        Iterable<AggregateActivity> savedActivities = repository.saveAll(activities);
+        List<AggregateActivity> savedActivities = new ArrayList<>();
+        for(AggregateActivity activity : activities){
+            try {
+                AggregateActivity _activity = repository.save(activity);
+                savedActivities.add(_activity);
+            } catch(Exception e){}
+        }
+//        Iterable<AggregateActivity> savedActivities = repository.saveAll(activities);
         return savedActivities;
     }
     /*
@@ -236,10 +243,16 @@ public class AggregateActivityService {
         String fitbitId = fitbitUser.getFitbitId();
 
         if (from == null){
-            FitbitProfile profile = fitbitProfileService.getByFitbitUserId(fitbitUser.getId()).orElseThrow(
-                    () -> new IllegalStateException("FitbitUser "+ fitbitId + " has no profile")
-            );
-            from = profile.getMemberSince();
+            Optional<AggregateActivity> latest = findLatest(fitbitUser.getId(), acp);
+            if (latest.isPresent()){
+
+                Long fromTime = latest.get().getDateTime();
+                from = FitbitAuthenticationService.toRequestDateFormat(EntityHelper.epochToDate(fromTime));
+                colorLog.info("FETCH FROM LATEST: " + from);
+            } else {
+                from = FitbitAuthenticationService.toRequestDateFormat(FitbitAuthenticationService.getOldestPossibleTimeForRequest());
+                colorLog.info("FETCH FROM BEGINNING: " + from);
+            }
         }
 
         if (to == null){

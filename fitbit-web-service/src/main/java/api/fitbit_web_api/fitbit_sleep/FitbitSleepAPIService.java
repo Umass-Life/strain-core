@@ -15,10 +15,7 @@ import util.ColorLogger;
 import util.EntityHelper;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 import static util.Validation.checkNotNull;
@@ -38,9 +35,6 @@ public class FitbitSleepAPIService {
     private FitbitProfileService fitbitProfileService;
 
     @Autowired
-    private FitbitSleepAPIService fitbitSleepAPIService;
-
-    @Autowired
     private FitbitAuthenticationService authenticationService;
 
     @Autowired
@@ -51,10 +45,10 @@ public class FitbitSleepAPIService {
 
         Map<String, Object> responseMap = new HashMap<>();
         if (save){
-            Map<String, Object> saveInfo = fitbitSleepAPIService.fetchAndCreateBulk(fitbitUser, from, to);
+            Map<String, Object> saveInfo = fetchAndCreateBulk(fitbitUser, from, to);
             responseMap.put("counts", saveInfo);
         } else {
-            JsonNode node = fitbitSleepAPIService.fetchSleepFromFitbit(fitbitUser, from, to);
+            JsonNode node = fetchSleepFromFitbit(fitbitUser, from, to);
             responseMap.put("payload", node);
         }
         return responseMap;
@@ -93,15 +87,22 @@ public class FitbitSleepAPIService {
         String fitbitId = fitbitUser.getFitbitId();
 
         if (from == null){
-            FitbitProfile profile = fitbitProfileService.getByFitbitUserId(fitbitUser.getId()).orElseThrow(
-                    () -> new IllegalStateException("FitbitUser "+ fitbitId + " has no profile")
-            );
-            from = FitbitAuthenticationService.toRequestDateFormat(FitbitAuthenticationService.getOldestPossibleTimeForRequest());
+            Optional<FitbitSleep> latestSleep = fitbitSleepService.findLatest(fitbitUser.getId());
+            if (latestSleep.isPresent()){
+
+                from = latestSleep.get().getDateOfSleep();
+                colorLog.info("FETCH FROM LATEST: " + from);
+            } else {
+                from = FitbitAuthenticationService.toRequestDateFormat(FitbitAuthenticationService.getOldestPossibleTimeForRequest());
+                colorLog.info("FETCH FROM BEGINNING: " + from);
+            }
         }
 
         if (to == null){
             to = FitbitAuthenticationService.toRequestDateFormat(LocalDateTime.now());
         }
+        colorLog.info("from=%s to=%s", from, to);
+        FitbitAuthenticationService.validateRequestDates(from, to);
 
         String url = buildSleepQuery(fitbitId, from ,to);
         JsonNode node = authenticationService.authorizedRequest(fitbitUser, url);

@@ -1,6 +1,7 @@
 package api.fitbit_web_api.fitbit_activity;
 
 import api.FitbitConstantEnvironment;
+import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResource;
 import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResourceAggregate;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -59,9 +61,25 @@ public class ActivityAPIService {
         return buildFinegrainActivitiesURI(fitbitUser, resourceType, date, MIN_1);
     }
 
+    public String buildFinegrainActivitiesURI(FitbitUser fitbitUser, ActivitiesResource resourceType, LocalDateTime date){
+        if (is1SecTimeSerie(resourceType)){
+            return buildFinegrainActivitiesURI(fitbitUser, resourceType, date, SEC_1);
+        }
+        return buildFinegrainActivitiesURI(fitbitUser, resourceType, date, MIN_1);
+    }
+
     public String buildFinegrainActivitiesURI(FitbitUser fitbitUser, ActivitiesResource resourceType, String date, String detailType){
         return String.format("%s/user/%s/activities/%s/date/%s/1d/%s.json", RESOURCE_URL, fitbitUser.getFitbitId(),
                 resourceType.toString(), date, detailType);
+    }
+
+    //GET https://api.fitbit.com/1/user/-/[resource-path]/date/[date]/1d/[detail-level]/time/[start-time]/[end-time].json
+    public String buildFinegrainActivitiesURI(FitbitUser fitbitUser, ActivitiesResource resourceType, LocalDateTime date, String detailType){
+        String dateString = FitbitAuthenticationService.toRequestDateFormat(date);
+        return String.format("%s/user/%s/activities/%s/date/%s/1d/%s/time/%s:%s/23:59.json",
+                RESOURCE_URL, fitbitUser.getFitbitId(), resourceType.toString(), dateString,
+                detailType, date.getHour(), date.getMinute());
+
     }
 
     public String buildActivitiesTrackerTimeSeriesRequest(FitbitUser fitbitUser, ActivitiesResourceAggregate resourceType,

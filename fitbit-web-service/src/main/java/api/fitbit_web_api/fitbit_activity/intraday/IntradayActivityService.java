@@ -198,28 +198,49 @@ public class IntradayActivityService {
         checkNotNull(fitbitUser, "fitbitUser cannot be null");
         String fitbitId = fitbitUser.getFitbitId();
 
+        LocalDateTime fromTime = null;
+        LocalDateTime toTime = LocalDateTime.now();
+        Optional<AbstractIntradayActivity> latestHr = findLatest(fitbitUser.getId(), r);
         if (from == null){
-            FitbitProfile profile = fitbitProfileService.getByFitbitUserId(fitbitUser.getId()).orElseThrow(
-                    () -> new IllegalStateException("FitbitUser "+ fitbitId + " has no profile")
-            );
-            from = profile.getMemberSince();
+            if (latestHr.isPresent()){
+                fromTime = EntityHelper.epochToDate(latestHr.get().getDateTime());
+                colorLog.info(">> FETCH FROM LATEST: " + fromTime);
+            } else {
+                fromTime = FitbitAuthenticationService.getOldestPossibleTimeForRequest();
+                colorLog.info("?? FETCH FROM BEGINNING: " + fromTime);
+            }
+        } else {
+            fromTime = FitbitAuthenticationService.parseTimeParam(from);
+            if (latestHr.isPresent()){
+                LocalDateTime latestDate = EntityHelper.epochToDate(latestHr.get().getDateTime());
+                if (latestDate.isAfter(fromTime)) {
+                    colorLog.warning(latestDate);
+                    fromTime = latestDate;
+                    colorLog.info(">> FETCH FROM LATEST: " + fromTime);
+                }
+            }
+
         }
 
-        if (to == null){
-            to = FitbitAuthenticationService.toRequestDateFormat(LocalDateTime.now());
+        if (to != null){
+            toTime = FitbitAuthenticationService.parseTimeParam(to);
         }
 
-        String ACTIVITIES_KEY = getActivitiesKey(r);
-        LocalDateTime cur = parseTimeParam(from);
-        LocalDateTime toDate = parseTimeParam(to);
+        colorLog.info("from=%s\nto=%s", fromTime, toTime);
+        FitbitAuthenticationService.validateRequestDates(fromTime, toTime);
+
+        LocalDateTime cur = fromTime;
+        LocalDateTime toDate = toTime;
         ObjectMapper mapper = new ObjectMapper();
         ArrayNode nodes = mapper.createArrayNode();
         while(cur.compareTo(toDate) != 1){
-            String curString = FitbitAuthenticationService.toRequestDateFormat(cur);
-            String url = activityAPIService.buildFinegrainActivitiesURI(fitbitUser, r, curString);
+            System.out.println(cur);
+            String url = activityAPIService.buildFinegrainActivitiesURI(fitbitUser, r, cur);
             JsonNode node= authenticationService.authorizedRequest(fitbitUser, url);
             nodes.add(node);
             cur = cur.plusDays(1L);
+            String zeroedCurString = FitbitAuthenticationService.toRequestDateFormat(cur);
+            cur = FitbitAuthenticationService.parseTimeParam(zeroedCurString);
         }
 
         return nodes;
@@ -265,8 +286,14 @@ public class IntradayActivityService {
             String timeText = node_i.get(INTRA_TIME).asText();
             Double value = node_i.get(VALUE).asDouble();
             String dateTimeString = combineDateTime(todayString, timeText);
+            LocalDateTime dateTime = null;
+            try {
+                dateTime = parseLongTimeParam(dateTimeString);
+            } catch(Exception e){
+                colorLog.severe(node_i.toString());
+                System.exit(1);
+            }
 
-            LocalDateTime dateTime=  parseLongTimeParam(dateTimeString);
             Long dateTimeEpoch = EntityHelper.toEpochMilli(dateTime);
             AbstractIntradayActivity entity = service.jsonToPOJO(fitbitUserId, dateTimeEpoch, value, node_i);
             activities.add(entity);

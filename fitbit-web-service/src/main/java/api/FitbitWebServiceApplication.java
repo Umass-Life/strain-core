@@ -2,6 +2,10 @@ package api;
 
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_profile.FitbitProfile;
+import api.fitbit_account.fitbit_user.FitbitUser;
+import api.fitbit_account.fitbit_user.FitbitUserService;
+import api.fitbit_web_api.fitbit_activity.ActivityAPIService;
+import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResource;
 import api.fitbit_web_api.fitbit_heartrate.FitbitHeartrate;
 import api.fitbit_web_api.fitbit_heartrate.FitbitHeartrateService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,7 +27,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.stereotype.Component;
+import util.EntityHelper;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -43,6 +49,12 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 	@Autowired
 	FitbitAuthenticationService service;
 
+	@Autowired
+	ActivityAPIService apiService;
+
+	@Autowired
+	FitbitUserService userService;
+
 	@Component
 	public static class ApplicationConfig {
 		public String port;
@@ -56,6 +68,13 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args){
 		colorLogger.info("%s started at port: %s", FitbitWebServiceApplication.class.getName(), config.port);
+		LocalDateTime d =  FitbitAuthenticationService.parseLongTimeParam("2018-08-16T08:15:00.000");
+		LocalDateTime d2 =  FitbitAuthenticationService.parseLongTimeParam("2018-08-05T08:15:00.000");
+		LocalDateTime d3 = FitbitAuthenticationService.parseLongTimeParam("2018-08-16T08:15:30");
+		LocalDateTime d4 = FitbitAuthenticationService.parseLongTimeParam("2018-08-05T20:34:59");
+		FitbitUser user = EntityHelper.iterableToList(userService.list()).get(0);
+		String s= apiService.buildFinegrainActivitiesURI(user, ActivitiesResource.heart, d4, "1min");
+		colorLogger.info(s);
 
 
 	}
