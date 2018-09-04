@@ -24,7 +24,36 @@ public class EMATestController {
 
     @RequestMapping(value = {"/",""}, method = RequestMethod.POST)
     public ResponseEntity post(@RequestBody JsonNode node){
-        System.out.println(node);
+        try{
+            System.out.println(node);
+        } catch(Exception e){
+
+        }
+
         return ResponseEntity.ok("success");
     }
 }
+
+/*
+
+{
+  "msgtype": "batchslice",
+  "id": "1534219271888",
+  "type": "stress_level",
+  "data": [
+    {
+      "timestamp": 1534219234,
+      "level": "Neither"
+    }
+  ],
+  "slice": 0,
+  "slices": 1,
+  "type_count": [
+    2,
+    3
+  ]
+}
+
+
+
+* */

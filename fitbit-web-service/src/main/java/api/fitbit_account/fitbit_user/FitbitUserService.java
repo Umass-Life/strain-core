@@ -1,19 +1,24 @@
 package api.fitbit_account.fitbit_user;
 
 import api.FitbitConstantEnvironment;
+import api.fitbit_account.fitbit_profile.FitbitProfile;
 import api.fitbit_account.fitbit_profile.FitbitProfileService;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import util.ColorLogger;
 import util.Validation;
 
 import static util.Validation.checkNotNull;
 
 import java.util.Optional;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 @Service
 public class FitbitUserService {
+    private static final Logger logger = Logger.getLogger(FitbitUserService.class.getSimpleName());
+    private static final ColorLogger colorLogger = new ColorLogger(logger);
 
     public static final String SINGULAR = FitbitUser.class.getName();
     public static final String PLURAL = SINGULAR + "s";
@@ -94,6 +99,9 @@ public class FitbitUserService {
     public FitbitUser createWithProfile(Long strainUserId, String fitbitId, String accessToken, String refreshToken,
                              String tokenType, Long expiresIn){
         FitbitUser fitbitUser = create(strainUserId,fitbitId,accessToken, refreshToken, tokenType,expiresIn);
+        FitbitProfile profile = fitbitProfileService.fetchAndSave(fitbitUser);
+
+        colorLogger.info("new profile \n%s", profile.toString());
         return fitbitUser;
     }
 

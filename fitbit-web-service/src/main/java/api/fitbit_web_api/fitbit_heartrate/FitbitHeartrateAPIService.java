@@ -109,7 +109,7 @@ public class FitbitHeartrateAPIService {
             if (latestHr.isPresent()){
 
                 Long fromTime = latestHr.get().getDateTime();
-                from = EntityHelper.epochToDateString(fromTime);
+                from = FitbitAuthenticationService.toRequestDateFormat(EntityHelper.epochToDate(fromTime));
                 colorLog.info("FETCH FROM LATEST: " + from);
             } else {
                 from = FitbitAuthenticationService.toRequestDateFormat(FitbitAuthenticationService.getOldestPossibleTimeForRequest());

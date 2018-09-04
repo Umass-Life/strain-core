@@ -51,11 +51,11 @@ public class FitbitWebApiController {
         LinkedBlockingQueue<List<FetchTask>> taskBatchQ = new LinkedBlockingQueue();
         Iterable<FitbitUser> users = fitbitUserService.list();
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime cur = LocalDateTime.of(2018, Month.AUGUST, 1, 0, 0);
+        LocalDateTime cur = LocalDateTime.of(2018, Month.JULY, 7, 0, 0);
 
         while(now.isAfter(cur)){
             String d1 = FitbitAuthenticationService.toRequestDateFormat(cur);
-            LocalDateTime to = cur.plusDays(7);
+            LocalDateTime to = cur.plusDays(10);
             if (to.isAfter(now)) to = now;
             String d2 = FitbitAuthenticationService.toRequestDateFormat(to);
             boolean save = true;

@@ -55,3 +55,10 @@ then
   echo $cmd;
   eval $cmd;
 fi
+
+if [ $1 = "ema-service" ]
+then
+  cmd="mvn spring-boot:run -pl ema-service"
+  echo $cmd;
+  eval $cmd;
+fi

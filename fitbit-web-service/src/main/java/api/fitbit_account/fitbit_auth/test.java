@@ -1,5 +1,7 @@
 package api.fitbit_account.fitbit_auth;
 
+import api.fitbit_account.fitbit_subscription.CollectionType;
+import org.apache.commons.codec.binary.Base64;
 import util.EntityHelper;
 
 import java.time.LocalDateTime;
@@ -10,7 +12,14 @@ import java.util.function.Supplier;
 public class test {
 
     public static void main(String[] args) {
+        String CLIENT_ID = "22CTFZ";
+        String CLIENT_SECRET = "2577c07d8af8c715a2a190fb240ebf3f";
+        String authorization_token = CLIENT_ID + ":" + CLIENT_SECRET;
+        byte[] authorization_token_encoded_bytes = Base64.encodeBase64(authorization_token.getBytes());
+        String authorization_token_encoded = new String(authorization_token_encoded_bytes);
+        System.out.println(authorization_token_encoded);
 
+        CollectionType.valueOf("body");
 
 //        System.out.println(FitbitAuthenticationService.toRequestDateFormat(LocalDateTime.now()));
 //
@@ -29,23 +38,25 @@ public class test {
 //        System.out.println(FitbitAuthenticationService.toRequestDateFormat(d));
 //        String x = null;//new String("a");
 //        Optional.of(x).ifPresent(y -> System.out.println(y));
-//
-        Supplier<Integer> f = () -> {
-            int c = 0;
-            try {
-                if (c==0){
-                    c = 1;
-//                    return c;
-                }
-                c = 2;
-            } catch(Exception e){
-                e.printStackTrace();
-            } finally {
-                System.out.println("finally");
-                return c;
-            }
-        };
-        System.out.println(f.get());
+
+
+////
+//        Supplier<Integer> f = () -> {
+//            int c = 0;
+//            try {
+//                if (c==0){
+//                    c = 1;
+////                    return c;
+//                }
+//                c = 2;
+//            } catch(Exception e){
+//                e.printStackTrace();
+//            } finally {
+//                System.out.println("finally");
+//                return c;
+//            }
+//        };
+//        System.out.println(f.get());
 
 //        Timer timer = new Timer("Timer");
 //        TimerTask repeatedTask = new TimerTask() {

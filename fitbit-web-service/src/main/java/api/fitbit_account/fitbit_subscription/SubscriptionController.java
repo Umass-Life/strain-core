@@ -20,7 +20,8 @@ import java.util.logging.Logger;
 @Controller
 @RequestMapping(value = "/fitbit")
 public class SubscriptionController {
-    private final static String verificationCode = "d8afed4cd5d690d9224fd3a403d10166ac59e82a7e270223cbdcce0307d6a970";
+//    private final static String verificationCode = "d8afed4cd5d690d9224fd3a403d10166ac59e82a7e270223cbdcce0307d6a970";
+    private final static String verificationCode = "1e5b7ab2d2e4c1876cfed321a08f23e40dc519c20d8500cab72337cf3270c583";
     private Logger logger = Logger.getLogger(SubscriptionController.class.getSimpleName());
     private ColorLogger colorLogger = new ColorLogger(logger);
 
@@ -36,7 +37,7 @@ public class SubscriptionController {
     @RequestMapping(value="/webhook", method = RequestMethod.GET)
     public ResponseEntity webhook(@RequestParam(value="verify") String verify){
         try {
-            colorLogger.info("VERI CODE: " +  verify);
+            colorLogger.info("Fitbit called /webhook -> VERIFICATION CODE: " +  verify);
             if (verify!=null && verify.length() > 0){
                 if(verify.equals(verificationCode)){
                     colorLogger.info("correct code");
@@ -60,14 +61,56 @@ public class SubscriptionController {
             return ResponseEntity.status(404).body("");
         }
     }
-    // https://api.fitbit.com/1/user/-/[collection-path]/apiSubscriptions/[subscription-id].json
-    @RequestMapping(value="/subscribe", method = RequestMethod.GET)
-    public ResponseEntity subscribe(@RequestParam(value="fid",required=false) String fid,
-                                    @RequestParam(value="id",required=false) Long id){
+
+    @RequestMapping(value="/subscription", method = RequestMethod.GET)
+    public ResponseEntity listSubscription(@RequestParam(value="fid",required=false) String fid,
+                                           @RequestParam(value="id",required=false) Long id){
         Map<String, Object> map = new HashMap<>();
         try {
             FitbitUser fitbitUser = getFitbitUser(fid, id);
-            JsonNode node = subscriptionService.subscribeUser(fitbitUser);
+            JsonNode node = subscriptionService.listSubscriptionByUser(fitbitUser);
+            map.put("payload", node);
+            return ResponseEntity.ok(map);
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLogger.severe(e.getMessage());
+            map = new HashMap<>();
+            map.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(map);
+        }
+    }
+
+    @RequestMapping(value="/subscription/delete", method = RequestMethod.POST)
+    public ResponseEntity deleteSubscription(@RequestParam(value="fid",required=false) String fid,
+                                             @RequestParam(value="id",required=false) Long id,
+                                             @RequestParam(value="r",required=true) String resource){
+        Map<String, Object> map = new HashMap<>();
+        try {
+            CollectionType type = CollectionType.valueOf(resource);
+            FitbitUser fitbitUser = getFitbitUser(fid, id);
+            JsonNode node = subscriptionService.deleteSubscriptionByUser(fitbitUser, type);
+            map.put("payload", node);
+            return ResponseEntity.ok(map);
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLogger.severe(e.getMessage());
+            map = new HashMap<>();
+            map.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(map);
+        }
+    }
+
+    // https://api.fitbit.com/1/user/-/[collection-path]/apiSubscriptions/[subscription-id].json
+    @RequestMapping(value="/subscribe", method = RequestMethod.POST)
+    public ResponseEntity subscribe(@RequestParam(value="fid",required=false) String fid,
+                                    @RequestParam(value="id",required=false) Long id,
+                                    @RequestParam(value="r",required=true) String resource){
+        Map<String, Object> map = new HashMap<>();
+        try {
+
+            CollectionType type = CollectionType.valueOf(resource);
+            FitbitUser fitbitUser = getFitbitUser(fid, id);
+            JsonNode node = subscriptionService.subscribeUser(fitbitUser, type);
             map.put("payload", node);
             return ResponseEntity.ok(map);
         } catch (Exception e){

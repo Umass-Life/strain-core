@@ -2,6 +2,8 @@ api/fitbit_web_api/fitbit_activity/intraday/IIntradayActivityService.class
 api/fitbit_web_api/fitbit_activity/intraday/elevation/ElevationActivity.class
 api/fitbit_web_api/fitbit_heartrate/FitbitHeartrate.class
 api/fitbit_web_api/fitbit_activity/intraday/elevation/ElevationActivityRepository.class
+api/fitbit_web_api/FitbitWebApiController$FetchTask.class
+api/ema/StressLevel.class
 api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivityRepository.class
 api/fitbit_web_api/fitbit_activity/intraday/AbstractIntradayActivityRepository.class
 api/WebConfig.class
@@ -19,6 +21,7 @@ api/fitbit_web_api/fitbit_sleep/SleepStages.class
 api/ema/EMATestController.class
 api/fitbit_account/fitbit_user/FitbitUser.class
 api/fitbit_web_api/fitbit_activity/intraday/IntradayActivityService.class
+api/fitbit_account/fitbit_subscription/SubscriptionController.class
 api/fitbit_account/fitbit_auth/FitbitAuthenticationService.class
 api/FitbitWebServiceApplication$ApplicationConfig.class
 api/fitbit_web_api/fitbit_activity/aggregate/AggregateActivityService.class
@@ -35,8 +38,10 @@ api/constants/AccessTokenParams.class
 api/fitbit_account/fitbit_user/FitbitUserRepository.class
 api/fitbit_account/fitbit_user/FitbitUserController.class
 api/fitbit_account/fitbit_profile/FitbitProfileService.class
+api/ema/StressLevelRepository.class
 api/fitbit_web_api/fitbit_activity/ActivityAPIService.class
 api/fitbit_web_api/fitbit_activity/aggregate/AggregateActivity.class
+api/ema/StressLevelService.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleep.class
 api/constants/UnauthorizedErrors.class
 api/fitbit_web_api/fitbit_heartrate/heartrate_zone/HeartrateZone.class
@@ -45,6 +50,7 @@ api/fitbit_web_api/fitbit_activity/intraday/calories/CaloriesActivity.class
 api/fitbit_web_api/fitbit_activity/intraday/floors/FloorsActivityService.class
 api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerie.class
 api/fitbit_web_api/fitbit_activity/intraday/floors/FloorsActivityRepository.class
+api/ema/EMAService.class
 api/fitbit_web_api/fitbit_activity/intraday/heart/HeartActivityRepository.class
 api/fitbit_web_api/fitbit_activity/intraday/floors/FloorsActivity.class
 api/fitbit_web_api/fitbit_activity/intraday/calories/CaloriesActivityService.class
@@ -65,6 +71,7 @@ api/fitbit_account/fitbit_profile/FitbitProfileController.class
 api/fitbit_account/fitbit_profile/FitbitProfileRepository.class
 api/fitbit_web_api/fitbit_activity/intraday/AbstractIntradayActivity.class
 api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerieRepository.class
+api/fitbit_account/fitbit_subscription/FitbitSubscriptionService.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleepRepository.class
 api/fitbit_account/fitbit_profile/FitbitProfile.class
 api/fitbit_web_api/fitbit_sleep/FitbitSleepAPIService.class

@@ -2,6 +2,7 @@ package api.fitbit_account.fitbit_profile;
 
 import api.FitbitConstantEnvironment;
 import api.constants.AccessTokenResponseKey;
+import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_web_api.fitbit_activity.ActivityAPIService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -35,6 +36,10 @@ public class FitbitProfileService {
 
     @Autowired
     private ActivityAPIService activityAPIService;
+
+    @Autowired
+    private FitbitAuthenticationService authenticationService;
+
 
     public Optional<FitbitProfile> getById(Long id){
         checkNotNull(id, "fitbit profile id cannot be null in FitbitProfileSerivce.getById");
@@ -131,37 +136,38 @@ public class FitbitProfileService {
     }
 
     public JsonNode fetchProfileFromWebAPI(FitbitUser fitbitUser){
-        JsonNode node = null;
         ObjectMapper objectMapper = new ObjectMapper();
         String fitbitId = fitbitUser.getFitbitId();
         String access_token = fitbitUser.getAccessToken();
         String profileUrl = activityAPIService.buildProfileRequest(fitbitUser);
-        colorLogger.info("fetching.. " + profileUrl);
-        HttpGet httpGet = new HttpGet(profileUrl);
-        httpGet.addHeader("Authorization", String.format("Bearer %s", access_token));
-
-        CloseableHttpClient client = HttpClients.createDefault();
-
-        try {
-            HttpResponse res = client.execute(httpGet);
-            Integer statusCode = res.getStatusLine().getStatusCode();
-            colorLogger.info(res.getStatusLine());
-
-            HttpEntity entity = res.getEntity();
-            String body = EntityUtils.toString(entity);
-            Object json = objectMapper.writeValueAsString(body);
-            node = objectMapper.readTree(body);
-            String prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(node);
-            if (statusCode != 200) {
-                colorLogger.severe(prettyJson);
-                throw new IllegalArgumentException(res.getStatusLine().toString());
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-            node = null;
-            colorLogger.severe("Got code: " + e.getMessage());
-        } finally {
-            return node;
-        }
+        JsonNode node = authenticationService.authorizedRequest(fitbitUser, profileUrl);
+        return node;
+//        colorLogger.info("fetching.. " + profileUrl);
+//        HttpGet httpGet = new HttpGet(profileUrl);
+//        httpGet.addHeader("Authorization", String.format("Bearer %s", access_token));
+//
+//        CloseableHttpClient client = HttpClients.createDefault();
+//
+//        try {
+//            HttpResponse res = client.execute(httpGet);
+//            Integer statusCode = res.getStatusLine().getStatusCode();
+//            colorLogger.info(res.getStatusLine());
+//
+//            HttpEntity entity = res.getEntity();
+//            String body = EntityUtils.toString(entity);
+//            Object json = objectMapper.writeValueAsString(body);
+//            node = objectMapper.readTree(body);
+//            String prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(node);
+//            if (statusCode != 200) {
+//                colorLogger.severe(prettyJson);
+//                throw new IllegalArgumentException(res.getStatusLine().toString());
+//            }
+//        } catch (Exception e){
+//            e.printStackTrace();
+//            node = null;
+//            colorLogger.severe("Got code: " + e.getMessage());
+//        } finally {
+//            return node;
+//        }
     }
 }

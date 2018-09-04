@@ -17,6 +17,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
@@ -136,8 +137,6 @@ public class FitbitAuthenticationService {
             httpPost.addHeader(HTTP.CONTENT_TYPE, "application/x-www-form-urlencoded");
             HttpEntity body = new UrlEncodedFormEntity(formlist);
 
-//            debug_body(body);
-//            colorLog.info(body);
             httpPost.setEntity(body);
             HttpClient client = HttpClients.createDefault();
             HttpResponse response = client.execute(httpPost);
@@ -318,11 +317,16 @@ public class FitbitAuthenticationService {
         }
         return buf.toString();
     }
+
     public JsonNode authorizedPOSTRequest(FitbitUser fitbitUser, String url, JsonNode inputBody){
-        return authorizedPOSTRequest(fitbitUser, url, inputBody, 0);
+        return authorizedPOSTRequest(fitbitUser, url, null, inputBody, 0);
     }
 
-    public JsonNode authorizedPOSTRequest(FitbitUser fitbitUser, String url, JsonNode inputBody, int attempt){
+    public JsonNode authorizedPOSTRequest(FitbitUser fitbitUser, String url, Map<String, String> headers, JsonNode inputBody){
+        return authorizedPOSTRequest(fitbitUser, url, headers, inputBody, 0);
+    }
+
+    public JsonNode authorizedPOSTRequest(FitbitUser fitbitUser, String url, Map<String, String> headers, JsonNode inputBody, int attempt){
         if (attempt == RETRY_ATTEMPTS){
             throw new IllegalStateException(String.format("request attempt more than %s times", RETRY_ATTEMPTS-1));
         }
@@ -331,16 +335,15 @@ public class FitbitAuthenticationService {
         String userId = fitbitUser.getFitbitId();
         String access_token = fitbitUser.getAccessToken();
 
-        colorLog.info("posting " + url);
-        String authorization_token = CLIENT_ID + ":" + CLIENT_SECRET;
-        byte[] authorization_token_encoded_bytes = Base64.encodeBase64(authorization_token.getBytes());
-        String authorization_token_encoded = new String(authorization_token_encoded_bytes);
-        final String BASIC_AUTH = "Basic " + authorization_token_encoded;
-
-        HttpPost httpPost = new HttpPost(FITBIT_ACCESS_TOKEN_URI);
-//        httpPost.addHeader("Authorization", String.format("Bearer %s", access_token));
-        httpPost.addHeader("Authorization", BASIC_AUTH);
-        httpPost.addHeader("X-Fitbit-Subscriber-Id", "STRAIN");
+        colorLog.info("POST " + url);
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.addHeader("Authorization", String.format("Bearer %s", access_token));
+        if (headers!=null){
+            headers.entrySet().forEach((Map.Entry<String, String> e) ->{
+                System.out.println(e.getKey() + " : "  + e.getValue());
+                httpPost.addHeader(e.getKey(), e.getValue());
+            });
+        }
 
         StrainTimer timer = new StrainTimer(colorLog, "POST " + url);
         timer.start();
@@ -364,7 +367,7 @@ public class FitbitAuthenticationService {
             HttpEntity entity = res.getEntity();
             String body = EntityUtils.toString(entity);
             node = objectMapper.readTree(body);
-            if (statusCode != 200) {
+            if (statusCode >= 300) {
                 String SUCCESS_TOKEN = AccessTokenResponseKey.SUCCESS_TOKEN.toString();
                 String ERRORS_TOKEN = AccessTokenResponseKey.ERRORS_TOKEN.toString();
                 colorLog.warning(node);
@@ -426,7 +429,6 @@ public class FitbitAuthenticationService {
         HttpGet httpGet = new HttpGet(url);
         httpGet.addHeader("Authorization", String.format("Bearer %s", access_token));
 
-
         CloseableHttpClient client = HttpClients.createDefault();
         StrainTimer timer = new StrainTimer(colorLog, "GET " + url);
         timer.start();
@@ -456,7 +458,78 @@ public class FitbitAuthenticationService {
                             if ((fitbitUser = refreshAccessToken(fitbitUser)) != null){
                                 colorLog.warning("refreshed token for user:\n%s\non attempt %s", fitbitUser, attempt+1);
                                 node = authorizedRequest(fitbitUser, url, attempt + 1);
-                                return node; // skip to finally clause;
+                                return node; // skip to finall  y clause;
+                            } else {
+                                throw new IllegalStateException("failed to refresh token on unauthorized request " +
+                                        "for user-id = " + fitbitUser.getId());
+                            }
+                        }
+                    }
+                }
+                colorLog.severe(node);
+                throw new IllegalArgumentException(res.getStatusLine().toString());
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLog.severe("Got code: " + e.getMessage());
+            throw new IllegalAccessError(e.getMessage());
+        } finally {
+            timer.stop();
+            return node;
+        }
+    }
+
+    public JsonNode authorizedDELETERequest(FitbitUser fitbitUser, String url){
+        return authorizedDELETERequest(fitbitUser, url, 0);
+    }
+
+    public JsonNode authorizedDELETERequest(FitbitUser fitbitUser, String url, int attempt){
+        if (attempt == RETRY_ATTEMPTS){
+            throw new IllegalStateException(String.format("request attempt more than %s times", RETRY_ATTEMPTS-1));
+        }
+        JsonNode node = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        String userId = fitbitUser.getFitbitId();
+        String access_token = fitbitUser.getAccessToken();
+
+        colorLog.info("DELETE " + url);
+        HttpDelete httpDelete = new HttpDelete(url);
+        httpDelete.addHeader("Authorization", String.format("Bearer %s", access_token));
+
+        CloseableHttpClient client = HttpClients.createDefault();
+        StrainTimer timer = new StrainTimer(colorLog, "GET " + url);
+        timer.start();
+
+        try {
+            HttpResponse res = client.execute(httpDelete);
+            Integer statusCode = res.getStatusLine().getStatusCode();
+            colorLog.info(res.getStatusLine());
+
+            HttpEntity entity = res.getEntity();
+            if (entity!=null){
+                String body = EntityUtils.toString(entity);
+                node = objectMapper.readTree(body);
+            }
+
+            if (statusCode >= 300) {
+                String SUCCESS_TOKEN = AccessTokenResponseKey.SUCCESS_TOKEN.toString();
+                String ERRORS_TOKEN = AccessTokenResponseKey.ERRORS_TOKEN.toString();
+                colorLog.warning(node);
+                if (node.has(SUCCESS_TOKEN) && !node.get(SUCCESS_TOKEN).asBoolean()){
+                    colorLog.warning(node.get(SUCCESS_TOKEN).asBoolean());
+                    if (node.has(ERRORS_TOKEN)){
+                        ArrayNode errorArrayNode = (ArrayNode) node.get(ERRORS_TOKEN);
+                        colorLog.warning(String.format("Token might need to be refreshed for user\n%s\nwith err:\n %s",
+                                fitbitUser, errorArrayNode));
+                        JsonNode errNode = errorArrayNode.get(0);
+                        String errorType = errNode.get(AccessTokenResponseKey.ERROR_TYPE.toString()).asText();
+                        if(errorType.equals("expired_token")){
+                            colorLog.warning("errorType : " + errorType);
+                            if ((fitbitUser = refreshAccessToken(fitbitUser)) != null){
+                                colorLog.warning("refreshed token for user:\n%s\non attempt %s", fitbitUser, attempt+1);
+                                node = authorizedRequest(fitbitUser, url, attempt + 1);
+                                return node; // skip to finall  y clause;
                             } else {
                                 throw new IllegalStateException("failed to refresh token on unauthorized request " +
                                         "for user-id = " + fitbitUser.getId());

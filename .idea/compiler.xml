@@ -11,6 +11,7 @@
         <module name="common" />
         <module name="config-service" />
         <module name="discovery-service" />
+        <module name="ema-service" />
         <module name="fitbit-web-service" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="common" target="1.8" />
       <module name="config-service" target="1.8" />
       <module name="discovery-service" target="1.8" />
+      <module name="ema-service" target="1.8" />
       <module name="fitbit-web-service" target="1.8" />
       <module name="strain-core" target="1.8" />
     </bytecodeTargetLevel>

@@ -68,20 +68,10 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args){
 		colorLogger.info("%s started at port: %s", FitbitWebServiceApplication.class.getName(), config.port);
-		LocalDateTime d =  FitbitAuthenticationService.parseLongTimeParam("2018-08-16T08:15:00.000");
-		LocalDateTime d2 =  FitbitAuthenticationService.parseLongTimeParam("2018-08-05T08:15:00.000");
-		LocalDateTime d3 = FitbitAuthenticationService.parseLongTimeParam("2018-08-16T08:15:30");
-		LocalDateTime d4 = FitbitAuthenticationService.parseLongTimeParam("2018-08-05T20:34:59");
-		FitbitUser user = EntityHelper.iterableToList(userService.list()).get(0);
-		String s= apiService.buildFinegrainActivitiesURI(user, ActivitiesResource.heart, d4, "1min");
-		colorLogger.info(s);
-
-
 	}
 
 	@RequestMapping(value = "/**", method = RequestMethod.OPTIONS)
 	public ResponseEntity PREFLIGHT_BYPASS(){
-		colorLogger.info("PREFLIGHT initiated----");
 		return new ResponseEntity(HttpStatus.OK);
 	}
 
