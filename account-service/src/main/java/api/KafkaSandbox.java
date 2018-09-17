@@ -37,7 +37,6 @@ import java.util.logging.Logger;
 @EnableKafka
 public class KafkaSandbox {
     public static Logger log = Logger.getLogger(KafkaSandbox.class.getName());
-
     @Value("${spring.kafka.topics.new-strain-user}")
     public String NEW_STRAIN_USER_TOPIC;
 
@@ -119,7 +118,7 @@ public class KafkaSandbox {
 
     @Bean
     public KafkaAdmin admin(){
-        log.info("\n----> " + bootstrapServersLocation);
+        log.info("----> " + bootstrapServersLocation);
         Map<String, Object> configs = new HashMap<>();
         configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServersLocation);
         return new KafkaAdmin(configs);

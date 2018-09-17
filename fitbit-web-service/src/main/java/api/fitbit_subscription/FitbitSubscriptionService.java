@@ -1,23 +1,38 @@
-package api.fitbit_account.fitbit_subscription;
+package api.fitbit_subscription;
 
 import api.FitbitConstantEnvironment;
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_user.FitbitUser;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+import util.ColorLogger;
+import util.EntityHelper;
 import util.Validation;
 
+import javax.management.Notification;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
+import java.util.logging.Logger;
 
 @Service
 public class FitbitSubscriptionService {
+    private static Logger logger = Logger.getLogger(FitbitSubscriptionService.class.getSimpleName());
+    private static ColorLogger colorLogger = new ColorLogger(logger);
     @Autowired
     private FitbitAuthenticationService authenticationService;
 
     @Autowired
     private FitbitConstantEnvironment constantEnvironment;
 
+    @Autowired
     public static final String SUBSCRIPTION_ID = "320";
     public static final List<CollectionType> subscriptionList = Arrays.asList(CollectionType.activities, CollectionType.sleep);
 
@@ -54,6 +69,8 @@ public class FitbitSubscriptionService {
         JsonNode node = authenticationService.authorizedRequest(user, listingURI);
         return node;
     }
+
+    /** URI paths */
 
     public JsonNode deleteSubscriptionByUser(FitbitUser user, CollectionType collectionType){
         Validation.checkNotNull(user, "Fitbit user cannot be nul in subscribeUser");

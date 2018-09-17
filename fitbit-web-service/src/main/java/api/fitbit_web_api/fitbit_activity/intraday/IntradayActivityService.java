@@ -1,5 +1,6 @@
 package api.fitbit_web_api.fitbit_activity.intraday;
 
+import api.IFitbitQueryService;
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_profile.FitbitProfile;
 import api.fitbit_account.fitbit_profile.FitbitProfileService;
@@ -44,7 +45,7 @@ import static api.fitbit_web_api.fitbit_activity.ActivityAPIService.getIntraDayA
 import static util.Validation.checkNotNull;
 
 @Service
-public class IntradayActivityService {
+public class IntradayActivityService implements IFitbitQueryService {
     private static Logger logger = Logger.getLogger(IntradayActivityService.class.getSimpleName());
     private static ColorLogger colorLog = new ColorLogger(logger);
 

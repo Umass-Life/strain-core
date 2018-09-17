@@ -1,6 +1,7 @@
 package api.fitbit_web_api.fitbit_heartrate;
 
 import api.FitbitConstantEnvironment;
+import api.IFitbitQueryService;
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_profile.FitbitProfile;
 import api.fitbit_account.fitbit_profile.FitbitProfileService;
@@ -24,7 +25,7 @@ import static api.fitbit_account.fitbit_auth.FitbitAuthenticationService.parseTi
 import static util.Validation.checkNotNull;
 
 @Service
-public class FitbitHeartrateAPIService {
+public class FitbitHeartrateAPIService implements IFitbitQueryService {
     private static final Logger logger = Logger.getLogger(FitbitHeartrateAPIService.class.getSimpleName());
     private static final ColorLogger colorLog = new ColorLogger(logger);
 

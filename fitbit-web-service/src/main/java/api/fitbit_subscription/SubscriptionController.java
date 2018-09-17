@@ -1,11 +1,15 @@
-package api.fitbit_account.fitbit_subscription;
+package api.fitbit_subscription;
 
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_account.fitbit_user.FitbitUserService;
+import api.fitbit_web_api.FitbitNotificationService;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import util.ColorLogger;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -33,6 +38,9 @@ public class SubscriptionController {
 
     @Autowired
     private FitbitSubscriptionService subscriptionService;
+
+    @Autowired
+    private FitbitNotificationService notificationService;
 
     @RequestMapping(value="/webhook", method = RequestMethod.GET)
     public ResponseEntity webhook(@RequestParam(value="verify") String verify){
@@ -107,7 +115,6 @@ public class SubscriptionController {
                                     @RequestParam(value="r",required=true) String resource){
         Map<String, Object> map = new HashMap<>();
         try {
-
             CollectionType type = CollectionType.valueOf(resource);
             FitbitUser fitbitUser = getFitbitUser(fid, id);
             JsonNode node = subscriptionService.subscribeUser(fitbitUser, type);
@@ -118,6 +125,28 @@ public class SubscriptionController {
             colorLogger.severe(e.getMessage());
             map = new HashMap<>();
             map.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(map);
+        }
+    }
+
+    @RequestMapping(value = "/notifications/debug", method = RequestMethod.POST)
+    public ResponseEntity testNotification(@RequestBody Map<String, Object> json){
+        Map<String, Object> map = new HashMap<>();
+        try{
+            ObjectMapper om = new ObjectMapper();
+            ObjectNode node = om.createObjectNode();
+            node.put("time", new Date().toString());
+            node.put("data", json.toString());
+            colorLogger.info("SEND " + node);
+            notificationService.notifyDebug(node);
+            map.put("success", true);
+            return ResponseEntity.ok(map);
+        } catch (Exception e){
+            e.printStackTrace();
+            colorLogger.severe(e.getMessage());
+            map = new HashMap<>();
+            map.put("error", e.getMessage());
+            map.put("success", false);
             return ResponseEntity.badRequest().body(map);
         }
     }
@@ -139,5 +168,4 @@ public class SubscriptionController {
         }
         return fitbitUser;
     }
-
 }

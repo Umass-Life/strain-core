@@ -1,4 +1,4 @@
-package api.fitbit_account.fitbit_subscription;
+package api.fitbit_subscription;
 
 public enum CollectionType {
     activities("activities"),

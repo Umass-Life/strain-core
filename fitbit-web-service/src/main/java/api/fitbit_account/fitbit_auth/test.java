@@ -1,13 +1,7 @@
 package api.fitbit_account.fitbit_auth;
 
-import api.fitbit_account.fitbit_subscription.CollectionType;
+import api.fitbit_subscription.CollectionType;
 import org.apache.commons.codec.binary.Base64;
-import util.EntityHelper;
-
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.util.*;
-import java.util.function.Supplier;
 
 public class test {
 

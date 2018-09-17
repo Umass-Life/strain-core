@@ -1,6 +1,7 @@
 package api.fitbit_account.fitbit_profile;
 
 import api.FitbitConstantEnvironment;
+import api.IFitbitQueryService;
 import api.constants.AccessTokenResponseKey;
 import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_user.FitbitUser;
@@ -23,7 +24,7 @@ import java.util.logging.Logger;
 import static util.Validation.checkNotNull;
 
 @Service
-public class FitbitProfileService {
+public class FitbitProfileService implements IFitbitQueryService {
 
     private final Logger logger = Logger.getLogger(FitbitProfileService.class.getName());
     private final ColorLogger colorLogger = new ColorLogger(logger);

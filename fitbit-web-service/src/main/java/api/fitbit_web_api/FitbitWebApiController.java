@@ -95,7 +95,6 @@ public class FitbitWebApiController {
                     }
                 });
 
-
                 String intraname = String.format("Intra: %s-[%s]-[%s]", fitbitUser.getFitbitId(), d1, d2);
                 FetchTask intraFetch = FetchTask.of(intraname, () -> {
                     colorLog.info(intraname);
@@ -117,15 +116,7 @@ public class FitbitWebApiController {
             taskBatchQ.add(taskBatch);
             cur = to;
         }
-//        for(List<FetchTask> fs : taskBatchQ){
-//            System.out.println();
-//            for(FetchTask f : fs){
-//                System.out.println(f.getName());
-//            }
-//        }
-//
-//        colorLog.info(taskBatchQ.size());
-//        if (true) return ResponseEntity.ok("");
+
         try {
             Timer timer = new Timer("Timer");
             TimerTask repeatedTask = new TimerTask() {

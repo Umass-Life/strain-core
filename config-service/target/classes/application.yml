@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: file://${user.home}/Documents/code/web/sample-projects/strain-config
+          uri: file:///Users/nsimsiri/Documents/code/web/sample-projects/strain-config
   application:
     name: config-service
 
