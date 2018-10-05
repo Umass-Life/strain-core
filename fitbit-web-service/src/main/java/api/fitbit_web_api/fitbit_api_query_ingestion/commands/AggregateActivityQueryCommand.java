@@ -4,16 +4,22 @@ import api.IFitbitQueryService;
 import api.fitbit_account.fitbit_user.FitbitUser;
 import api.fitbit_web_api.fitbit_activity.aggregate.AggregateActivityService;
 import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResource;
+import api.fitbit_web_api.fitbit_activity.constants.ActivitiesResourceAggregate;
 import api.fitbit_web_api.fitbit_api_query_ingestion.IFitbitQueryCommand;
 import api.fitbit_web_api.fitbit_api_query_ingestion.command_factories.AggregateActivityQueryCommandFactory;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class AggregateActivityQueryCommand implements IFitbitQueryCommand {
     private AggregateActivityService activityService;
     private FitbitUser fitbitUser;
-    private ActivitiesResource resource;
+    private ActivitiesResourceAggregate resource;
     private LocalDateTime from;
     private LocalDateTime to;
 
@@ -35,7 +41,7 @@ public class AggregateActivityQueryCommand implements IFitbitQueryCommand {
         this.activityService = (AggregateActivityService) service;
     }
 
-    public void setResource(ActivitiesResource resource) {
+    public void setResource(ActivitiesResourceAggregate resource) {
         this.resource = resource;
     }
 
@@ -49,7 +55,15 @@ public class AggregateActivityQueryCommand implements IFitbitQueryCommand {
 
     @Override
     public JsonNode executeSync() {
-        return null;
+        ObjectMapper m = new ObjectMapper();
+        Set<Object> objs = new HashSet<>();
+        objs.add(fitbitUser);
+        objs.add(resource);
+        objs.add(from);
+        objs.add(to);
+        return m.valueToTree(objs);
     }
+
+
 
 }

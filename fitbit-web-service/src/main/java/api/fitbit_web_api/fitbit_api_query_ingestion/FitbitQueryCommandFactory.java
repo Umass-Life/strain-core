@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.Validation;
 
+import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,36 +38,45 @@ public class FitbitQueryCommandFactory {
     private Map<FitbitQueryTypes, IFitbitQueryService> typeToQueryService = null;
     private Map<FitbitQueryTypes, IFitbitQueryCommandFactory> typeToCommandFactory = null;
 
-    private final Map<FitbitQueryTypes, IFitbitQueryService> initQueryServices(){
-        Map<FitbitQueryTypes, IFitbitQueryService> map = new HashMap<>();
-        map.put(FitbitQueryTypes.PROFILE, profileService);
-        map.put(FitbitQueryTypes.AGGREGATE, aggregateActivityService);
-        map.put(FitbitQueryTypes.INTRADAY, intradayActivityService);
-        map.put(FitbitQueryTypes.SLEEP, sleepAPIService);
-        map.put(FitbitQueryTypes.HEART, heartrateAPIService);
-        return map;
+    @PostConstruct
+    public void init(){
+        initQueryServices();
+        initQueryCommandFactories();
     }
 
-    private final Map<FitbitQueryTypes, IFitbitQueryCommandFactory> initQueryCommandFactories(){
-        Map<FitbitQueryTypes, IFitbitQueryCommandFactory> map = new HashMap<>();
-        map.put(FitbitQueryTypes.PROFILE, new ProfileQueryCommandFactory());
-        map.put(FitbitQueryTypes.AGGREGATE, new AggregateActivityQueryCommandFactory());
-        map.put(FitbitQueryTypes.INTRADAY, new IntradayActivityQueryCommandFactory());
-        map.put(FitbitQueryTypes.SLEEP, new SleepQueryCommandFactory());
-        map.put(FitbitQueryTypes.HEART, new HeartrateQueryCommandFactory());
-        return map;
+    private void initQueryServices(){
+        if (this.typeToQueryService == null){
+            final Map<FitbitQueryTypes, IFitbitQueryService> map = new HashMap<>();
+            map.put(FitbitQueryTypes.PROFILE, profileService);
+            map.put(FitbitQueryTypes.AGGREGATE, aggregateActivityService);
+            map.put(FitbitQueryTypes.INTRADAY, intradayActivityService);
+            map.put(FitbitQueryTypes.SLEEP, sleepAPIService);
+            map.put(FitbitQueryTypes.HEART, heartrateAPIService);
+
+            this.typeToQueryService = map;
+        }
+    }
+
+    private final void initQueryCommandFactories(){
+        if (this.typeToCommandFactory == null){
+            Map<FitbitQueryTypes, IFitbitQueryCommandFactory> map = new HashMap<>();
+            map.put(FitbitQueryTypes.PROFILE, new ProfileQueryCommandFactory());
+            map.put(FitbitQueryTypes.AGGREGATE, new AggregateActivityQueryCommandFactory());
+            map.put(FitbitQueryTypes.INTRADAY, new IntradayActivityQueryCommandFactory());
+            map.put(FitbitQueryTypes.SLEEP, new SleepQueryCommandFactory());
+            map.put(FitbitQueryTypes.HEART, new HeartrateQueryCommandFactory());
+
+            this.typeToCommandFactory = map;
+        }
     }
 
     public IFitbitQueryService getQueryService(String queryType){
         FitbitQueryTypes type = FitbitQueryTypes.valueOf(queryType.toUpperCase());
         return getQueryService(type);
-
     }
 
     public IFitbitQueryService getQueryService(FitbitQueryTypes queryTypes){
-        if (this.typeToQueryService == null){
-            this.typeToQueryService = initQueryServices();
-        }
+        initQueryServices();
         return this.typeToQueryService.get(queryTypes);
     }
 
@@ -76,9 +86,7 @@ public class FitbitQueryCommandFactory {
     }
 
     public IFitbitQueryCommandFactory getQueryCommandFactory(FitbitQueryTypes queryType){
-        if (this.typeToCommandFactory == null){
-            this.typeToCommandFactory = initQueryCommandFactories();
-        }
+        initQueryCommandFactories();
         return this.typeToCommandFactory.get(queryType);
     }
 
@@ -90,7 +98,7 @@ public class FitbitQueryCommandFactory {
         IFitbitQueryCommandFactory factory = getQueryCommandFactory(type);
         IFitbitQueryService service = getQueryService(type);
         return factory.buildCommand(service, fitbitUser,parameters);
-
     }
+
 
 }

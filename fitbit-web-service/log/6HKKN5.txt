@@ -13,3 +13,33 @@
   "tokenType" : "Bearer",
   "expiresIn" : 3600
 }
+
+
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (master)]$ git checkout abc
+Switched to branch 'abc'
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (abc)]$ git add -A
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (abc)]$ git commit -m "dkfjd"
+On branch abc
+nothing to commit, working tree clean
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (abc)]$ git checkout master
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 1 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (master)]$ git add -A
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (master)]$ git commit -m "kdjfk"
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (master)]$ git push
+To https://github.com/nsimsiri-psn/cmpsci320-git-tutorial.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/nsimsiri-psn/cmpsci320-git-tutorial.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[nsimsiri@nsimsiri-pro cmpsci320-git-tutorial (master)]$ gi
