@@ -31,8 +31,14 @@ public class StrainUserService {
         return userRepository.save(new StrainUser(email, password));
     }
 
-    public StrainUser createWithUniqueEmail(String email, String password){
-        return null;
+    public StrainUser createWithUniqueEmail(String email, String password) throws NonUniqueException{
+        checkNotNull(email);
+        Optional<StrainUser> userOpt = getByEmail(email);
+        if(userOpt.isPresent()) {
+            StrainUser user = userOpt.get();
+            throw new NonUniqueException(String.format("Email %s exists for user-id with email %s ", user.getId(), user.getEmail()));
+        }
+        return create(email, password);
     }
 
     public static Map<String, Object> buildAuthenticationResponse(boolean isAuthenticated, String username,

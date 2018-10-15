@@ -8,6 +8,7 @@ import api.fitbit_account.fitbit_profile.FitbitProfileService;
 import api.fitbit_web_api.fitbit_activity.aggregate.AggregateActivityService;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import util.ColorLogger;
 import util.EntityHelper;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
@@ -46,6 +48,9 @@ public class FitbitUserController {
     @Autowired
     AggregateActivityService aggregateActivityService;
 
+    @Value("${view.uri}")
+    String WEBAPP_URI_HOME;
+
     @RequestMapping(value = "/authorize", method= RequestMethod.GET)
     public ResponseEntity authorizeFitbit(@RequestParam(value="strainUserId") String strainUserIdString) throws URISyntaxException {
         Map<String, Object> responseJson = new HashMap<>();
@@ -68,7 +73,7 @@ public class FitbitUserController {
     }
 
     @RequestMapping(value="/received", method= RequestMethod.GET)
-    public ResponseEntity<Map> api_callback(HttpServletRequest req){
+    public void api_callback(HttpServletRequest req, HttpServletResponse res){
         Map<String, Object> responseJson = new HashMap<>();
         try {
 
@@ -109,7 +114,6 @@ public class FitbitUserController {
                 colorLog.info("--user created");
             }
 
-
             colorLog.info("4) obtained FitbitUser --- \n%s\n", fitbitUser);
             JsonNode profileJsonNode = fitbitProfileService.fetchProfileFromWebAPI(fitbitUser);
             if (profileJsonNode == null){
@@ -138,13 +142,14 @@ public class FitbitUserController {
             responseJson.put(FitbitProfile.SINGULAR, fitbitProfile);
             responseJson.put("activitySummary", activityJson);
 
-            return ResponseEntity.ok(responseJson);
         } catch (Exception e){
             e.printStackTrace();
             colorLog.severe(e.getMessage());
             responseJson.put("error", e.getMessage());
-            return ResponseEntity.badRequest().body(responseJson);
+//            return ResponseEntity.badRequest().body(responseJson);
         }
+        res.setHeader("Location", WEBAPP_URI_HOME);
+        res.setStatus(302);
     }
 
     @RequestMapping(value = "/renew", method = RequestMethod.POST)

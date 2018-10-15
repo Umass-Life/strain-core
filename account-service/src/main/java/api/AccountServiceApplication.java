@@ -48,7 +48,6 @@ public class AccountServiceApplication implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args){
         log.info(String.format("\n%s running...", AccountServiceApplication.class.getName()));
-        log.info("\n"+service.create("hello", "world"));
 
 
 //        ProducerRecord<Integer, String> producerRecord = new ProducerRecord<>(configWrap.get_NEW_STRAIN_USER_TOPIC(), "HELLO");
@@ -77,25 +76,11 @@ public class AccountServiceApplication implements ApplicationRunner {
 //        }
     }
 
-    @Bean
-    public AuditorAware<String> auditorAware(){
-        return new AuditorAwareImpl();
-    }
-
-
-
     @RequestMapping(value="/ping", method = RequestMethod.GET)
     public ResponseEntity<String> ping(){
         return ResponseEntity.ok("pong");
     }
 
-
-    public static class AuditorAwareImpl implements AuditorAware<String>{
-        @Override
-        public Optional<String> getCurrentAuditor() {
-            return Optional.of("admin");
-        }
-    }
 
     @Component
     public static class ConfigWrap {

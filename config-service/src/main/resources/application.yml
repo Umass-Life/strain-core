@@ -1,7 +1,12 @@
-server:
+strain:
+  domain: localhost
   port: 8769
 
+server:
+  port: ${strain.port}
+
 spring:
+  profiles: dev
   cloud:
     config:
       server:
@@ -9,11 +14,33 @@ spring:
           uri: file://${user.home}/Documents/code/web/sample-projects/strain-config
   application:
     name: config-service
-
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8770/eureka
+      defaultZone: http://${strain.domain}:8770/eureka
+  instance:
+    preferIpAddress: true
+
+---
+strain:
+  domain: 10.0.0.183 # production inet
+  port: 8769
+
+server:
+  port: ${strain.port}
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://home/strain-config
+  application:
+    name: config-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${strain.domain}:8770/eureka
   instance:
     preferIpAddress: true

@@ -1,9 +1,42 @@
+#spring:
+#  application:
+#    name: discovery-service
+#  cloud:
+#    config:
+#      uri: http://localhost:8769
+#eureka:
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+
+
+strain:
+    config:
+      domain: localhost
+      port: 8769
 spring:
+  profiles: dev
   application:
     name: discovery-service
   cloud:
     config:
-      uri: http://localhost:8769
+      uri: http://${strain.config.domain}:${strain.config.port}
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+---
+strain:
+  config:
+    domain: 10.0.0.183 #production server inet of config-server
+    port: 8769
+spring:
+  profiles: prod
+  application:
+    name: discovery-service
+  cloud:
+    config:
+      uri: http://${strain.config.domain}:${strain.config.port}
 eureka:
   client:
     registerWithEureka: false

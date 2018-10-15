@@ -82,8 +82,6 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 
 	}
 
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(FitbitWebServiceApplication.class, args);
 

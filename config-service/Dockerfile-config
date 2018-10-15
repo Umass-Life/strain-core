@@ -1,0 +1,9 @@
+FROM strain-alpine-jdk:base
+MAINTAINER nsimsiri
+COPY target/config-service-1.0-SNAPSHOT.jar /opt/lib/
+COPY /src/main/resources/application.yml /opt/lib/
+ADD strain-config /home/strain-config
+ENTRYPOINT ["/usr/bin/java"]
+CMD ["-jar", "-Dspring.profiles.active=prod", "/opt/lib/config-service-1.0-SNAPSHOT.jar"]
+EXPOSE 8769
+#

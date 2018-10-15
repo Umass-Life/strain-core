@@ -1,11 +1,10 @@
-api/AccountServiceApplication$ConfigWrap.class
-api/strain_user/StrainUserRepository.class
 api/strain_user/StrainUserService.class
 api/KafkaConfig.class
 api/strain_role/StrainRole.class
+api/AccountServiceApplication.class
+api/AccountServiceApplication$ConfigWrap.class
+api/strain_user/StrainUserRepository.class
 api/strain_user/StrainUserController.class
-api/AccountServiceApplication$AuditorAwareImpl.class
 api/KafkaSandbox$Listener.class
 api/KafkaSandbox.class
 api/strain_user/StrainUser.class
-api/AccountServiceApplication.class
