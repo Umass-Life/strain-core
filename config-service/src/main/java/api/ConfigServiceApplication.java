@@ -34,6 +34,7 @@ public class ConfigServiceApplication implements ApplicationRunner {
 
         log.info(String.format("\n%s running...", ConfigServerApplication.class.getName()));
         log.info(env.getProperty("server.port"));
+        log.info(env.getProperty("strain.domain"));
         log.info(env.getProperty("spring.cloud.config.server.git.uri"));
         try {
             log.info("Inet: " + InetAddress.getLocalHost().getHostName());

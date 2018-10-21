@@ -31,7 +31,7 @@ public class DiscoveryServiceApplication implements ApplicationListener<ServletW
     @Override
     public void onApplicationEvent(ServletWebServerInitializedEvent e){
         log.info("\n-------------\nDiscovery Server started at: " + e.getWebServer().getPort());
-        log.info(env.getProperty("eureka.instance.hostname"));
+        log.info("eureka.instance.hostname: " + env.getProperty("eureka.instance.hostname"));
         log.info("\n" + env.getProperty("spring.cloud.config.uri"));
 
     }
