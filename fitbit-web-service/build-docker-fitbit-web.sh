@@ -3,10 +3,10 @@
 mvn package spring-boot:repackage -DskipTests
 printf "\nCOMPILED FITBIT-WEB-SERVER"
 
-docker build --file=Dockerfile-account --tag=nsimsiri/fitbit-web-service:latest --rm=true .
+docker build --file=Dockerfile-fitbit-web --tag=nsimsiri/fitbit-web-service:latest --rm=true .
 printf "\nBUILT docker\n"
 
-docker push nsimsiri/account:latest
+docker push nsimsiri/fitbit-web-service:latest
 printf "\nPUSH image to repo\n"
 
 #printf "\nRUNNING..."
