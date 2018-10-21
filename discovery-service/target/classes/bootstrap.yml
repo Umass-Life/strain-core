@@ -28,7 +28,7 @@ eureka:
 ---
 strain:
   config:
-    domain: 10.0.0.183 #production server inet of config-server
+    domain: 172.31.50.56 #production server inet of config-server
     port: 8769
 spring:
   profiles: prod

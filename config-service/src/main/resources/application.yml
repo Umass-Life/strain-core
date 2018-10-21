@@ -23,7 +23,7 @@ eureka:
 
 ---
 strain:
-  domain: 10.0.0.183 # production inet
+  domain: 172.31.50.56 # production inet
   port: 8769
 
 server:

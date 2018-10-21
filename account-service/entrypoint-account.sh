@@ -1,6 +1,6 @@
 #! /bin/bash
 
-host=10.0.0.183
+host=172.31.50.56
 postgres_port=5432
 
 port=8769
