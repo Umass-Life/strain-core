@@ -7,8 +7,11 @@ rm -rf strain-config
 cp -r ../../strain-config ./
 printf "\nCOPIED ../../strain-config\n"
 
-docker build --file=Dockerfile-config --tag=config-service:latest --rm=true .
+docker build --file=Dockerfile-config --tag=nsimsiri/config-service:latest --rm=true .
 printf "\nBUILT docker\n"
 
-printf "\nRUNNING..."
-docker run --rm=true --name=config-service --publish=8769:8769 config-service:latest
+docker push nsimsiri/config-service:latest
+printf "\nPUSH image to repo\n"
+
+#printf "\nRUNNING..."
+#docker run --rm=true --name=config-service --publish=8769:8769 nsimsiri/config-service:latest

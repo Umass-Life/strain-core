@@ -27,7 +27,7 @@ fi
 
 if [ $1 = "3" ]
 then
-  cmd="mvn spring-boot:run -pl api-gateway-service"
+  cmd="mvn spring-boot:run -Dspring-boot.run.profiles=prod -pl api-gateway-service"
   echo $cmd
   eval $cmd;
 fi

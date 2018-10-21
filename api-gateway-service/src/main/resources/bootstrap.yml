@@ -1,7 +1,15 @@
 spring:
+  profiles: dev
   application:
     name: api-gateway-service
   cloud:
     config:
       uri: http://localhost:8769
-
+---
+spring:
+  profiles: prod
+  application:
+    name: api-gateway-service
+  cloud:
+    config:
+      uri: http://10.0.0.183:8769

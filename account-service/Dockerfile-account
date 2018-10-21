@@ -1,0 +1,12 @@
+FROM strain-alpine-jdk:base
+MAINTAINER nsimsiri
+ARG app=account-service-1.0-SNAPSHOT.jar
+RUN echo $app
+COPY /target/$app /opt/lib/
+COPY entrypoint-account.sh /opt/lib
+COPY wait-for-it.sh /opt/lib
+RUN chmod +x /opt/lib/entrypoint-account.sh
+RUN chmod +x /opt/lib/wait-for-it.sh
+#ENTRYPOINT ["/bin/ash"]
+ENTRYPOINT ["/opt/lib/entrypoint-account.sh"]
+EXPOSE 8771

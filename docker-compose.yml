@@ -1,0 +1,90 @@
+version: "3.3"
+services:
+  config-service:
+    # replace username/repo:tag with your name and image details
+    image: nsimsiri/config-service:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    build:
+      context: .
+      dockerfile: ./config-service/Dockerfile-config
+    ports:
+      - "8769:8769"
+
+  discovery-service:
+    image: nsimsiri/discovery-service:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    build:
+      context: .
+      dockerfile: ./discovery-service/Dockerfile-discovery
+    ports:
+      - "8770:8770"
+    depends_on:
+      - config-service
+
+  gateway-service:
+    image: nsimsiri/gateway-service:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    build:
+      context: .
+      dockerfile: ./api-gateway-service/Dockerfile-gateway
+
+    ports:
+      - "8768:8768"
+    depends_on:
+      - config-service
+      - discovery-service
+
+  postgres:
+    image: postgres:alpine
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: strain
+      POSTGRES_DB: strain
+    ports:
+      - "5432:5432"
+#
+  fitbit-web-service:
+    image: nsimsiri/fitbit-web-service:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    build:
+      context: .
+      dockerfile: ./fitbit-web-service/Dockerfile-fitbit-web
+    ports:
+      - "8771:8771"
+    depends_on:
+      - config-service
+      - discovery-service
+      - postgres
+
+  account-service:
+    image: nsimsiri/account-service:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    build:
+      context: .
+      dockerfile: ./account-service/Dockerfile-fitbit-web
+    ports:
+    - "8772:8772"
+    depends_on:
+    - config-service
+    - discovery-service
+    - postgres
+#

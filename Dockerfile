@@ -6,6 +6,8 @@ RUN apk add --no-cache openjdk8 curl
 # Update aptitude with new repo
 RUN apk update
 
+RUN apk add --update bash && rm -rf /var/cache/apk/*
+
 # Install software
 RUN apk add --no-cache git
 # Make ssh dir

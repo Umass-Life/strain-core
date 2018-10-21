@@ -1,5 +1,6 @@
 package api;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -20,10 +21,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
+    @Value("${server.uri}")
+    private String machineInetUri;
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        System.out.println(String.format("http://%s:3000", machineInetUri));
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins(String.format("http://%s:3000", machineInetUri))
+                .allowedOrigins("*")
                 .allowedMethods("POST", "GET", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("Content-Type",
                         "Access-Control-Allow-Origin",

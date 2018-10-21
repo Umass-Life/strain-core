@@ -55,6 +55,7 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 	@Autowired
 	FitbitUserService userService;
 
+
 	@Component
 	public static class ApplicationConfig {
 		public String port;
