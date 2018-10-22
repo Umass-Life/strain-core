@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-host=10.0.0.183
+host=172.31.50.56
 port=8769
 echo 'waiting for config-service.'
 until $(curl --output /dev/null --silent --head --fail http://$host:$port/ping); do

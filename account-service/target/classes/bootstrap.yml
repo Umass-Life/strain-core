@@ -14,4 +14,4 @@ spring:
     name: account-service
   cloud:
     config:
-      uri: http://10.0.0.183:8769
+      uri: http://172.31.50.56:8769

@@ -1,9 +1,10 @@
 #!/bin/ash
 
-host=10.0.0.183
+host=172.31.50.56
 
 port=8769
 echo 'gateway-service: waiting for config-service.'
+echo $host
 until $(curl --output /dev/null --silent --head --fail http://$host:$port/ping); do
     printf "."
     sleep 3

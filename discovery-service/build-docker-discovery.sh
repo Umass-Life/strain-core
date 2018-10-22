@@ -11,6 +11,6 @@ printf "\nBUILT docker\n"
 docker push nsimsiri/discovery-service:latest
 printf "\nPUSH image to repo\n"
 
-printf "\nRUNNING..."
-docker run --rm=true --name=discovery-service --publish=8770:8770 nsimsiri/discovery-service:latest
+#printf "\nRUNNING..."
+#docker run --rm=true --name=discovery-service --publish=8770:8770 nsimsiri/discovery-service:latest
 

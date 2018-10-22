@@ -33,6 +33,7 @@ public class APIGatewayService implements ApplicationRunner {
     public void run(ApplicationArguments args){
         log.info(String.format("\n%s running...", APIGatewayService.class.getName()));
         log.info(String.format("\n%s PORT", env.getProperty("server.port")));
+        log.info(String.format("\n%s spring.cloud.config.uri", env.getProperty("spring.cloud.config.uri")));
         log.info("\neureka.client.serviceUrl.defaultZone: " + env.getProperty("eureka.client.serviceUrl.defaultZone"));
     }
 

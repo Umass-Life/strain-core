@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domain=10.0.0.183
+domain=172.31.50.56
 
 if [ $1 = "rebuild" ]
 then
