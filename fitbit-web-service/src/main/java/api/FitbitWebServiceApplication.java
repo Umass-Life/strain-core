@@ -11,6 +11,7 @@ import api.fitbit_web_api.fitbit_heartrate.FitbitHeartrateService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,6 +56,9 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 	@Autowired
 	FitbitUserService userService;
 
+	@Autowired
+	private Environment env;
+
 
 	@Component
 	public static class ApplicationConfig {
@@ -66,10 +70,24 @@ public class FitbitWebServiceApplication implements ApplicationRunner {
 		}
 	}
 
+	/*
+	* # The format used for the keystore
+server.ssl.key-store-type=PKCS12
+# The path to the keystore containing the certificate
+server.ssl.key-store=classpath:keystore.p12
+# The password used to generate the certificate
+server.ssl.key-store-password=password
+# The alias mapped to the certificate
+server.ssl.key-alias=tomcat
+	*
+	* */
+
 	@Override
 	public void run(ApplicationArguments args){
 		colorLogger.info("%s started at port: %s", FitbitWebServiceApplication.class.getName(), config.port);
+		colorLogger.info("SSL PROPERTY LOADED: " + env.getProperty("server.ssl.key-store-type"));
 	}
+
 
 	@RequestMapping(value = "/**", method = RequestMethod.OPTIONS)
 	public ResponseEntity PREFLIGHT_BYPASS(){
