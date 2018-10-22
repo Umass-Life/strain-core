@@ -27,4 +27,4 @@ echo 'account-service: waiting for postgreSQL.'
 /opt/lib/wait-for-it.sh -h $host -p $postgres_port -t 0 --strict -- \
 echo "postgreSQL is up"
 
-#/usr/bin/java -jar -Dspring.profiles.active=prod /opt/lib/account-service-1.0-SNAPSHOT.jar
+/usr/bin/java -jar -Dspring.profiles.active=prod /opt/lib/account-service-1.0-SNAPSHOT.jar
