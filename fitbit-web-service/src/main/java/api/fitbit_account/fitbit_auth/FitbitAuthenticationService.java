@@ -599,5 +599,8 @@ public class FitbitAuthenticationService {
         return String.format("%sT%s", date, time);
     }
 
+    public static void main(String[] args){
+        System.out.println(LocalDateTime.parse("2018-05-05"));
+    }
 
 }

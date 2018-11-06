@@ -1,1 +1,4 @@
 /config-service/strain-config
+/secrets
+/fitbit-web-service/secrets
+/account-service/secrets

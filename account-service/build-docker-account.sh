@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cp -r ../secrets ./
+
 mvn package spring-boot:repackage -DskipTests
 printf "\nCOMPILED ACCOUNT-SERVER"
 

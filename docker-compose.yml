@@ -1,5 +1,15 @@
 version: "3.3"
 services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf
+    ports:
+      - 80:80
+      - 433:433
+
+
   config-service:
     # replace username/repo:tag with your name and image details
     image: nsimsiri/config-service:latest

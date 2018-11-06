@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cp -r ../secrets ./
+
 mvn package spring-boot:repackage -DskipTests
 printf "\nCOMPILED FITBIT-WEB-SERVER"
 
@@ -10,4 +12,4 @@ docker push nsimsiri/fitbit-web-service:latest
 printf "\nPUSH image to repo\n"
 
 #printf "\nRUNNING..."
-#docker run --rm=true --name=fitbit-web-service --publish=8772:8772 nsimsiri/fitbit-web-service:latest
+#docker run --rm=true --name=fitbit-web-service --publish=8771:8771 nsimsiri/fitbit-web-service:latest

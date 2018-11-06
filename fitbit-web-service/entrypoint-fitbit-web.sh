@@ -20,9 +20,7 @@ until $(curl --output /dev/null --silent --head --fail http://$host:$port/ping);
 done
 echo "discovery-service is up"
 
-printf "\n"
-echo 'fitbit-web-service: waiting for postgreSQL.'
-
 /opt/lib/wait-for-it.sh -h $host -p $postgres_port -t 0 --strict -- \
 echo "postgreSQL is up"
+#ping www.google.com
 /usr/bin/java -jar -Dspring.profiles.active=prod /opt/lib/fitbit-web-service-1.0-SNAPSHOT.jar

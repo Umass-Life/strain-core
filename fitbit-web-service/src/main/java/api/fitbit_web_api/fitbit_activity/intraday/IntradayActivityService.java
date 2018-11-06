@@ -37,9 +37,7 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import static api.fitbit_account.fitbit_auth.FitbitAuthenticationService.combineDateTime;
-import static api.fitbit_account.fitbit_auth.FitbitAuthenticationService.parseLongTimeParam;
-import static api.fitbit_account.fitbit_auth.FitbitAuthenticationService.parseTimeParam;
+import static api.fitbit_account.fitbit_auth.FitbitAuthenticationService.*;
 import static api.fitbit_web_api.fitbit_activity.ActivityAPIService.getActivitiesKey;
 import static api.fitbit_web_api.fitbit_activity.ActivityAPIService.getIntraDayActivitiesKey;
 import static util.Validation.checkNotNull;
@@ -120,6 +118,15 @@ public class IntradayActivityService implements IFitbitQueryService {
         return factory.get(r);
     }
 
+    public Iterable<AbstractIntradayActivity> list(Long fitbitUserId, ActivitiesResource resource, Integer page, Integer count){
+
+        Specification<AbstractIntradayActivity> specs = whereFitbitUserId(fitbitUserId);
+        IIntradayActivityService service = getService(resource);
+
+        Page pageOut = service.findAll(specs, PageRequest.of(page, count, Sort.Direction.DESC, "dateTime"));
+        return pageOut.getContent();
+    }
+
 
     /***
      *
@@ -140,15 +147,6 @@ public class IntradayActivityService implements IFitbitQueryService {
         Integer savedCount = service.save(activities);
         timer.stop();
         return savedCount;
-    }
-
-    public Iterable<AbstractIntradayActivity> list(Long fitbitUserId, ActivitiesResource resource, Integer page, Integer count){
-
-        Specification<AbstractIntradayActivity> specs = whereFitbitUserId(fitbitUserId);
-        IIntradayActivityService service = getService(resource);
-
-        Page pageOut = service.findAll(specs, PageRequest.of(page, count, Sort.Direction.DESC, "dateTime"));
-        return pageOut.getContent();
     }
 
     public Map<String, Object> fetchAndSave(FitbitUser fitbitUser, Set<ActivitiesResource> resourcePaths,
@@ -201,6 +199,9 @@ public class IntradayActivityService implements IFitbitQueryService {
 
         LocalDateTime fromTime = null;
         LocalDateTime toTime = LocalDateTime.now();
+        if (to != null){
+            toTime = parseTimeParam(to);
+        }
         Optional<AbstractIntradayActivity> latestHr = findLatest(fitbitUser.getId(), r);
         if (from == null){
             if (latestHr.isPresent()){
@@ -212,19 +213,16 @@ public class IntradayActivityService implements IFitbitQueryService {
             }
         } else {
             fromTime = FitbitAuthenticationService.parseTimeParam(from);
-            if (latestHr.isPresent()){
-                LocalDateTime latestDate = EntityHelper.epochToDate(latestHr.get().getDateTime());
-                if (latestDate.isAfter(fromTime)) {
-                    colorLog.warning(latestDate);
-                    fromTime = latestDate;
-                    colorLog.info(">> FETCH FROM LATEST: " + fromTime);
-                }
-            }
+            // change strategy, override request.
+//            if (latestHr.isPresent()){
+//                LocalDateTime latestDate = EntityHelper.epochToDate(latestHr.get().getDateTime());
+//                if (latestDate.isAfter(fromTime)) {
+//                    colorLog.warning(latestDate);
+//                    fromTime = latestDate;
+//                    colorLog.info(">> FETCH FROM LATEST: " + fromTime);
+//                }
+//            }
 
-        }
-
-        if (to != null){
-            toTime = FitbitAuthenticationService.parseTimeParam(to);
         }
 
         colorLog.info("from=%s\nto=%s", fromTime, toTime);

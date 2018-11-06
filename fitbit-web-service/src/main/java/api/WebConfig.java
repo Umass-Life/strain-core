@@ -21,15 +21,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    @Value("${server.uri}")
-    private String machineInetUri;
+    @Value("${view.uri}")
+    private String viewUri; // from application.yml
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        System.out.println(String.format("http://%s:3000", machineInetUri));
         registry.addMapping("/**")
-                .allowedOrigins(String.format("http://%s:3000", machineInetUri))
-                .allowedOrigins("*")
+                .allowedOrigins(viewUri)
                 .allowedMethods("POST", "GET", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("Content-Type",
                         "Access-Control-Allow-Origin",
