@@ -5,6 +5,7 @@ RUN echo $app
 COPY /target/$app /opt/lib/
 COPY entrypoint-fitbit-web.sh /opt/lib
 COPY wait-for-it.sh /opt/lib
+COPY /secrets/api_umasslife_net.pfx /opt/lib
 RUN chmod +x /opt/lib/entrypoint-fitbit-web.sh
 RUN chmod +x /opt/lib/wait-for-it.sh
 #ENTRYPOINT ["/bin/ash"]

@@ -1,5 +1,6 @@
 package api;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -18,12 +19,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    private static String publicDomain = "54.86.8.246";
+    @Value("${view.uri}")
+    private String viewUri; // from application.yml
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        System.out.printf("\n\n%s\n\n", String.format("http://%s:3000", publicDomain));
         registry.addMapping("/**")
-                .allowedOrigins(String.format("http://%s:3000", publicDomain))
+                .allowedOrigins(viewUri)
                 .allowedMethods("POST", "GET", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("Content-Type",
                         "Access-Control-Allow-Origin",

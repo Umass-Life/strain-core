@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Controller;
@@ -25,8 +26,12 @@ import java.util.logging.Logger;
 @Controller
 @RequestMapping(value = "/fitbit")
 public class SubscriptionController {
+
 //    private final static String verificationCode = "d8afed4cd5d690d9224fd3a403d10166ac59e82a7e270223cbdcce0307d6a970";
-    private final static String verificationCode = "1e5b7ab2d2e4c1876cfed321a08f23e40dc519c20d8500cab72337cf3270c583";
+//    private final static String verificationCode = "1e5b7ab2d2e4c1876cfed321a08f23e40dc519c20d8500cab72337cf3270c583";
+    @Value("${fitbit.verificationCode}")
+    private String verificationCode;
+
     private Logger logger = Logger.getLogger(SubscriptionController.class.getSimpleName());
     private ColorLogger colorLogger = new ColorLogger(logger);
 
@@ -44,6 +49,7 @@ public class SubscriptionController {
 
     @RequestMapping(value="/webhook", method = RequestMethod.GET)
     public ResponseEntity webhook(@RequestParam(value="verify") String verify){
+        colorLogger.info("Stored verificationCode: " + verificationCode);
         try {
             colorLogger.info("Fitbit called /webhook -> VERIFICATION CODE: " +  verify);
             if (verify!=null && verify.length() > 0){
