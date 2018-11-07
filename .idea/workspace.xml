@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5648ee4d-dc9b-4e79-af03-7f626f883425" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/account-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/account-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/fitbit-web-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/fitbit-web-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,7 +60,7 @@
           <entry key="HOCON" value="195" />
           <entry key="JAVA" value="16030" />
           <entry key="PLAIN_TEXT" value="909" />
-          <entry key="YAML" value="2272" />
+          <entry key="YAML" value="2274" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -82,7 +80,7 @@
           <entry key="java" value="16030" />
           <entry key="py" value="327" />
           <entry key="sh" value="2018" />
-          <entry key="yml" value="2272" />
+          <entry key="yml" value="2274" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -141,7 +139,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
+            <state relative-caret-position="266">
               <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
             </state>
           </provider>
@@ -150,8 +148,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="168">
+              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -357,7 +355,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541583099211" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541584466837" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -604,12 +602,12 @@
       <workItem from="1540955871141" duration="5560000" />
       <workItem from="1541137125459" duration="294000" />
       <workItem from="1541438487126" duration="4198000" />
-      <workItem from="1541529519008" duration="4630000" />
+      <workItem from="1541529519008" duration="5556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195397000" />
+    <option name="totallyTimeSpent" value="196323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1012,15 +1010,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="266">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="168">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
     </entry>

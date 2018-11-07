@@ -10,7 +10,7 @@ services:
       - ./secrets/api_umasslife_net.crt:/etc/ssl/api_umasslife_net.crt
     ports:
       - 80:80
-      - 433:433
+      - 443:443
 
 
   config-service:
