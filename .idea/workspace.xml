@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5648ee4d-dc9b-4e79-af03-7f626f883425" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config-service/strain-config/account-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/account-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/fitbit-web-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/fitbit-web-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_subscription/SubscriptionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_subscription/SubscriptionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,11 +49,11 @@
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -55,11 +61,11 @@
         <counts>
           <entry key="Bash" value="2009" />
           <entry key="Dockerfile" value="682" />
-          <entry key="Enforced Plain Text" value="15" />
+          <entry key="Enforced Plain Text" value="25" />
           <entry key="HOCON" value="195" />
-          <entry key="JAVA" value="16030" />
+          <entry key="JAVA" value="16043" />
           <entry key="PLAIN_TEXT" value="909" />
-          <entry key="YAML" value="2274" />
+          <entry key="YAML" value="2288" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -72,14 +78,14 @@
           <entry key="Dockerfile-discovery" value="250" />
           <entry key="Dockerfile-fitbit-web" value="257" />
           <entry key="Dockerfile-gateway" value="131" />
-          <entry key="conf" value="246" />
+          <entry key="conf" value="256" />
           <entry key="dummy" value="25" />
           <entry key="env" value="130" />
           <entry key="gitignore" value="55" />
-          <entry key="java" value="16030" />
+          <entry key="java" value="16043" />
           <entry key="py" value="327" />
           <entry key="sh" value="2018" />
-          <entry key="yml" value="2274" />
+          <entry key="yml" value="2288" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -95,23 +101,24 @@
           <entry key="env" value="3" />
           <entry key="gitignore" value="3" />
           <entry key="iml" value="6" />
-          <entry key="java" value="167" />
+          <entry key="java" value="170" />
           <entry key="py" value="1" />
-          <entry key="sh" value="92" />
+          <entry key="sh" value="95" />
           <entry key="txt" value="1" />
           <entry key="xml" value="15" />
-          <entry key="yml" value="40" />
+          <entry key="yml" value="41" />
+          <entry key="yml#" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="91" />
+          <entry key="Bash" value="94" />
           <entry key="Dockerfile" value="37" />
           <entry key="IDEA_MODULE" value="6" />
-          <entry key="JAVA" value="167" />
-          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="JAVA" value="170" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="XML" value="15" />
-          <entry key="YAML" value="40" />
+          <entry key="YAML" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.test" />
@@ -129,26 +136,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="53" column="53" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            <state relative-caret-position="434">
+              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+        <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-396">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="616">
+              <caret line="44" column="55" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -172,6 +179,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
               <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -267,7 +283,6 @@
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/data_ingestion/fitbit_batch/BatchProcessingService.java" />
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.java" />
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/IntradayActivityService.java" />
-        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java" />
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/SSLConfiguration.java" />
         <option value="$PROJECT_DIR$/account-service/src/main/java/api/WebConfig.java" />
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/WebConfig.java" />
@@ -276,8 +291,9 @@
         <option value="$PROJECT_DIR$/fitbit-web-service/Dockerfile-fitbit-web" />
         <option value="$PROJECT_DIR$/account-service/Dockerfile-account" />
         <option value="$PROJECT_DIR$/nginx/build_nginx.sh" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java" />
         <option value="$PROJECT_DIR$/nginx/nginx.conf" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
       </list>
     </option>
   </component>
@@ -310,7 +326,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -348,13 +363,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541584567834" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541612275204" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -601,12 +617,13 @@
       <workItem from="1540955871141" duration="5560000" />
       <workItem from="1541137125459" duration="294000" />
       <workItem from="1541438487126" duration="4198000" />
-      <workItem from="1541529519008" duration="5891000" />
+      <workItem from="1541529519008" duration="10125000" />
+      <workItem from="1541617950215" duration="5521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196658000" />
+    <option name="totallyTimeSpent" value="206413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,7 +638,7 @@
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990099" visible="true" weight="0.16027689" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990099" visible="true" weight="0.16187434" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -678,27 +695,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-service/strain-config/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-service/build-docker-config.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-service/config-service.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -793,13 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/entrypoint-account.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway-service/Dockerfile-gateway">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -832,13 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -976,10 +958,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/#docker-compose.yml#">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strain.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/entrypoint-fitbit-web.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="53" column="53" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
+        <state relative-caret-position="434">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -990,8 +996,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/strain.sh">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/config-service/build-docker-config.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/entrypoint-account.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit-web-service/Dockerfile-fitbit-web">
       <provider selected="true" editor-type-id="text-editor">
@@ -1000,24 +1024,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/entrypoint-fitbit-web.sh">
+    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="616">
+          <caret line="44" column="55" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nginx/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state relative-caret-position="126">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
         </state>
       </provider>
     </entry>

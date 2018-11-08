@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @Controller
-@RequestMapping(value = "/fitbit")
+@RequestMapping(value = "/subscription")
 public class SubscriptionController {
 
 //    private final static String verificationCode = "d8afed4cd5d690d9224fd3a403d10166ac59e82a7e270223cbdcce0307d6a970";
@@ -76,7 +76,7 @@ public class SubscriptionController {
         }
     }
 
-    @RequestMapping(value="/subscription", method = RequestMethod.GET)
+    @RequestMapping(value={"/", ""}, method = RequestMethod.GET)
     public ResponseEntity listSubscription(@RequestParam(value="fid",required=false) String fid,
                                            @RequestParam(value="id",required=false) Long id){
         Map<String, Object> map = new HashMap<>();
@@ -94,7 +94,7 @@ public class SubscriptionController {
         }
     }
 
-    @RequestMapping(value="/subscription/delete", method = RequestMethod.POST)
+    @RequestMapping(value="/delete", method = RequestMethod.POST)
     public ResponseEntity deleteSubscription(@RequestParam(value="fid",required=false) String fid,
                                              @RequestParam(value="id",required=false) Long id,
                                              @RequestParam(value="r",required=true) String resource){
@@ -115,7 +115,7 @@ public class SubscriptionController {
     }
 
     // https://api.fitbit.com/1/user/-/[collection-path]/apiSubscriptions/[subscription-id].json
-    @RequestMapping(value="/subscribe", method = RequestMethod.POST)
+    @RequestMapping(value={"/", ""}, method = RequestMethod.POST)
     public ResponseEntity subscribe(@RequestParam(value="fid",required=false) String fid,
                                     @RequestParam(value="id",required=false) Long id,
                                     @RequestParam(value="r",required=true) String resource){

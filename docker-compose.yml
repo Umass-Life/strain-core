@@ -7,7 +7,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./secrets/private.key:/etc/ssl/private.key
       - ./secrets/umasslife_net.crt:/etc/ssl/umasslife_net.crt
-      - ./secrets/api_umasslife_net.crt:/etc/ssl/api_umasslife_net.crt
+      - ./secrets/api-ssl-bundle.crt:/etc/ssl/api-ssl-bundle.crt
     ports:
       - 80:80
       - 443:443
