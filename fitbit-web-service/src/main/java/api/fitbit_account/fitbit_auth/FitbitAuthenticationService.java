@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -500,10 +501,10 @@ public class FitbitAuthenticationService {
         CloseableHttpClient client = HttpClients.createDefault();
         StrainTimer timer = new StrainTimer(colorLog, "GET " + url);
         timer.start();
-
+        Integer statusCode = null;
         try {
             HttpResponse res = client.execute(httpDelete);
-            Integer statusCode = res.getStatusLine().getStatusCode();
+            statusCode = res.getStatusLine().getStatusCode();
             colorLog.info(res.getStatusLine());
 
             HttpEntity entity = res.getEntity();
@@ -540,6 +541,13 @@ public class FitbitAuthenticationService {
                 colorLog.severe(node);
                 throw new IllegalArgumentException(res.getStatusLine().toString());
             }
+
+            Map<String, Object> returnMap = new HashMap<>();
+            returnMap.put("payload", node);
+            returnMap.put("status", statusCode);
+            ObjectMapper om = new ObjectMapper();
+            String jsonStr = om.writeValueAsString(returnMap);
+            node = om.readTree(jsonStr);
 
         } catch (Exception e){
             e.printStackTrace();

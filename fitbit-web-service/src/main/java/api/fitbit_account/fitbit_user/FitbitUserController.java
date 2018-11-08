@@ -72,6 +72,12 @@ public class FitbitUserController {
         }
     }
 
+    /***
+     * User Registration function
+     *
+     * @param req
+     * @param res
+     */
     @RequestMapping(value="/received", method= RequestMethod.GET)
     public void api_callback(HttpServletRequest req, HttpServletResponse res){
         Map<String, Object> responseJson = new HashMap<>();
@@ -278,7 +284,6 @@ public class FitbitUserController {
         }
         return ResponseEntity.ok(responseMap);
     }
-
 
 
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
