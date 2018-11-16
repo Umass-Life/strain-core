@@ -25,9 +25,11 @@ public class StressLevel extends BaseEntity {
     private String stressLevel;
 
     public StressLevel(){}
-    public StressLevel(Long dateTime, String stressLevel) {
+    public StressLevel(Long strainId, String fitbitId, Long dateTime, String stressLevel) {
         this.dateTime = dateTime;
         this.stressLevel = stressLevel;
+        this.strainId = strainId;
+        this.fitbitId = fitbitId;
     }
 
     public Long getDateTime() {

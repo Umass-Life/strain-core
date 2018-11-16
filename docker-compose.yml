@@ -100,4 +100,20 @@ services:
     - config-service
     - discovery-service
     - postgres
+
+  ema-service:
+    image: nsimsiri/ema-service:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    build:
+      context: .
+      dockerfile: ./ema-service/Dockerfile-fitbit-web
+    ports:
+    - "8773:8773"
+    depends_on:
+    - config-service
+    - discovery-service
+    - postgres
 #

@@ -34,6 +34,9 @@ public class StressLevelService {
     public List<StressLevel> create(JsonNode node) {
         final String TIMESTAMP = "timestamp";
         final String LEVEL = "level";
+        final String STRAIN_ID = "strainid";
+        final String FITBIT_ID = "fitbitId";
+
         if (!node.has("msgtype") && !node.has("data")) {
             throw new IllegalArgumentException("wrong json type: \n" + node);
         }
@@ -47,9 +50,20 @@ public class StressLevelService {
                 if (!data_i.has(TIMESTAMP) && !data_i.has(LEVEL)){
                     throw new IllegalArgumentException("bad stress json datum: " + data_i.toString());
                 }
+                if (!data.has(STRAIN_ID)){
+                    throw new IllegalArgumentException("strain-id not found");
+                }
+                if (!data.has(FITBIT_ID)){
+                    throw new IllegalArgumentException("fitbit-id not found");
+                }
+                // parse data.
+
                 Long dateTime = data_i.get(TIMESTAMP).asLong();
                 String level = data_i.get(LEVEL).asText();
-                StressLevel stressLevel = create(dateTime, level);
+                Long strainId = data_i.get(STRAIN_ID).asLong();
+                String fitbitId = data_i.get(FITBIT_ID).asText();
+
+                StressLevel stressLevel = create(strainId, fitbitId, dateTime, level);
                 levels.add(stressLevel);
             } catch (Exception e){
                 colorLog.severe(e.getMessage());
@@ -61,8 +75,8 @@ public class StressLevelService {
 
 
 
-    public StressLevel create(Long dateTime, String stressLevel){
-        StressLevel stressLevel1 = new StressLevel(dateTime, stressLevel);
+    public StressLevel create(Long strainId, String fitbitId, Long dateTime, String stressLevel){
+        StressLevel stressLevel1 = new StressLevel(strainId, fitbitId, dateTime, stressLevel);
         return repository.save(stressLevel1);
     }
 

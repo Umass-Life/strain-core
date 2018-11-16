@@ -10,4 +10,3 @@ api/EMAServiceApplication$ApplicationConfig.class
 api/ema/StressLevelRepository.class
 api/SecurityConfig.class
 api/ema/StressLevelService.class
-api/ema/EMATestController.class

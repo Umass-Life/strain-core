@@ -5,50 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5648ee4d-dc9b-4e79-af03-7f626f883425" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserKafkaConsumerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/api/KafkaSandbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/api/strain_user/StrainUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/account-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/account-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/account-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/account-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/AccountServiceApplication$ConfigWrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/api/AccountServiceApplication$ConfigWrap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/AccountServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/api/AccountServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/KafkaConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/api/KafkaConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/KafkaSandbox$Listener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/KafkaSandbox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/api/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/api/strain_user/StrainUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/classes/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/account-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/account-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/api-gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/api-gateway-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/fitbit-web-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/fitbit-web-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMATestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/api/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/NotificationKafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/NotificationKafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_subscription/SubscriptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/FitbitNotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/FitbitNotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_account/fitbit_user/FitbitUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_account/fitbit_user/FitbitUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_subscription/NotificationKafkaConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_subscription/NotificationKafkaConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_subscription/SubscriptionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_subscription/SubscriptionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_web_api/FitbitNotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/classes/api/fitbit_web_api/FitbitNotificationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/fitbit-web-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit-web-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/strain.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/ema/EMATestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/ema/StressLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/api/ema/StressLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/ema/StressLevelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/api/ema/StressLevelService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -100,8 +67,8 @@
           <entry key="Dockerfile" value="682" />
           <entry key="Enforced Plain Text" value="53" />
           <entry key="HOCON" value="195" />
-          <entry key="JAVA" value="21447" />
-          <entry key="PLAIN_TEXT" value="985" />
+          <entry key="JAVA" value="22022" />
+          <entry key="PLAIN_TEXT" value="998" />
           <entry key="YAML" value="2348" />
         </counts>
       </usages-collector>
@@ -117,10 +84,10 @@
           <entry key="Dockerfile-fitbit-web" value="257" />
           <entry key="Dockerfile-gateway" value="131" />
           <entry key="conf" value="284" />
-          <entry key="dummy" value="78" />
+          <entry key="dummy" value="91" />
           <entry key="env" value="130" />
           <entry key="gitignore" value="55" />
-          <entry key="java" value="21447" />
+          <entry key="java" value="22022" />
           <entry key="py" value="327" />
           <entry key="sh" value="2047" />
           <entry key="yml" value="2348" />
@@ -140,7 +107,7 @@
           <entry key="env" value="3" />
           <entry key="gitignore" value="3" />
           <entry key="iml" value="6" />
-          <entry key="java" value="193" />
+          <entry key="java" value="196" />
           <entry key="py" value="1" />
           <entry key="sh" value="101" />
           <entry key="txt" value="1" />
@@ -154,7 +121,7 @@
           <entry key="Bash" value="100" />
           <entry key="Dockerfile" value="38" />
           <entry key="IDEA_MODULE" value="6" />
-          <entry key="JAVA" value="193" />
+          <entry key="JAVA" value="196" />
           <entry key="PLAIN_TEXT" value="27" />
           <entry key="XML" value="18" />
           <entry key="YAML" value="50" />
@@ -173,76 +140,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ema-service/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+            <state relative-caret-position="378">
+              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
               <folding>
-                <element signature="e#1152#1153#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1238#1239#0" expanded="true" />
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1304#1305#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
+                <element signature="e#1117#1118#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ema-service/build-docker-ema.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ema-service/entrypoint-ema.sh">
+        <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+            <state relative-caret-position="784">
+              <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java">
+        <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4536">
-              <caret line="358" column="97" selection-start-line="358" selection-start-column="97" selection-end-line="358" selection-end-column="97" />
+            <state relative-caret-position="518">
+              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -298,8 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/discovery-service/entrypoint-discovery.sh" />
         <option value="$PROJECT_DIR$/discovery-service/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/fitbit-web-service/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/.env" />
@@ -345,10 +266,12 @@
         <option value="$PROJECT_DIR$/account-service/src/main/java/api/AccountServiceController.java" />
         <option value="$PROJECT_DIR$/ema-service/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/ema-service/src/main/java/api/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java" />
         <option value="$PROJECT_DIR$/ema-service/build-docker-ema.sh" />
         <option value="$PROJECT_DIR$/ema-service/Dockerfile-ema" />
         <option value="$PROJECT_DIR$/ema-service/entrypoint-ema.sh" />
+        <option value="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java" />
+        <option value="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java" />
+        <option value="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java" />
       </list>
     </option>
   </component>
@@ -515,7 +438,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542379418085" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542383735789" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -769,12 +692,12 @@
       <workItem from="1541978823515" duration="2719000" />
       <workItem from="1542041761347" duration="2002000" />
       <workItem from="1542143152881" duration="2701000" />
-      <workItem from="1542349043420" duration="1719000" />
+      <workItem from="1542349043420" duration="3658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252093000" />
+    <option name="totallyTimeSpent" value="254032000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,20 +769,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/IntradayActivityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1066">
-          <caret line="215" column="49" selection-start-line="215" selection-start-column="49" selection-end-line="215" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1402">
@@ -1076,20 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4536">
-          <caret line="358" column="97" selection-start-line="358" selection-start-column="97" selection-end-line="358" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account-service/entrypoint-account.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -1113,22 +1008,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway-service/Dockerfile-gateway">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding>
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1238#1239#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway-service/entrypoint_gateway.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -1165,6 +1044,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ema-service/Dockerfile-ema">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ema-service/build-docker-ema.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_auth/FitbitAuthenticationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -1182,17 +1075,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ema-service/Dockerfile-ema">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ema-service/build-docker-ema.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state>
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1200,6 +1086,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="358" column="97" selection-start-line="358" selection-start-column="97" selection-end-line="358" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
         </state>
       </provider>
     </entry>
