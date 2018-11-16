@@ -12,6 +12,12 @@ public class StressLevel extends BaseEntity {
     public static final String SINGULAR = StressLevel.class.getSimpleName();
     public static final String PLURAL = SINGULAR+ "s";
 
+    @Column(nullable = false)
+    private Long strainId;
+
+    @Column(nullable = false)
+    private String fitbitId;
+
     @Column(unique = true, nullable = false)
     private Long dateTime;
 
@@ -38,5 +44,21 @@ public class StressLevel extends BaseEntity {
 
     public void setStressLevel(String stressLevel) {
         this.stressLevel = stressLevel;
+    }
+
+    public Long getStrainId() {
+        return strainId;
+    }
+
+    public void setStrainId(Long strainId) {
+        this.strainId = strainId;
+    }
+
+    public String getFitbitId() {
+        return fitbitId;
+    }
+
+    public void setFitbitId(String fitbitId) {
+        this.fitbitId = fitbitId;
     }
 }

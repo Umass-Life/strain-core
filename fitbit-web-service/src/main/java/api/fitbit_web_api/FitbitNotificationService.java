@@ -23,8 +23,8 @@ public class FitbitNotificationService {
     private ColorLogger log = new ColorLogger(defaultLogger);
     @Autowired
     private NotificationKafkaConfig notificationKafkaConfig;
-    @Autowired
-    private KafkaTemplate<Long, String> kafkaTemplate;
+//    @Autowired
+//    private KafkaTemplate<Long, String> kafkaTemplate;
 
     private FitbitSubscriptionService subscriptionService;
 
@@ -35,36 +35,36 @@ public class FitbitNotificationService {
      * */
 
     public void notifySubscription(JsonNode notificationJson) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        String serializedJson = mapper.writeValueAsString(notificationJson);
-        Long key = EntityHelper.toEpochMilli(LocalDateTime.now());
-        this.kafkaTemplate.send(notificationKafkaConfig.FITBIT_NOTIFICATION_TOPIC, key, serializedJson);
-        this.kafkaTemplate.flush();
+//        ObjectMapper mapper = new ObjectMapper();
+//        String serializedJson = mapper.writeValueAsString(notificationJson);
+//        Long key = EntityHelper.toEpochMilli(LocalDateTime.now());
+//        this.kafkaTemplate.send(notificationKafkaConfig.FITBIT_NOTIFICATION_TOPIC, key, serializedJson);
+//        this.kafkaTemplate.flush();
     }
 
     public void notifyDebug(JsonNode test) throws JsonProcessingException{
-        Long key = EntityHelper.toEpochMilli(LocalDateTime.now());
-        ObjectMapper mapper = new ObjectMapper();
-        String serializedJson = mapper.writeValueAsString(test);
-        this.kafkaTemplate.send(notificationKafkaConfig.DEBUG_TOPIC, key, serializedJson);
-        this.kafkaTemplate.flush();
+//        Long key = EntityHelper.toEpochMilli(LocalDateTime.now());
+//        ObjectMapper mapper = new ObjectMapper();
+//        String serializedJson = mapper.writeValueAsString(test);
+//        this.kafkaTemplate.send(notificationKafkaConfig.DEBUG_TOPIC, key, serializedJson);
+//        this.kafkaTemplate.flush();
     }
 
-    @KafkaListener(topics = "${spring.kafka.topics.fitbit-notification}")
-    public void notificationListener(ConsumerRecord<Long, String> msg) throws IOException {
-        String json = msg.value();
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode node = mapper.readTree(json);
-        log.info("RECV: " + node);
-    }
-
-    @KafkaListener(topics = "${spring.kafka.topics.debug}")
-    public void debugListener(ConsumerRecord<Long, String> msg) throws IOException {
-        String json = msg.value();
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode node = mapper.readTree(json);
-        log.info("[KAFKA(debug)]: " + node);
-    }
+//    @KafkaListener(topics = "${spring.kafka.topics.fitbit-notification}")
+//    public void notificationListener(ConsumerRecord<Long, String> msg) throws IOException {
+//        String json = msg.value();
+//        ObjectMapper mapper = new ObjectMapper();
+//        JsonNode node = mapper.readTree(json);
+//        log.info("RECV: " + node);
+//    }
+//
+//    @KafkaListener(topics = "${spring.kafka.topics.debug}")
+//    public void debugListener(ConsumerRecord<Long, String> msg) throws IOException {
+//        String json = msg.value();
+//        ObjectMapper mapper = new ObjectMapper();
+//        JsonNode node = mapper.readTree(json);
+//        log.info("[KAFKA(debug)]: " + node);
+//    }
 
 }
 

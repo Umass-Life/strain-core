@@ -40,17 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .deleteCookies("JSESSIONID").invalidateHttpSession(true);
     }
 
-//    @Override
-//    public void configure(WebSecurity webSecurity) throws Exception {
-//        webSecurity.ignoring()
-//                .antMatchers("/test/**")
-//                .antMatchers(HttpMethod.OPTIONS, "/**")
-//                .antMatchers(HttpMethod.GET, "/ping")
-//                .antMatchers(HttpMethod.POST ,"/users/")
-//                .antMatchers(HttpMethod.POST, "/users")
-//                .antMatchers(HttpMethod.POST, "/users/update/**");
-//    }
-
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -79,44 +68,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return source;
     }
 
-//    @Override
-//    protected void configure(HttpSecurity security) throws Exception
-//    {
-//        security.httpBasic().disable();
-//    }
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {
-//        authManagerBuilder.authenticationProvider(customAuthenticationProvider());
-//    }
-//
-//    @Override
-//    public UserDetailsService userDetailsServiceBean(){
-//        return new AMSUserDetailsService(userService, authService);
-//    }
-//
-//    @Bean
-//    public PasswordEncoder passwordEncoder(){
-//        return new BCryptPasswordEncoder();
-//    }
-//
-//    @Bean
-//    public DaoAuthenticationProvider customAuthenticationProvider(){
-//        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-//        provider.setPasswordEncoder(passwordEncoder());
-//        provider.setUserDetailsService(userDetailsServiceBean());
-//        return provider;
-//    }
-//
-//    @Bean
-//    public RestOnLoginSuccessHandler getRestAuthenticationSuccessHandler(){
-//        return new RestOnLoginSuccessHandler(userService);
-//    }
-//
-//    @Bean
-//    AuthenticationFailureHandler getRestOnAuthenticationFailureHandler(){
-//        return new RestOnAuthenticationFailureHandler();
-//    }
+
+    public <T extends Integer> T test(Class<T> x) {
+        return null;
+
+    }
+
 }
 
 

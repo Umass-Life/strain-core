@@ -6,12 +6,17 @@ import api.fitbit_account.fitbit_auth.FitbitAuthenticationService;
 import api.fitbit_account.fitbit_profile.FitbitProfile;
 import api.fitbit_account.fitbit_profile.FitbitProfileService;
 import api.fitbit_web_api.fitbit_activity.aggregate.AggregateActivityService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import util.ColorLogger;
@@ -23,6 +28,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
 
 import static util.Validation.checkNotNull;
@@ -33,8 +39,8 @@ import static util.Validation.parseInt;
 public class FitbitUserController {
     // will reverse order Users so first user (me) comes first.
     final Boolean TESTING_MODE = true;
-    private final Logger log = Logger.getLogger(FitbitUserController.class.getName());
-    private final ColorLogger colorLog = new ColorLogger(log);
+    private static Logger log = Logger.getLogger(FitbitUserController.class.getName());
+    private static ColorLogger colorLog = new ColorLogger(log);
 
     @Autowired
     FitbitAuthenticationService fitbitUserAuthenticationService;
@@ -334,5 +340,37 @@ public class FitbitUserController {
     @RequestMapping(value = "/ping", method = RequestMethod.GET)
     public ResponseEntity<String> ping(){
         return ResponseEntity.ok("pong");
+    }
+
+    @KafkaListener(id = "strain-user-group" , topics = "new-strain-user")//"#{'${spring.kafka.topics.new-strain-user}'}" )
+    @SendTo
+    public String onNewStrainUser(ConsumerRecord<Integer, String> msg){
+//        colorLog.info("\n----> received " + msg);
+        Map<String, Object> resMap = new HashMap<>();
+        ObjectMapper om = new ObjectMapper();
+        if (msg.value().equals("$debug")) return "$debug";
+        try {
+            if (msg!=null){
+                String id = msg.value();
+                Long strainId = Long.parseLong(id);
+//                Optional<FitbitUser> fitbitUserOpt = fitbitUserService.getByFitbitId(fitbitId);
+//                Optional<String> fitbitUserOpt = Optional.of("hi");
+
+                Optional<FitbitUser> fitbitUserOpt = fitbitUserService.getByStrainUserId(strainId);
+
+                if (fitbitUserOpt.isPresent()){
+                    resMap.put(FitbitUser.SINGULAR, fitbitUserOpt.get());
+                } else {
+                    resMap.put("error", "user not found: " + id);
+                }
+                String resMapJSON = om.writeValueAsString(resMap);
+                colorLog.info(resMapJSON);
+                return resMapJSON;
+
+            }
+        }catch(JsonProcessingException e){
+            e.printStackTrace();
+        }
+        return "";
     }
 }

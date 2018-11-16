@@ -56,6 +56,20 @@ public class StrainUserService {
 
     }
 
+    public StrainUser login(String email, String password) {
+        checkNotNull(email);
+        checkNotNull(password);
+        Optional<StrainUser> userOpt = getByEmail(email);
+        if (!userOpt.isPresent()){
+            return null;
+        }
 
+        StrainUser user = userOpt.get();
+        // naive pwd check for quick development
+        if (!user.getPassword().equals(password)){
+            return null;
+        }
+        return user;
+    }
 
 }

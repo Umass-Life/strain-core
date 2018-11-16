@@ -5,6 +5,4 @@ api/AccountServiceApplication.class
 api/AccountServiceApplication$ConfigWrap.class
 api/strain_user/StrainUserRepository.class
 api/strain_user/StrainUserController.class
-api/KafkaSandbox$Listener.class
-api/KafkaSandbox.class
 api/strain_user/StrainUser.class

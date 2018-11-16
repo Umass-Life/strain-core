@@ -68,7 +68,7 @@ public class SubscriptionController {
     @RequestMapping(value="/webhook", method = RequestMethod.POST)
     public ResponseEntity subscription(@RequestBody Map<String, Object> body){
         try {
-            colorLogger.info(body.toString());
+            colorLogger.info("[NOTIFICATION]\n" + body.toString());
             return ResponseEntity.status(204).body("");
         } catch (Exception e){
             e.printStackTrace();

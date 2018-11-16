@@ -48,6 +48,7 @@
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_profile/FitbitProfileRepository.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/sleep_time_series/SleepTimeSerie.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/data_ingestion/fitbit_batch/BatchProcessingService.java
+/Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_account/fitbit_user/FitbitUserKafkaConsumerConfig.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/distance/DistanceActivityService.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_heartrate/FitbitHeartrateAPIService.java
 /Users/nsimsiri/Documents/code/web/sample-projects/strain-core/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_activity/intraday/IIntradayActivityService.java

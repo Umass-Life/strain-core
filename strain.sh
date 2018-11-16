@@ -27,7 +27,7 @@ fi
 
 if [ $1 = "3" ]
 then
-  cmd="mvn spring-boot:run -Dspring-boot.run.profiles=prod -pl api-gateway-service"
+  cmd="mvn spring-boot:run -Dspring-boot.run.profiles=dev -pl api-gateway-service"
   echo $cmd
   eval $cmd;
 fi
@@ -50,14 +50,14 @@ fi
 
 if [ $1 = "fitbit-web-service" ]
 then
-  cmd="mvn spring-boot:run -pl fitbit-web-service"
+  cmd="mvn spring-boot:run -Dspring-boot.run.profiles=dev -pl fitbit-web-service"
   echo $cmd;
   eval $cmd;
 fi
 
 if [ $1 = "account-service" ]
 then
-  cmd="mvn spring-boot:run -pl account-service"
+  cmd="mvn spring-boot:run -Dspring-boot.run.profiles=dev -pl account-service"
   echo $cmd;
   eval $cmd;
 fi
