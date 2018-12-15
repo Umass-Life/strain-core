@@ -20,12 +20,14 @@ public class EMAController {
     private static final Logger logger = Logger.getLogger(EMAController.class.getSimpleName());
     private static final ColorLogger colorLog = new ColorLogger(logger);
     @Autowired
+    private EMAService emaService;
+    @Autowired
     private StressLevelService stressLevelService;
 
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
     public ResponseEntity<Map> list(){
         Map<String, Object> responseJson = new HashMap<>();
-        responseJson.put(StressLevel.PLURAL, stressLevelService.list());
+        responseJson.put(StressLevel.PLURAL, emaService.list());
         return ResponseEntity.ok(responseJson);
     }
 
@@ -34,17 +36,27 @@ public class EMAController {
         Map<String, Object> responseJson = new HashMap<>();
         try{
             colorLog.info(node);
-            List<StressLevel> levels = stressLevelService.create(node);
+            List<EMA> emas = emaService.create(node);
             responseJson.put("success", "true");
-            colorLog.info("SAVED: \n%s", levels);
+            colorLog.info("SAVED: \n%s", emas);
             return ResponseEntity.ok(responseJson);
         } catch(Exception e){
-            e.printStackTrace();
+//            e.printStackTrace();
             colorLog.severe(e.getMessage());
             responseJson.put("success", "false");
             return ResponseEntity.ok(responseJson);
         }
     }
+
+    @RequestMapping(value = "/stress", method = RequestMethod.GET)
+    public ResponseEntity<Map> stress(){
+        System.out.println("stress");
+        Map<String, Object> responseJson = new HashMap<>();
+        responseJson.put(StressLevel.PLURAL, stressLevelService.list());
+        return ResponseEntity.ok(responseJson);
+    }
+
+
 
     @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
     public ResponseEntity test(){

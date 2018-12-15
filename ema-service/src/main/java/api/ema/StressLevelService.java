@@ -34,12 +34,23 @@ public class StressLevelService {
     public List<StressLevel> create(JsonNode node) {
         final String TIMESTAMP = "timestamp";
         final String LEVEL = "level";
-        final String STRAIN_ID = "strainid";
+        final String STRAIN_ID = "strainId";
         final String FITBIT_ID = "fitbitId";
 
         if (!node.has("msgtype") && !node.has("data")) {
             throw new IllegalArgumentException("wrong json type: \n" + node);
         }
+
+        if (!node.has(STRAIN_ID)){
+            throw new IllegalArgumentException("strain-id not found");
+        }
+        if (!node.has(FITBIT_ID)){
+            throw new IllegalArgumentException("fitbit-id not found");
+        }
+
+        String strainIdString = node.get(STRAIN_ID).asText();
+        Long strainId = Long.parseLong(strainIdString);
+        String fitbitId = node.get(FITBIT_ID).asText();
 
         ArrayNode data = (ArrayNode) node.get("data");
         if (data== null) throw new IllegalArgumentException("json needs to have field \'data\':\n"+node);
@@ -50,18 +61,12 @@ public class StressLevelService {
                 if (!data_i.has(TIMESTAMP) && !data_i.has(LEVEL)){
                     throw new IllegalArgumentException("bad stress json datum: " + data_i.toString());
                 }
-                if (!data.has(STRAIN_ID)){
-                    throw new IllegalArgumentException("strain-id not found");
-                }
-                if (!data.has(FITBIT_ID)){
-                    throw new IllegalArgumentException("fitbit-id not found");
-                }
+
                 // parse data.
 
                 Long dateTime = data_i.get(TIMESTAMP).asLong();
                 String level = data_i.get(LEVEL).asText();
-                Long strainId = data_i.get(STRAIN_ID).asLong();
-                String fitbitId = data_i.get(FITBIT_ID).asText();
+
 
                 StressLevel stressLevel = create(strainId, fitbitId, dateTime, level);
                 levels.add(stressLevel);

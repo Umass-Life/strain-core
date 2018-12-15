@@ -64,7 +64,7 @@ fi
 
 if [ $1 = "ema-service" ]
 then
-  cmd="mvn spring-boot:run -pl ema-service"
+  cmd="mvn spring-boot:run -Dspring-boot.run.profiles=dev -pl ema-service"
   echo $cmd;
   eval $cmd;
 fi
