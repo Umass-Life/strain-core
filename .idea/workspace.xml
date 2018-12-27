@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5648ee4d-dc9b-4e79-af03-7f626f883425" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMARepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/location/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/api-gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/api-gateway-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-service/strain-config/ema-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/strain-config/ema-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/config-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/ema/StressLevelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/ema/EMAController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/api/ema/EMAController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/ema/EMAService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/api/ema/EMAService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/ema/StressLevelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/classes/api/ema/StressLevelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/ema-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/ema-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/ema-service-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/ema-service-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ema-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/strain.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ema-service/target/classes/api/location/LocationController.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,12 +33,12 @@
     <session id="1433126072">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="36" />
+          <entry key="project.closed" value="38" />
           <entry key="project.open.time.13" value="6" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="4" />
           <entry key="project.open.time.16" value="3" />
-          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="2" />
@@ -69,7 +53,7 @@
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.37" value="1" />
-          <entry key="project.opened" value="43" />
+          <entry key="project.opened" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -79,7 +63,7 @@
           <entry key="Dockerfile" value="682" />
           <entry key="Enforced Plain Text" value="53" />
           <entry key="HOCON" value="195" />
-          <entry key="JAVA" value="24460" />
+          <entry key="JAVA" value="24817" />
           <entry key="PLAIN_TEXT" value="1019" />
           <entry key="YAML" value="2364" />
         </counts>
@@ -99,7 +83,7 @@
           <entry key="dummy" value="112" />
           <entry key="env" value="130" />
           <entry key="gitignore" value="55" />
-          <entry key="java" value="24460" />
+          <entry key="java" value="24817" />
           <entry key="py" value="327" />
           <entry key="sh" value="2047" />
           <entry key="yml" value="2364" />
@@ -172,11 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="302">
+              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -207,11 +191,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="420">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -355,8 +339,8 @@
         <option value="$PROJECT_DIR$/ema-service/src/main/java/api/location/Location.java" />
         <option value="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationRepository.java" />
         <option value="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationService.java" />
-        <option value="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java" />
         <option value="$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java" />
+        <option value="$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java" />
       </list>
     </option>
   </component>
@@ -376,11 +360,9 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="120" />
-    <option name="y" value="31" />
-    <option name="width" value="1419" />
-    <option name="height" value="1012" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -390,7 +372,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -558,14 +540,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544814662365" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544977823057" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -827,12 +809,13 @@
       <workItem from="1544062185681" duration="1291000" />
       <workItem from="1544150275895" duration="1299000" />
       <workItem from="1544483931074" duration="1867000" />
-      <workItem from="1544801369625" duration="2326000" />
+      <workItem from="1544801369625" duration="2817000" />
+      <workItem from="1545803633495" duration="783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273813000" />
+    <option name="totallyTimeSpent" value="275087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -844,10 +827,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="120" y="31" width="1419" height="1012" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990099" visible="true" weight="0.26143792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990099" visible="true" weight="0.26824033" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1166,10 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,16 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit-web-service/src/main/java/api/fitbit_web_api/fitbit_sleep/FitbitSleepController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2058">
@@ -1252,8 +1220,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/ema/EMAController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="302">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ema-service/src/main/java/api/location/LocationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
